@@ -1,0 +1,18 @@
+{
+  "name": "REALISH - Human or AI?",
+  "short_name": "REALISH",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0E0E11",
+  "theme_color": "#0E0E11",
+  "description": "Seven items a day. Some were made by a person. Some were generated. Decide which is which.",
+  "categories": ["games", "education", "puzzle"],
+  "icons": [
+    { "src": "icons/Icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/Icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/Icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/Icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

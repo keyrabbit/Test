@@ -1,0 +1,61 @@
+{
+  "project": "REALISH — Human or AI?",
+  "objective": "Prove that a two-minute daily 'human or AI' test makes people want to come back tomorrow.",
+  "updatedUtc": "2026-07-29T23:00:00Z",
+  "phase": "Milestone 2 — publish, install, validate the demo",
+  "currentTask": "Publishing the offline iPhone PWA demo and opening the go/no-go feedback issue.",
+  "agentMonitoring": false,
+  "agentMonitoringNote": "This agent cannot observe GitHub after its process exits. Re-run `pwsh scripts/sync_owner_inbox.ps1` in the IQ repository to pull new issues and comments into the work queue.",
+  "latestCompleted": [
+    "Resolved the IQ repository and the existing keyrabbit/Test Pages configuration",
+    "Installed the Flutter SDK and created the shared client",
+    "Authored 21 provenance-verified demo items across three date-keyed packs",
+    "Built the seven-round Daily Test, reveal, result and tomorrow screens",
+    "30 unit, content-integrity and widget tests passing; static analysis clean"
+  ],
+  "milestones": [
+    { "id": 0, "title": "Repository discovery and control plane", "status": "done" },
+    { "id": 1, "title": "Offline iPhone demo vertical slice", "status": "done" },
+    { "id": 2, "title": "Publish, install and validate the demo", "status": "in-progress" },
+    { "id": 3, "title": "Owner interest gate", "status": "blocked-on-owner" },
+    { "id": 4, "title": "Backend and content operations", "status": "gated" },
+    { "id": 5, "title": "Viral loop", "status": "gated" },
+    { "id": 6, "title": "Retention", "status": "gated" },
+    { "id": 7, "title": "Monetization", "status": "gated" },
+    { "id": 8, "title": "Cross-platform expansion", "status": "gated" }
+  ],
+  "nextThree": [
+    "Owner plays the demo on a real iPhone and answers the go/no-go issue",
+    "Fix any P0/P1 defects raised in demo feedback",
+    "Acquire licensed image, audio and video assets with verified provenance"
+  ],
+  "blockers": [
+    {
+      "title": "Licensed image / audio / video assets are unavailable",
+      "severity": "p0",
+      "detail": "This environment cannot lawfully source licensed human photography or produce AI media with recorded generation provenance. The demo therefore ships text-only rounds.",
+      "issue": null
+    },
+    {
+      "title": "Real-iPhone validation pending",
+      "severity": "p1",
+      "detail": "No physical iOS device is available. Offline and standalone behaviour has been verified in a desktop browser only.",
+      "issue": null
+    }
+  ],
+  "ownerDecisionsAwaitingImplementation": [],
+  "demo": {
+    "version": "0.1.0",
+    "commitSha": "pending",
+    "buildTimeUtc": "pending",
+    "contentPacks": 3,
+    "contentItems": 21,
+    "offlineValidated": "browser-emulation-only",
+    "realDeviceValidated": false
+  },
+  "quality": {
+    "staticAnalysis": "clean",
+    "tests": "30 passing",
+    "criticPass": "pending"
+  }
+}

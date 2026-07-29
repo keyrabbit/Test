@@ -1,0 +1,553 @@
+{
+  "schemaVersion": "1.0.0",
+  "generator": "hand-authored for the REALISH offline demo",
+  "notice": "Demo content. Human items are public-domain literature (US public domain, published before 1929). AI items were generated for this project with recorded provenance. No scraped, licensed, in-copyright, celebrity, or public-figure media is used.",
+  "tells": [
+    {
+      "id": "generic-phrasing",
+      "name": "Generic phrasing",
+      "explanation": "Language that could describe almost anything. Concrete, oddly specific detail is a human fingerprint."
+    },
+    {
+      "id": "tidy-ending",
+      "name": "The tidy bow",
+      "explanation": "A neat summarising sentence that restates the feeling instead of ending on an image."
+    },
+    {
+      "id": "uniform-rhythm",
+      "name": "Uniform rhythm",
+      "explanation": "Sentences of suspiciously even length and shape. Human prose lurches; it runs long, then stops short."
+    },
+    {
+      "id": "hedged-emotion",
+      "name": "Hedged emotion",
+      "explanation": "Feelings described from a safe distance rather than stated plainly or shown in action."
+    },
+    {
+      "id": "specific-detail",
+      "name": "Unbudgeted detail",
+      "explanation": "A detail too strange or too useless to be invented for effect. Real observation keeps things it does not need."
+    },
+    {
+      "id": "odd-syntax",
+      "name": "Awkward on purpose",
+      "explanation": "Period grammar, run-on clauses, and choices a fluency-optimised model would smooth away."
+    },
+    {
+      "id": "abstract-nouns",
+      "name": "Abstraction stack",
+      "explanation": "Piles of abstract nouns doing work that a concrete image should be doing."
+    },
+    {
+      "id": "symmetry",
+      "name": "Too-neat symmetry",
+      "explanation": "Balanced triplets and mirrored clauses. Models love a rule of three — but so did some humans."
+    }
+  ],
+  "packs": [
+    {
+      "packId": "pack-001",
+      "date": "2026-07-30",
+      "title": "Reality Test 001",
+      "items": [
+        {
+          "id": "p1-r1",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "easy",
+          "category": "Messages & Reviews",
+          "body": "This cozy little cafe is a hidden gem in the heart of the neighbourhood. The staff are incredibly friendly and welcoming, and the atmosphere is warm and inviting. Whether you are stopping in for a quick coffee or settling in with a book, it offers the perfect blend of comfort and quality. Highly recommended for anyone looking for a relaxing spot.",
+          "tellId": "generic-phrasing",
+          "explanation": "Nothing here could only be true of one cafe. No dish, no price, no bad day, no name — just a stack of approving adjectives.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/cafe-review-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A short cafe review written in generic promotional language."
+        },
+        {
+          "id": "p1-r2",
+          "type": "text",
+          "label": "human",
+          "difficulty": "easy",
+          "category": "Literature",
+          "body": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+          "tellId": "odd-syntax",
+          "explanation": "The comma splice and mock-legal cadence are period habits. The sentence is also a joke at its own expense — it states a truth it intends to demolish.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Pride and Prejudice",
+            "author": "Jane Austen",
+            "published": 1813,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1813"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening sentence of Pride and Prejudice."
+        },
+        {
+          "id": "p1-r4",
+          "type": "text",
+          "label": "human",
+          "difficulty": "medium",
+          "category": "Literature",
+          "body": "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+          "tellId": "specific-detail",
+          "explanation": "\"Never mind how long precisely\" is an evasion no model would bother to invent. The narrator withholds a detail for his own reasons, which is a very human thing to do.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Moby-Dick",
+            "author": "Herman Melville",
+            "published": 1851,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1851"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening lines of Moby-Dick."
+        },
+        {
+          "id": "p1-r3",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "medium",
+          "category": "Messages & Reviews",
+          "body": "There is a certain quietness that arrives with autumn, a sense of the world exhaling after a long summer. The light softens. The mornings carry a coolness that feels like a promise. In these moments, one begins to understand that endings and beginnings are not opposites but companions, each making room for the other.",
+          "tellId": "tidy-ending",
+          "explanation": "The last sentence explains the feeling instead of leaving an image. \"Not opposites but companions\" is the shape of an insight without the substance of one.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/autumn-reflection-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A short reflective paragraph about autumn."
+        },
+        {
+          "id": "p1-r5",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "medium",
+          "category": "Messages & Reviews",
+          "body": "Crafted with care and designed for everyday moments, this ceramic mug brings together timeless style and practical comfort. Its smooth glaze and balanced weight make every sip a pleasure, while the durable construction ensures it will be a companion for years to come. A thoughtful addition to any kitchen.",
+          "tellId": "symmetry",
+          "explanation": "Three balanced clauses, each pairing an abstract virtue with a practical one. The mug has no colour, no size, and no price.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/mug-copy-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "Marketing copy for a ceramic mug."
+        },
+        {
+          "id": "p1-r6",
+          "type": "text",
+          "label": "human",
+          "difficulty": "hard",
+          "category": "Literature",
+          "body": "In my younger and more vulnerable years my father gave me some advice that I have been turning over in my mind ever since. \"Whenever you feel like criticizing anyone,\" he told me, \"just remember that all the people in this world have not had the advantages that you have had.\"",
+          "tellId": "odd-syntax",
+          "explanation": "The advice is withheld for a full clause, then delivered in someone else's voice. That deferral is a structural risk models rarely take.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "published": 1925,
+            "rightsBasis": "US public domain (published before 1929; entered public domain 2021)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1925"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening lines of The Great Gatsby."
+        },
+        {
+          "id": "p1-r7",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "hard",
+          "category": "Messages & Reviews",
+          "body": "The harbour lay still beneath a sky the colour of cold iron, and the gulls turned above it without sound.",
+          "tellId": "uniform-rhythm",
+          "explanation": "Balanced, unhurried and safe. \"Cold iron\" and soundless gulls are the two most reachable images for this scene — the sentence takes no risk a writer would take.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/harbour-line-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A one-sentence description of a harbour."
+        }
+      ]
+    },
+    {
+      "packId": "pack-002",
+      "date": "2026-07-31",
+      "title": "Reality Test 002",
+      "items": [
+        {
+          "id": "p2-r2",
+          "type": "text",
+          "label": "human",
+          "difficulty": "easy",
+          "category": "Literature",
+          "body": "All happy families are alike; each unhappy family is unhappy in its own way.",
+          "tellId": "odd-syntax",
+          "explanation": "A claim sharp enough to argue with. The semicolon does real structural work rather than decorating the sentence.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Anna Karenina (Constance Garnett translation)",
+            "author": "Leo Tolstoy",
+            "published": 1901,
+            "rightsBasis": "US public domain (translation published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "Garnett translation, published 1901"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening line of Anna Karenina."
+        },
+        {
+          "id": "p2-r1",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "easy",
+          "category": "Messages & Reviews",
+          "body": "Our stay was absolutely wonderful from start to finish. The room was spotless, the bed was incredibly comfortable, and the staff went above and beyond to make us feel at home. The location is ideal for exploring the city. We would not hesitate to return and highly recommend it to anyone visiting the area.",
+          "tellId": "generic-phrasing",
+          "explanation": "Every clause is a template. Real reviews complain about one small thing — the shower, the noise, the breakfast hours.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/hotel-review-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A short, uniformly positive hotel review."
+        },
+        {
+          "id": "p2-r4",
+          "type": "text",
+          "label": "human",
+          "difficulty": "medium",
+          "category": "Literature",
+          "body": "3 May. Bistritz.—Left Munich at 8:35 P.M., on 1st May, arriving at Vienna early next morning; should have arrived at 6:46, but train was an hour late. Buda-Pesth seems a wonderful place, from the glimpse which I got of it from the train.",
+          "tellId": "specific-detail",
+          "explanation": "A timetable no story needs. 6:46, an hour late, a glimpse from a train — this is the useless precision of somebody actually keeping a diary.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Dracula",
+            "author": "Bram Stoker",
+            "published": 1897,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1897"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening journal entry of Dracula."
+        },
+        {
+          "id": "p2-r3",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "medium",
+          "category": "Messages & Reviews",
+          "body": "After much reflection, I have decided to begin a new chapter in my career. I am deeply grateful to the incredible team I worked alongside — the lessons, the challenges, and the growth have shaped me in ways I could not have anticipated. I am excited for what comes next and open to connecting with others on a similar journey.",
+          "tellId": "abstract-nouns",
+          "explanation": "Lessons, challenges, growth, journey. Four abstractions and not one thing that actually happened.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/career-post-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A professional networking post about changing jobs."
+        },
+        {
+          "id": "p2-r5",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "medium",
+          "category": "Messages & Reviews",
+          "body": "This simple weeknight pasta comes together in under thirty minutes, making it the perfect solution for busy evenings. With pantry staples and fresh ingredients, it delivers a comforting meal the whole family will love. Feel free to customise it with whatever vegetables you have on hand.",
+          "tellId": "generic-phrasing",
+          "explanation": "The food-blog voice with the personal story removed. \"Whatever you have on hand\" avoids committing to a single real ingredient.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/recipe-intro-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "An introduction to a weeknight pasta recipe."
+        },
+        {
+          "id": "p2-r6",
+          "type": "text",
+          "label": "human",
+          "difficulty": "hard",
+          "category": "Literature",
+          "body": "The Nellie, a cruising yawl, swung to her anchor without a flutter of the sails, and was at rest. The flood had made, the wind was nearly calm, and being bound down the river, the only thing for it was to come to and wait for the turn of the tide.",
+          "tellId": "odd-syntax",
+          "explanation": "Sailing terms used without translation, and a sentence that assumes you know what a flood tide is. Models explain their jargon; people who know it do not.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Heart of Darkness",
+            "author": "Joseph Conrad",
+            "published": 1899,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1899"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening lines of Heart of Darkness."
+        },
+        {
+          "id": "p2-r7",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "hard",
+          "category": "Messages & Reviews",
+          "body": "Tuesday. The rain did not stop, so I stayed in and reorganised the bookshelf by colour, which I regretted almost immediately. I could not find anything afterwards. Still, the room looked better, and I suppose that counted for something.",
+          "tellId": "hedged-emotion",
+          "explanation": "Genuinely hard — the detail is good. The tell is the closing hedge: \"I suppose that counted for something\" is a model reaching for a wry ending instead of simply stopping.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/diary-entry-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A short diary entry about a rainy Tuesday."
+        }
+      ]
+    },
+    {
+      "packId": "pack-003",
+      "date": "2026-08-01",
+      "title": "Reality Test 003",
+      "items": [
+        {
+          "id": "p3-r1",
+          "type": "text",
+          "label": "human",
+          "difficulty": "easy",
+          "category": "Literature",
+          "body": "Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, \"and what is the use of a book,\" thought Alice, \"without pictures or conversations?\"",
+          "tellId": "odd-syntax",
+          "explanation": "One enormous breathless sentence that changes direction twice and ends inside a child's head. Models punctuate more politely than this.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Alice's Adventures in Wonderland",
+            "author": "Lewis Carroll",
+            "published": 1865,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1865"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening lines of Alice's Adventures in Wonderland."
+        },
+        {
+          "id": "p3-r2",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "easy",
+          "category": "Messages & Reviews",
+          "body": "Great app! It does exactly what it promises and the interface is clean and intuitive. I have been using it daily for a few weeks now and have not run into any issues. The recent update made everything even smoother. Definitely worth downloading if you are looking for something reliable.",
+          "tellId": "uniform-rhythm",
+          "explanation": "Four sentences of near-identical length, each delivering exactly one positive point. Real reviews are lopsided.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/app-review-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A positive app store review."
+        },
+        {
+          "id": "p3-r3",
+          "type": "text",
+          "label": "human",
+          "difficulty": "medium",
+          "category": "Literature",
+          "body": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity.",
+          "tellId": "symmetry",
+          "explanation": "A deliberate trap. This is human, and it is relentlessly symmetrical — proof that a single tell never decides the answer on its own.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "A Tale of Two Cities",
+            "author": "Charles Dickens",
+            "published": 1859,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1859"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening lines of A Tale of Two Cities."
+        },
+        {
+          "id": "p3-r5",
+          "type": "text",
+          "label": "human",
+          "difficulty": "medium",
+          "category": "Literature",
+          "body": "It is very seldom that mere ordinary people like John and myself secure ancestral halls for the summer. A colonial mansion, a hereditary estate, I would say a haunted house, and reach the height of romantic felicity—but that would be asking too much of fate!",
+          "tellId": "specific-detail",
+          "explanation": "The narrator interrupts herself to argue with her own sentence. That self-correction mid-thought is very difficult to fake.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "The Yellow Wallpaper",
+            "author": "Charlotte Perkins Gilman",
+            "published": 1892,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1892"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "The opening lines of The Yellow Wallpaper."
+        },
+        {
+          "id": "p3-r4",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "medium",
+          "category": "Messages & Reviews",
+          "body": "Thank you for reaching out to us regarding your recent order. I completely understand how frustrating this must be, and I sincerely apologise for the inconvenience caused. I have escalated your case to our fulfilment team and you can expect an update within two business days. Please do not hesitate to reach out if you have any further questions.",
+          "tellId": "hedged-emotion",
+          "explanation": "Empathy delivered as procedure. \"I completely understand how frustrating this must be\" appears in millions of training examples.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/support-email-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A customer service email apologising for an order problem."
+        },
+        {
+          "id": "p3-r6",
+          "type": "text",
+          "label": "ai",
+          "difficulty": "hard",
+          "category": "Messages & Reviews",
+          "body": "The bus left two hours late and nobody seemed surprised. An old man across the aisle shared his cigarettes with the driver at every stop. By the time we reached the lake it was dark, and I could only hear it, which was somehow better.",
+          "tellId": "tidy-ending",
+          "explanation": "The observed detail is strong, which is why this is hard. The giveaway is \"which was somehow better\" — a supplied interpretation where a journal would simply stop.",
+          "provenance": {
+            "source": "ai-generated",
+            "model": "Claude Opus 5",
+            "via": "GitHub Copilot CLI",
+            "generatedAt": "2026-07-29",
+            "promptReference": "demo-seed/travel-note-01"
+          },
+          "rights": {
+            "status": "project-owned",
+            "evidence": "generated for this project"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A travel journal note about a late bus."
+        },
+        {
+          "id": "p3-r7",
+          "type": "text",
+          "label": "human",
+          "difficulty": "hard",
+          "category": "Literature",
+          "body": "Whenever I find myself growing grim about the mouth; whenever it is a damp, drizzly November in my soul; whenever I find myself involuntarily pausing before coffin warehouses, and bringing up the rear of every funeral I meet—then, I account it high time to get to sea as soon as I can.",
+          "tellId": "specific-detail",
+          "explanation": "\"Bringing up the rear of every funeral I meet\" is too strange and too specific to be a generated flourish. The escalation is genuinely unhinged in a way models avoid.",
+          "provenance": {
+            "source": "public-domain-literature",
+            "work": "Moby-Dick",
+            "author": "Herman Melville",
+            "published": 1851,
+            "rightsBasis": "US public domain (published before 1929)"
+          },
+          "rights": {
+            "status": "public-domain",
+            "evidence": "published 1851"
+          },
+          "reviewStatus": "ambiguity-reviewed",
+          "altText": "A passage from Moby-Dick about going to sea."
+        }
+      ]
+    }
+  ]
+}

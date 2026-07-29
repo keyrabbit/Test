@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>REALISH — project status</title>
+<meta name="theme-color" content="#0E0E11">
+<meta name="description" content="Build status for REALISH — Human or AI?">
+<style>
+  :root{
+    --bg:#0E0E11; --raised:#17171C; --line:#2A2A33;
+    --ink:#F2F2F4; --soft:#9A9AA6; --faint:#63636E;
+    --accent:#FF5C39; --ok:#35C77F; --warn:#E5A83D; --bad:#E5484D;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding:24px 18px 64px;
+  }
+  .wrap{max-width:640px;margin:0 auto}
+  h1{font-size:28px;letter-spacing:2px;margin:0}
+  .sub{color:var(--accent);font-size:13px;margin:4px 0 0}
+  .obj{color:var(--soft);margin:14px 0 0}
+  .lab{font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--soft);font-weight:700}
+  .card{background:var(--raised);border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0}
+  .cta{
+    display:block;background:var(--accent);color:#fff;text-decoration:none;
+    text-align:center;font-weight:700;font-size:17px;padding:18px;border-radius:14px;margin:18px 0 8px;
+  }
+  .cta.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);font-size:15px}
+  ol,ul{margin:8px 0 0;padding-left:20px;color:var(--soft)}
+  li{margin:5px 0}
+  .row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:0}
+  .row span:last-child{color:var(--ink);font-weight:600;text-align:right}
+  .pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.6px;
+    padding:3px 9px;border-radius:99px;border:1px solid currentColor}
+  .done{color:var(--ok)} .prog{color:var(--accent)} .gate{color:var(--faint)} .block{color:var(--bad)}
+  .ms{display:flex;align-items:center;gap:10px;padding:7px 0}
+  .ms b{flex:1;font-weight:500;color:var(--soft);font-size:14px}
+  .ms.done b{color:var(--ink)}
+  .note{color:var(--faint);font-size:12.5px;margin-top:10px}
+  a{color:var(--accent)}
+  code{background:#000;padding:2px 6px;border-radius:5px;font-size:12.5px;color:var(--soft)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>REALISH</h1>
+  <p class="sub">Human or AI?</p>
+  <p class="obj" id="objective">Loading…</p>
+
+  <div class="card">
+    <div class="lab">Current phase</div>
+    <div id="phase" style="font-weight:700;margin-top:4px">—</div>
+    <div class="lab" style="margin-top:14px">Doing now</div>
+    <div id="task" style="color:var(--soft);margin-top:4px">—</div>
+    <div class="note">
+      Updated <span id="utc">—</span> ·
+      your time <span id="local">—</span>
+    </div>
+  </div>
+
+  <a class="cta" id="playBtn" href="#">▶ Play on iPhone</a>
+  <a class="cta ghost" id="feedbackBtn" href="#">Report how it felt →</a>
+
+  <div class="card">
+    <div class="lab">Install on your iPhone</div>
+    <ol>
+      <li>Open the demo link above in <b>Safari</b>.</li>
+      <li>Tap the <b>Share</b> icon (square with an arrow).</li>
+      <li>Choose <b>Add to Home Screen</b>, then <b>Add</b>.</li>
+      <li>Launch it from the Home Screen icon — it opens full screen.</li>
+      <li>To test offline: play once, turn on Airplane Mode, reopen it.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="lab">Latest demo build</div>
+    <div id="demo"></div>
+  </div>
+
+  <div class="card">
+    <div class="lab">Milestones</div>
+    <div id="milestones"></div>
+  </div>
+
+  <div class="card">
+    <div class="lab">Next three</div>
+    <ul id="next"></ul>
+  </div>
+
+  <div class="card">
+    <div class="lab">Blockers</div>
+    <div id="blockers"></div>
+  </div>
+
+  <div class="card">
+    <div class="lab">Owner decisions awaiting implementation</div>
+    <div id="decisions" style="color:var(--soft);margin-top:6px"></div>
+  </div>
+
+  <div class="card">
+    <div class="lab">Quality</div>
+    <div id="quality"></div>
+  </div>
+
+  <div class="card">
+    <div class="lab">Honest limitation</div>
+    <p class="note" id="monitorNote" style="margin-top:6px"></p>
+  </div>
+
+  <p class="note">
+    Status is generated from <code>project-status.json</code> in the private IQ
+    repository. Nothing private is published here.
+  </p>
+</div>
+
+<script>
+const PILL = {
+  'done':          ['done','Done'],
+  'in-progress':   ['prog','In progress'],
+  'blocked-on-owner':['block','Waiting on you'],
+  'gated':         ['gate','Gated'],
+  'not-started':   ['gate','Not started']
+};
+
+function el(id){ return document.getElementById(id); }
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+fetch('status.json?t=' + Date.now())
+  .then(r => r.json())
+  .then(s => {
+    el('objective').textContent = s.objective;
+    el('phase').textContent = s.phase;
+    el('task').textContent = s.currentTask;
+    el('utc').textContent = s.updatedUtc;
+    try {
+      el('local').textContent = new Date(s.updatedUtc).toLocaleString();
+    } catch { el('local').textContent = '—'; }
+
+    const play = el('playBtn');
+    if (s.demo && s.demo.url) {
+      play.href = s.demo.url;
+    } else {
+      play.href = 'demo/';
+    }
+    el('feedbackBtn').href = s.feedbackUrl ||
+      'https://github.com/keyrabbit/IQ/issues';
+
+    const d = s.demo || {};
+    el('demo').innerHTML = [
+      ['Version', d.version],
+      ['Commit', d.commitSha],
+      ['Built (UTC)', d.buildTimeUtc],
+      ['Content packs', d.contentPacks],
+      ['Content items', d.contentItems],
+      ['Offline verified', d.offlineValidated],
+      ['Tested on a real iPhone', d.realDeviceValidated ? 'yes' : 'not yet']
+    ].map(([k,v]) => `<div class="row"><span>${esc(k)}</span><span>${esc(v ?? '—')}</span></div>`).join('');
+
+    el('milestones').innerHTML = s.milestones.map(m => {
+      const [cls,label] = PILL[m.status] || ['gate', m.status];
+      return `<div class="ms ${m.status==='done'?'done':''}">
+        <b>${m.id}. ${esc(m.title)}</b>
+        <span class="pill ${cls}">${esc(label)}</span></div>`;
+    }).join('');
+
+    el('next').innerHTML = (s.nextThree||[]).map(n => `<li>${esc(n)}</li>`).join('');
+
+    const b = s.blockers || [];
+    el('blockers').innerHTML = b.length ? b.map(x =>
+      `<div style="margin-top:10px">
+         <span class="pill ${x.severity==='p0'?'block':'prog'}">${esc(x.severity)}</span>
+         <b style="margin-left:6px">${esc(x.title)}</b>
+         <div class="note">${esc(x.detail)}</div>
+         ${x.issue ? `<a class="note" href="${esc(x.issue)}">Tracking issue →</a>` : ''}
+       </div>`).join('') : '<div class="note">None.</div>';
+
+    const dec = s.ownerDecisionsAwaitingImplementation || [];
+    el('decisions').innerHTML = dec.length
+      ? '<ul>' + dec.map(x => `<li>${esc(x)}</li>`).join('') + '</ul>'
+      : 'None waiting.';
+
+    const q = s.quality || {};
+    el('quality').innerHTML = [
+      ['Static analysis', q.staticAnalysis],
+      ['Tests', q.tests],
+      ['Independent critic pass', q.criticPass],
+      ['CI', q.ci || 'not configured yet']
+    ].map(([k,v]) => `<div class="row"><span>${esc(k)}</span><span>${esc(v ?? '—')}</span></div>`).join('');
+
+    el('monitorNote').textContent = s.agentMonitoringNote;
+  })
+  .catch(e => {
+    el('objective').textContent = 'Status could not be loaded: ' + e.message;
+  });
+</script>
+</body>
+</html>
