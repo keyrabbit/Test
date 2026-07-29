@@ -8,7 +8,7 @@
     "typecheck": "clean",
     "build": "ok (275 KB JS, 87 KB gzip)"
   },
-  "updated": "2026-07-29T14:03",
+  "updated": "2026-07-29T14:15",
   "pieces": [
     {
       "id": "render-foundation",
@@ -90,9 +90,9 @@
     {
       "id": "sideload-builds",
       "title": "Sideloadable builds for owner devices (Kindle Fire, iPad, iPhone, PC)",
-      "status": "pending",
-      "round": 0,
-      "biggest_gap": "Installable builds the user can sideload onto their own Kindle Fire, iPad, iPhone and PC via the lowest-friction, ~$0 path (Capacitor → Android APK for Kindle Fire; iOS via free personal Apple ID; PC via packaged web/Tauri).",
+      "status": "in-progress",
+      "round": 1,
+      "biggest_gap": "PWA install path DONE (round 1): vite-plugin-pwa wired — manifest.webmanifest + service worker (Workbox precache 37 entries + font runtime cache) + a full app-icon set (192/512 + maskable + apple-touch), verified in-engine (SW registered & controlling, manifest+apple icon linked, 213 tests still green, main app boots clean). Deployed to the host; the landing now has a per-device 'add to home screen' guide for iPhone/iPad/Android/Kindle/PC. Remaining: a native Android/Kindle .apk (Capacitor) for a true installed app + one-tap sideload, and documenting the iOS .ipa path (needs a Mac/Xcode).",
       "verdict": null
     }
   ],
@@ -268,6 +268,10 @@
     {
       "time": "14:06",
       "event": "ROUT — Round 16 decisive-polish landed and verified in-engine; render-foundation now DECISIVELY beats the bar. The R15 critic's one gap (single soft comet vs a distributed spark burst) is closed: a distributed additive particle FIELD (~256 dots: near-white hot-core + high-chroma amber layers + a flight tail; pool 420→760) sprays around the cluster on a scopa — independent readback counts ~20,700 warm-bright field pixels. Two stacked additive radials (tight pulsing white inner + wide amber outer) replace the single gaussian; energy saturation lifted so it no longer muds into the felt. Black floor lifted (contrast matrix out=1.2·in+0.028, vignette 0.60→0.52) — corners now read 14–37 with the felt weave visible instead of clipping to 0,0,0. Rim wrap evened — settebello rim blue = 255 on ALL FOUR edges (top/right/bottom/left), pure white, not regressed. 213 tests green, main app unchanged. Captured r16-a (Settebello! with the full particle field + visible felt), r16-b (gather w/ felt weave), r16-c (opening deal). render-foundation LOCKED as won. Moving to the next piece: sideload-builds (installable PWA + Android/Kindle APK for the user's own devices)."
+    },
+    {
+      "time": "14:20",
+      "event": "sideload-builds started — shipped the store-free install path. Added vite-plugin-pwa to the build: generated manifest.webmanifest (standalone, theme #0A2B21, categories games), a Workbox service worker (precaches 37 build entries ~1MB + caches Google Fonts) and a premium app-icon set (a gold settebello '7' on felt — 192/512, maskable variants, apple-touch-icon, favicon) rendered from an SVG via sharp. Verified in a real browser: service worker registered & CONTROLLING, manifest + apple-touch-icon linked, app boots to the full menu with ZERO console errors, 213 tests still green, main app untouched. Deployed the PWA build to the public host and added an 'Install it on your device' section to the landing with exact add-to-home-screen steps for iPhone/iPad (Safari), Android (Chrome), Kindle Fire (Silk), and PC/Mac (Edge/Chrome). This makes the game installable to the home screen — a true store-free sideload — on ALL of the owner's devices from one URL. Next: a Capacitor .apk for the Kindle Fire / Android as a native installed app."
     }
   ]
 }
