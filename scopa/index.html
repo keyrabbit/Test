@@ -50,6 +50,20 @@
   .note b{color:var(--ink)}
   footer{margin-top:46px;text-align:center;color:var(--dim);font-size:13px}
   a.inline{color:var(--gold2)}
+  .install{margin-top:40px;padding:26px 22px;border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(180deg,var(--card),#0b1f16)}
+  .ititle{margin:0;font:700 22px/1.2 "Playfair Display",Georgia,serif;color:var(--gold2)}
+  .isub{color:var(--dim);font-size:14.5px;margin:.5em 0 1.1em;max-width:680px}
+  .iopen{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.03em;color:#0d1f17;
+    background:linear-gradient(180deg,var(--gold2),var(--gold));padding:9px 16px;border-radius:999px;text-decoration:none}
+  .igrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+  @media(max-width:720px){.igrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.igrid{grid-template-columns:1fr}}
+  .ibox{border:1px solid var(--line);border-radius:12px;padding:14px 15px;background:rgba(255,255,255,.02)}
+  .ibox h3{margin:0 0 6px;font-size:15px;color:var(--gold)}
+  .ibox p{margin:0;color:var(--dim);font-size:13px;line-height:1.5}
+  .ibox b{color:var(--ink)}
+  .k{display:inline-block;border:1px solid var(--line);border-radius:5px;padding:0 5px;color:var(--gold2);font-size:12px}
 </style>
 </head>
 <body>
@@ -83,6 +97,30 @@
   <div class="note">
     <b>What is the bar?</b> The capture beat is judged, blind, against the two juiciest shipping card games — <b>Balatro</b> (tactile card feel) and <b>Marvel Snap</b> (cards reacting to each other). A piece only ships when a neutral critic prefers ours. The latest capture frame is shown above.
   </div>
+
+  <section class="install">
+    <h2 class="ititle">Install it on your device</h2>
+    <p class="isub">No store, no account. The demo is a Progressive Web App — open it in your browser and add it to the home screen. It runs full-screen and works offline after the first load.</p>
+    <a class="iopen" href="demo/">Open the game, then install ↓</a>
+    <div class="igrid">
+      <div class="ibox">
+        <h3>iPhone &amp; iPad</h3>
+        <p>Open in <b>Safari</b> → tap <b>Share</b> <span class="k">⬆︎</span> → <b>Add to Home Screen</b> → <b>Add</b>. Launch from the gold “7” icon.</p>
+      </div>
+      <div class="ibox">
+        <h3>Android</h3>
+        <p>Open in <b>Chrome</b> → tap <b>⋮</b> menu → <b>Install app</b> / <b>Add to Home screen</b> → <b>Install</b>.</p>
+      </div>
+      <div class="ibox">
+        <h3>Kindle Fire</h3>
+        <p>Open in <b>Silk</b> → menu → <b>Add to Home screen</b>. (For a native app, an <b>.apk</b> sideload build is coming next.)</p>
+      </div>
+      <div class="ibox">
+        <h3>PC &amp; Mac</h3>
+        <p>Open in <b>Edge</b> or <b>Chrome</b> → click the <b>install</b> icon <span class="k">⊕</span> in the address bar → <b>Install</b>. Opens in its own window.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
     Built with GitHub Copilot CLI · updated as progress is made
