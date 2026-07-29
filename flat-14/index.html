@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flat 14 — playable demo</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:#111318;color:#f2f2f0;
+    font-family:"Segoe UI",Inter,system-ui,-apple-system,sans-serif;
+    display:flex;align-items:center;justify-content:center;padding:32px}
+  main{max-width:620px;width:100%}
+  h1{font-size:38px;letter-spacing:.16em;font-weight:600;margin:0 0 6px}
+  .sub{color:#c3c6cb;font-size:16px;margin:0 0 28px;line-height:1.5}
+  a.play{display:inline-block;background:#f25c26;color:#fff;text-decoration:none;
+    font-weight:600;font-size:17px;padding:14px 30px;border-radius:10px;
+    letter-spacing:.02em}
+  a.play:hover{background:#ff6d38}
+  .meta{margin-top:34px;border-top:1px solid #262a31;padding-top:18px;
+    font-size:13px;color:#9aa0a8;line-height:1.9}
+  .meta b{color:#cfd2d6;font-weight:600}
+  code{background:#1a1d23;padding:2px 6px;border-radius:4px;font-size:12px}
+  .k{display:inline-block;padding:2px 8px;border-radius:5px;border:1px solid #5a6068;
+    margin:0 2px;font-size:12px}
+  .warn{margin-top:22px;padding:12px 14px;border-radius:8px;background:#2a1f14;
+    border:1px solid #4a3520;color:#e8c9a0;font-size:13px;line-height:1.6}
+</style>
+</head>
+<body>
+<main>
+  <h1>FLAT 14</h1>
+  <p class="sub">A first-person escape room with no assets. Every texture, every
+  sound and every object in it is generated in code — nothing is downloaded, and
+  the whole game is one HTML file.</p>
+
+  <a class="play" href="play/">Play in your browser</a>
+
+  <p class="meta">
+    <span class="k">W A S D</span> move
+    <span class="k">mouse</span> look
+    <span class="k">click</span> examine
+    <span class="k">G</span> stow
+    <span class="k">Tab</span> notes
+  </p>
+
+  <div class="warn">
+    Desktop browser with a mouse, please — this build uses pointer lock and has
+    no touch controls yet, so it will render on a tablet but will not play.
+  </div>
+
+  <p class="meta">
+    <b>Build</b> <code>05aef43</code> <em>(working tree had uncommitted changes)</em><br>
+    <b>Commit</b> Nothing had ever measured what a frame costs<br>
+    <b>Dated</b> 2026-07-29T12:27:07+02:00<br>
+    <b>Size</b> 952 kB, self-contained<br><b>Tests</b> 164 assertions<br>
+    <b>Source</b> <a href="https://github.com/keyrabbit/Escape" style="color:#f25c26">github.com/keyrabbit/Escape</a>
+  </p>
+</main>
+</body>
+</html>
