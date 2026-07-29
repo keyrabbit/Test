@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flat 14 — project status</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#0f1115;color:#e9eaec;padding:36px 20px 80px;
+    font-family:"Segoe UI",Inter,system-ui,-apple-system,sans-serif;line-height:1.55}
+  main{max-width:940px;margin:0 auto}
+  h1{font-size:30px;letter-spacing:.14em;margin:0 0 4px;font-weight:600}
+  .lede{color:#9aa0a8;margin:0 0 8px;font-size:15px}
+  .stamp{color:#6c727a;font-size:12px;margin:0 0 30px}
+  h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#8d939b;
+    margin:38px 0 14px;font-weight:600;border-bottom:1px solid #22262d;padding-bottom:8px}
+  .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(168px,1fr))}
+  .card{background:#161a21;border:1px solid #232830;border-radius:10px;padding:14px 16px}
+  .card.good{border-color:#2c4a33}
+  .card.bad{border-color:#5c2b2b;background:#1d1315}
+  .label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#858b93}
+  .value{font-size:30px;font-weight:600;margin-top:2px;letter-spacing:-.01em}
+  .note{font-size:12px;color:#7f858d;margin-top:4px}
+  .cols{display:grid;gap:26px;grid-template-columns:1fr 1fr}
+  @media(max-width:720px){.cols{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  td{padding:5px 8px;border-bottom:1px solid #1c2027}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .ok{color:#6fbf7a}.no{color:#e2686a;font-weight:600}
+  .dim{color:#6c727a}
+  code{background:#1a1e25;padding:1px 5px;border-radius:4px;font-size:12px;
+    font-family:ui-monospace,Consolas,monospace}
+  ul{list-style:none;padding:0;margin:0;font-size:13.5px}
+  li{padding:5px 0;border-bottom:1px solid #1c2027}
+  a{color:#f2814a;text-decoration:none}
+  a:hover{text-decoration:underline}
+  .n{display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;
+    background:#262b33;border-radius:5px;font-size:11px;color:#a9afb7;margin-right:8px}
+  .play{display:inline-block;background:#f25c26;color:#fff;padding:10px 22px;
+    border-radius:8px;font-weight:600;font-size:15px;margin-bottom:26px}
+  .play:hover{background:#ff6d38;text-decoration:none}
+  .foot{margin-top:44px;color:#6c727a;font-size:12px;border-top:1px solid #22262d;padding-top:16px}
+</style>
+</head>
+<body>
+<main>
+  <h1>FLAT 14</h1>
+  <p class="lede">A first-person escape room with no assets — every texture and
+  sound generated in code. This page is generated from the repository, so it
+  cannot disagree with it.</p>
+  <p class="stamp">Built 2026-07-29T12:23:51.133Z from
+    <code>593f274</code> Six of the nine scene passes were one lamp</p>
+
+  <a class="play" href="../">Play the demo</a>
+
+  <h2>Where it is</h2>
+  <div class="grid">
+    <div class="card ">
+      <div class="label">Rooms playable</div>
+      <div class="value">2</div>
+      <div class="note">Flat 14, and the atrio beyond it</div>
+    </div>
+    <div class="card good">
+      <div class="label">Assertions</div>
+      <div class="value">164<span class="dim">/164</span></div>
+      <div class="note">10 routes · all green · 3m ago</div>
+    </div>
+    <div class="card good">
+      <div class="label">Draw calls</div>
+      <div class="value">90</div>
+      <div class="note">budget 250 · using 36% · 11m ago</div>
+    </div>
+    <div class="card ">
+      <div class="label">Triangles</div>
+      <div class="value">32,030</div>
+      <div class="note">budget 150,000</div>
+    </div>
+    <div class="card ">
+      <div class="label">Open issues</div>
+      <div class="value">7</div>
+      <div class="note">7 closed</div>
+    </div>
+    <div class="card ">
+      <div class="label">Screenshots</div>
+      <div class="value">25</div>
+      <div class="note">regenerable evidence, byte-deterministic</div>
+    </div></div>
+
+  <div class="cols">
+    <div>
+      <h2>Test suite</h2>
+      <table>
+    <tr>
+      <td><code>?probe=solve</code></td>
+      <td class="num">22/22</td>
+      <td class="num dim">25.3s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=fail</code></td>
+      <td class="num">8/8</td>
+      <td class="num dim">20.9s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=solve2</code></td>
+      <td class="num">13/13</td>
+      <td class="num dim">23.7s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=fail2</code></td>
+      <td class="num">10/10</td>
+      <td class="num dim">19.8s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=walk</code></td>
+      <td class="num">18/18</td>
+      <td class="num dim">14.5s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=carry</code></td>
+      <td class="num">17/17</td>
+      <td class="num dim">22.2s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=log</code></td>
+      <td class="num">19/19</td>
+      <td class="num dim">21.5s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=perf</code></td>
+      <td class="num">7/7</td>
+      <td class="num dim">13.5s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=light</code></td>
+      <td class="num">38/38</td>
+      <td class="num dim">35s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=sound</code></td>
+      <td class="num">12/12</td>
+      <td class="num dim">19.3s</td>
+      <td class="ok">pass</td>
+    </tr></table>
+    </div>
+    <div>
+      <h2>Frame cost</h2>
+      <table>
+    <tr>
+      <td>desktop 1600x900</td>
+      <td class="num dim">1600×900</td>
+      <td class="num">90</td>
+      <td class="num">32,030</td>
+    </tr>
+    <tr>
+      <td>Fire HD 10</td>
+      <td class="num dim">1280×800</td>
+      <td class="num">90</td>
+      <td class="num">32,030</td>
+    </tr>
+    <tr>
+      <td>iPad Air (native px)</td>
+      <td class="num dim">2360×1640</td>
+      <td class="num">88</td>
+      <td class="num">31,934</td>
+    </tr></table>
+           <p class="note">Gated on draw calls and triangles, never milliseconds:
+           those two describe what the scene asks of the GPU, so they mean the
+           same thing on every machine.</p>
+    </div>
+  </div>
+
+  <h2>What is next</h2>
+  <ul><li><span class="n">1</span> A stranger plays it — before anything else is built</li><li><span class="n">2</span> Touch input, and with it the tablet builds</li><li><span class="n">3</span> Rooms as data, before room three exists</li><li><span class="n">4</span> Name and trademark search</li></ul>
+
+  <div class="cols">
+    <div>
+      <h2>Open work</h2>
+      <ul>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/6">#6</a>
+      Flat 14 is playable end to end: the room, the puzzle, and an honest list of what is still missing</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/8">#8</a>
+      Session state: two rooms evidenced, and the playtest that has to happen next</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/10">#10</a>
+      Black frame with two diagonal streaks in the headed dev build</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/11">#11</a>
+      Decision needed: is the game called Flat 14? (no conflicts found, but the name is close to unsearchable)</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/12">#12</a>
+      Tablet builds: Kindle Fire and iPad (packaging is easy, touch input is the project)</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/13">#13</a>
+      Art direction: should Flat 14 adopt the Heistweeper pastel/third-person style? (recommendation: no, but steal three things)</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/14">#14</a>
+      2,694 draw calls and ~1M triangles for two rooms: batch before building room three</li></ul>
+    </div>
+    <div>
+      <h2>Recent commits</h2>
+      <ul>
+    <li><code>593f274</code> Six of the nine scene passes were one lamp
+      <span class="dim">36m ago</span></li>
+    <li><code>05aef43</code> Nothing had ever measured what a frame costs
+      <span class="dim">1h ago</span></li>
+    <li><code>9837434</code> The published build could not be checked against the source that made it
+      <span class="dim">2h ago</span></li>
+    <li><code>e4364c4</code> The screenshot jitter was the tool sent to measure it
+      <span class="dim">2h ago</span></li>
+    <li><code>31a265d</code> The black-frame detector had never been seen to fire
+      <span class="dim">3h ago</span></li>
+    <li><code>83696b6</code> Nine of ten routes got three times faster, which was the bug
+      <span class="dim">3h ago</span></li>
+    <li><code>29d15e3</code> The game now says which driver drew the frame
+      <span class="dim">3h ago</span></li>
+    <li><code>54a5faa</code> The torch beam was already fixed; nothing could tell
+      <span class="dim">3h ago</span></li>
+    <li><code>953ff38</code> The download verifier could verify a directory
+      <span class="dim">4h ago</span></li>
+    <li><code>16206ef</code> Every screenshot always showed as modified, so nothing ever showed as broken
+      <span class="dim">4h ago</span></li>
+    <li><code>5633c78</code> The quality ladder had never been asked what it renders, only that it moves
+      <span class="dim">4h ago</span></li>
+    <li><code>06cf237</code> Remove a scratch script that should not have been committed
+      <span class="dim">5h ago</span></li></ul>
+    </div>
+  </div>
+
+  <p class="foot">
+    6,495 lines of game source · source at
+    <a href="https://github.com/keyrabbit/Escape">github.com/keyrabbit/Escape</a>.
+    Regenerated by <code>npm run publish:demo</code>.
+  </p>
+</main>
+</body>
+</html>
