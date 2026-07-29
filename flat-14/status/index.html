@@ -48,8 +48,8 @@
   <p class="lede">A first-person escape room with no assets — every texture and
   sound generated in code. This page is generated from the repository, so it
   cannot disagree with it.</p>
-  <p class="stamp">Built 2026-07-29T14:37:51.495Z from
-    <code>5b20348</code> It installs on a tablet, and the icon is generated too</p>
+  <p class="stamp">Built 2026-07-29T15:50:07.002Z from
+    <code>5298a87</code> Both rooms now derive collision from the geometry, not from memory</p>
 
   <a class="play" href="../">Play the demo</a>
 
@@ -60,15 +60,15 @@
       <div class="value">2</div>
       <div class="note">Flat 14, and the atrio beyond it</div>
     </div>
-    <div class="card good">
+    <div class="card bad">
       <div class="label">Assertions</div>
-      <div class="value">189<span class="dim">/189</span></div>
-      <div class="note">11 routes · all green · 14m ago</div>
+      <div class="value">189<span class="dim">/190</span></div>
+      <div class="note">11 routes · FAILING · 4m ago</div>
     </div>
     <div class="card good">
       <div class="label">Draw calls</div>
       <div class="value">90</div>
-      <div class="note">budget 250 · using 36% · 40m ago</div>
+      <div class="note">budget 250 · using 36% · 1h ago</div>
     </div>
     <div class="card ">
       <div class="label">Triangles</div>
@@ -93,67 +93,67 @@
     <tr>
       <td><code>?probe=solve</code></td>
       <td class="num">22/22</td>
-      <td class="num dim">27.6s</td>
+      <td class="num dim">26.4s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=fail</code></td>
       <td class="num">8/8</td>
-      <td class="num dim">21.3s</td>
+      <td class="num dim">20.7s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve2</code></td>
       <td class="num">13/13</td>
-      <td class="num dim">24.9s</td>
+      <td class="num dim">24.2s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=fail2</code></td>
       <td class="num">10/10</td>
-      <td class="num dim">20.4s</td>
+      <td class="num dim">19.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=walk</code></td>
-      <td class="num">19/19</td>
-      <td class="num dim">15.8s</td>
-      <td class="ok">pass</td>
+      <td class="num">19/20</td>
+      <td class="num dim">32.9s</td>
+      <td class="no">FAIL</td>
     </tr>
     <tr>
       <td><code>?probe=carry</code></td>
       <td class="num">17/17</td>
-      <td class="num dim">23.5s</td>
+      <td class="num dim">22.4s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=log</code></td>
       <td class="num">19/19</td>
-      <td class="num dim">22.2s</td>
+      <td class="num dim">21.4s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=perf</code></td>
       <td class="num">7/7</td>
-      <td class="num dim">14.6s</td>
+      <td class="num dim">12.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=light</code></td>
       <td class="num">38/38</td>
-      <td class="num dim">36.8s</td>
+      <td class="num dim">33.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=sound</code></td>
       <td class="num">12/12</td>
-      <td class="num dim">19.9s</td>
+      <td class="num dim">19s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=touch</code></td>
       <td class="num">24/24</td>
-      <td class="num dim">53.6s</td>
+      <td class="num dim">53.7s</td>
       <td class="ok">pass</td>
     </tr></table>
     </div>
@@ -209,35 +209,35 @@
     <div>
       <h2>Recent commits</h2>
       <ul>
-    <li><code>5b20348</code> It installs on a tablet, and the icon is generated too
-      <span class="dim">5m ago</span></li>
-    <li><code>7a3ddc8</code> The suite was testing a build that no longer existed
-      <span class="dim">41m ago</span></li>
-    <li><code>20053d7</code> Untrack a scratch file that .gitignore nearly covered
+    <li><code>5298a87</code> Both rooms now derive collision from the geometry, not from memory
+      <span class="dim">2m ago</span></li>
+    <li><code>cb86210</code> The distributable was deleted by the test that ran after it
+      <span class="dim">30m ago</span></li>
+    <li><code>594bff8</code> A timeout calibrated for a forty-second world reported a hang
+      <span class="dim">58m ago</span></li>
+    <li><code>c8c5f63</code> The frame budget is now enforced by CI, not by memory
       <span class="dim">1h ago</span></li>
+    <li><code>3034b08</code> The demo page advertised a number the tests had not produced since morning
+      <span class="dim">1h ago</span></li>
+    <li><code>5b20348</code> It installs on a tablet, and the icon is generated too
+      <span class="dim">1h ago</span></li>
+    <li><code>7a3ddc8</code> The suite was testing a build that no longer existed
+      <span class="dim">1h ago</span></li>
+    <li><code>20053d7</code> Untrack a scratch file that .gitignore nearly covered
+      <span class="dim">2h ago</span></li>
     <li><code>5235248</code> Measure the running page, not the parked one
-      <span class="dim">2h ago</span></li>
+      <span class="dim">3h ago</span></li>
     <li><code>d7ddb7e</code> A status page that has to be believed is not a status page
-      <span class="dim">2h ago</span></li>
+      <span class="dim">3h ago</span></li>
     <li><code>593f274</code> Six of the nine scene passes were one lamp
-      <span class="dim">2h ago</span></li>
+      <span class="dim">4h ago</span></li>
     <li><code>05aef43</code> Nothing had ever measured what a frame costs
-      <span class="dim">4h ago</span></li>
-    <li><code>9837434</code> The published build could not be checked against the source that made it
-      <span class="dim">4h ago</span></li>
-    <li><code>e4364c4</code> The screenshot jitter was the tool sent to measure it
-      <span class="dim">4h ago</span></li>
-    <li><code>31a265d</code> The black-frame detector had never been seen to fire
-      <span class="dim">5h ago</span></li>
-    <li><code>83696b6</code> Nine of ten routes got three times faster, which was the bug
-      <span class="dim">5h ago</span></li>
-    <li><code>29d15e3</code> The game now says which driver drew the frame
-      <span class="dim">6h ago</span></li></ul>
+      <span class="dim">5h ago</span></li></ul>
     </div>
   </div>
 
   <p class="foot">
-    7,095 lines of game source · source at
+    7,169 lines of game source · source at
     <a href="https://github.com/keyrabbit/Escape">github.com/keyrabbit/Escape</a>.
     Regenerated by <code>npm run publish:demo</code>.
   </p>
