@@ -8,62 +8,258 @@
     "typecheck": "clean",
     "build": "ok (275 KB JS, 87 KB gzip)"
   },
-  "updated": "2026-07-29T16:40:00+02:00",
+  "updated": "2026-07-29T13:24",
   "pieces": [
-    { "id": "render-foundation", "title": "GPU render layer (Canvas2D \u2192 Pixi/Three), keep rules core + spring model", "status": "looping", "round": 14, "biggest_gap": "MILESTONE: the R14 critic did its OWN rim-edge pixel readback (blue 255/254/249 clean lift, 255/252/245 money shot; gold:white ~0 at the edge, white dominates ~8\u201317:1) and confirmed the lead's numbers \u2014 verdict = we now TIE Marvel Snap on the capture, and it said STOP iterating the rim (the multi-round gold-rim gap is closed). It's a TIE not yet a clean BEAT for a DIFFERENT, non-rim reason: the cream card FACES read ~(255,250,189), nearly as luminous as the rim, so the hot edge doesn't singularly dominate, and there are no discrete bright particles \u2014 a global-tonemap + particle gap. Round 14 dispatched (NOT touching the finished rim): knock the reacting-card face interior down ~15\u201320% so the rim is the single brightest element, add ~12\u201324 DISCRETE bright energy particles riding the reacting card's bloom, warm+strengthen the halo behind the lifted card, deepen the darkest greens for dynamic range, and tighten/darken the contact shadow. Goal: convert tie\u2192clean BEAT, then lock the piece.", "verdict": "TIE with Snap achieved (both Balatro & Snap now tied/at-parity) and critic-verified by independent pixel readback. Rim declared DONE. One focused tonemap+particle round to convert tie\u2192beat, then render-foundation is won." },
-    { "id": "card-art", "title": "Card artwork overhaul + theme system (Gelato, Moderno + alternates)", "status": "selected", "round": 1, "biggest_gap": "USER PICKED Gelato (pastel storybook) + Moderno (flat vector) as primaries from 6 AI-generated animation-ready samples. NEXT: full-deck production art. Published issue #16 with the complete Batch-2 generation spec + exact per-asset prompts \u2014 only 16 source images per theme are needed (4 suit symbols + 12 rig-ready Fante/Cavallo/Re faces; numerals/pips/frame composited in-engine; backs already done). Awaiting the user's OpenAI-generated PNGs, then composite into the real card frame (Arabic numeral + suit pip) + prototype foil/parallax rig and A/B the living card vs the bar.", "verdict": "6/6 themes delivered & reviewed; 2 selected. Batch-2 full-deck prompt spec shipped (issue #16). Huge fidelity jump over the old videocoded art." },
-    { "id": "living-cards", "title": "Living/animated card art: shader foil + parallax + idle rig (Spine/Live2D)", "status": "pending", "round": 0, "biggest_gap": "Each card must animate like a game character (breathe, shimmer, react), not sit static. AI art = source; engine adds foil/parallax on all cards + cutout rig on hero cards.", "verdict": null },
-    { "id": "deal", "title": "The opening deal \u2014 first motion anyone sees", "status": "pending", "round": 0, "biggest_gap": null, "verdict": null },
-    { "id": "play-capture", "title": "Playing a card & capturing: cards react to each other", "status": "pending", "round": 0, "biggest_gap": null, "verdict": null },
-    { "id": "scopa-moment", "title": "The scopa moment \u2014 table swept clean (hero beat)", "status": "pending", "round": 0, "biggest_gap": null, "verdict": null },
-    { "id": "table-env", "title": "Table & environment: felt, wood, lighting, ambient life", "status": "pending", "round": 0, "biggest_gap": null, "verdict": null },
-    { "id": "attract-mode", "title": "AI-vs-AI attract mode + screen-record harness for critics", "status": "pending", "round": 0, "biggest_gap": null, "verdict": null },
-    { "id": "native-feel", "title": "Native-feel/perf gate: 60fps mobile, cold start, safe-areas, resume, packaging", "status": "pending", "round": 0, "biggest_gap": null, "verdict": null },
-    { "id": "sideload-builds", "title": "Sideloadable builds for owner devices (Kindle Fire, iPad, iPhone, PC)", "status": "pending", "round": 0, "biggest_gap": "Installable builds the user can sideload onto their own Kindle Fire, iPad, iPhone and PC via the lowest-friction, ~$0 path (Capacitor \u2192 Android APK for Kindle Fire; iOS via free personal Apple ID; PC via packaged web/Tauri).", "verdict": null }
+    {
+      "id": "render-foundation",
+      "title": "GPU render layer (Canvas2D → Pixi/Three), keep rules core + spring model",
+      "status": "looping",
+      "round": 15,
+      "biggest_gap": "Tie→beat conversion verified in-engine: reacting rim pure-white (top 253/250/246, mid 254/252/249), gold:white 3:1438; face interior knocked to 107–145 luma vs ~250 rim; discrete comet particle + deep vignette present. Awaiting fresh R15 critic for the definitive BEAT call.",
+      "verdict": "TIE with Snap achieved (both Balatro & Snap now tied/at-parity) and critic-verified by independent pixel readback. Rim declared DONE. One focused tonemap+particle round to convert tie→beat, then render-foundation is won.",
+      "afters": [
+        "shots/r15-a.png",
+        "shots/r15-b.png",
+        "shots/r15-c.png"
+      ]
+    },
+    {
+      "id": "card-art",
+      "title": "Card artwork overhaul + theme system (Gelato, Moderno + alternates)",
+      "status": "selected",
+      "round": 1,
+      "biggest_gap": "USER PICKED Gelato (pastel storybook) + Moderno (flat vector) as primaries from 6 AI-generated animation-ready samples. NEXT: full-deck production art. Published issue #16 with the complete Batch-2 generation spec + exact per-asset prompts — only 16 source images per theme are needed (4 suit symbols + 12 rig-ready Fante/Cavallo/Re faces; numerals/pips/frame composited in-engine; backs already done). Awaiting the user's OpenAI-generated PNGs, then composite into the real card frame (Arabic numeral + suit pip) + prototype foil/parallax rig and A/B the living card vs the bar.",
+      "verdict": "6/6 themes delivered & reviewed; 2 selected. Batch-2 full-deck prompt spec shipped (issue #16). Huge fidelity jump over the old videocoded art."
+    },
+    {
+      "id": "living-cards",
+      "title": "Living/animated card art: shader foil + parallax + idle rig (Spine/Live2D)",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": "Each card must animate like a game character (breathe, shimmer, react), not sit static. AI art = source; engine adds foil/parallax on all cards + cutout rig on hero cards.",
+      "verdict": null
+    },
+    {
+      "id": "deal",
+      "title": "The opening deal — first motion anyone sees",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": null,
+      "verdict": null
+    },
+    {
+      "id": "play-capture",
+      "title": "Playing a card & capturing: cards react to each other",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": null,
+      "verdict": null
+    },
+    {
+      "id": "scopa-moment",
+      "title": "The scopa moment — table swept clean (hero beat)",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": null,
+      "verdict": null
+    },
+    {
+      "id": "table-env",
+      "title": "Table & environment: felt, wood, lighting, ambient life",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": null,
+      "verdict": null
+    },
+    {
+      "id": "attract-mode",
+      "title": "AI-vs-AI attract mode + screen-record harness for critics",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": null,
+      "verdict": null
+    },
+    {
+      "id": "native-feel",
+      "title": "Native-feel/perf gate: 60fps mobile, cold start, safe-areas, resume, packaging",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": null,
+      "verdict": null
+    },
+    {
+      "id": "sideload-builds",
+      "title": "Sideloadable builds for owner devices (Kindle Fire, iPad, iPhone, PC)",
+      "status": "pending",
+      "round": 0,
+      "biggest_gap": "Installable builds the user can sideload onto their own Kindle Fire, iPad, iPhone and PC via the lowest-friction, ~$0 path (Capacitor → Android APK for Kindle Fire; iOS via free personal Apple ID; PC via packaged web/Tauri).",
+      "verdict": null
+    }
   ],
   "baseline": [
-    { "label": "Baseline \u2014 main menu", "src": "shots/baseline-menu.png" },
-    { "label": "Baseline \u2014 gameplay table (flat, pre-Gauntlet)", "src": "shots/baseline-table.png" }
+    {
+      "label": "Baseline — main menu",
+      "src": "shots/baseline-menu.png"
+    },
+    {
+      "label": "Baseline — gameplay table (flat, pre-Gauntlet)",
+      "src": "shots/baseline-table.png"
+    }
   ],
   "afters": [
-    { "label": "Round 13 \u2014 SETTEBELLO peak (lead pixel-verified): the reacting cards' rims are now an EVEN electric-white filament all the way around (blue 246/243/243 top/mid/bottom), gold:white inverted to ~1:4, gold held to the outer halo, sparks peeling off the edge \u2014 the Snap 'card emits white light' read", "src": "shots/r14-a.png" },
-    { "label": "Round 13 \u2014 clean settebello lift: a crisp uniform white rim wraps the full silhouette (top, sides AND bottom \u2014 the old 'white-at-corners, gold-down-the-sides' failure is gone) with a glossy foil catch-light", "src": "shots/r14-b.png" },
-    { "label": "Round 13 \u2014 capture cluster: reacting cards edge-lit white while the deep felt floor and warm halo sit behind, non-reacting cards dimmed", "src": "shots/r14-c.png" }
+    {
+      "label": "Round 13 — SETTEBELLO peak (lead pixel-verified): the reacting cards' rims are now an EVEN electric-white filament all the way around (blue 246/243/243 top/mid/bottom), gold:white inverted to ~1:4, gold held to the outer halo, sparks peeling off the edge — the Snap 'card emits white light' read",
+      "src": "shots/r14-a.png"
+    },
+    {
+      "label": "Round 13 — clean settebello lift: a crisp uniform white rim wraps the full silhouette (top, sides AND bottom — the old 'white-at-corners, gold-down-the-sides' failure is gone) with a glossy foil catch-light",
+      "src": "shots/r14-b.png"
+    },
+    {
+      "label": "Round 13 — capture cluster: reacting cards edge-lit white while the deep felt floor and warm halo sit behind, non-reacting cards dimmed",
+      "src": "shots/r14-c.png"
+    }
   ],
   "log": [
-    { "time": "09:18", "event": "Foundation verified green: 213 tests pass, typecheck clean, production build succeeds." },
-    { "time": "09:21", "event": "Captured visual baseline (menu + gameplay table) as the critics' 'before'." },
-    { "time": "09:22", "event": "Round 1 builder launched on the GPU render layer (hero slice: deal, play, capture)." },
-    { "time": "09:26", "event": "Live progress page built and verified (gauntlet/index.html). This is it." },
-    { "time": "09:52", "event": "Round 1 render layer landed on PixiJS: GPU shadows, felt lighting, spring card motion, Snap-style capture reaction. All 213 tests still green, build clean, Pixi code-split (only loads on ?hero=1)." },
-    { "time": "09:55", "event": "Fresh-context critic launched to blind A/B the hero scene vs Balatro/Marvel Snap and name the single biggest gap for Round 2." },
-    { "time": "09:58", "event": "Critic verdict: Round 1 does NOT beat the bar. Biggest gap \u2014 capture light is a background wash that never touches the cards; cards stay matte/unlit. Fix: rim-light + controlled gold + vignette + scale-punch + layered particles." },
-    { "time": "09:59", "event": "Round 2 builder dispatched with the critic's fix. Making the light live ON the cards." },
-    { "time": "10:03", "event": "QUEUED (user request): card artwork overhaul \u2014 the front/back figures look crude/low-fidelity. Invest in high-quality faces + backs and multiple themes (Classico, Moderno, Comic, \u2026). Starts as soon as the render round returns (same art files \u2014 avoiding two concurrent writers)." },
-    { "time": "10:14", "event": "Art direction set: user prefers modern/playful themes with Arabic numerals (1 traditional option), OK with AI-generated art. Cards MUST animate \u2014 so pipeline = AI static art as source \u2192 engine foil/parallax shaders on all cards + cutout rig (Spine/Live2D) on hero cards. Exact OpenAI prompts delivered for review; numerals/frame composited in-engine." },
-    { "time": "10:28", "event": "Round 2 render landed & rebuilt: flat bloom killed; felt vignette; gold rim-light + specular ON the cards; scale-punch + offset contact shadow; layered directional particles. Gates green. Re-captured; fresh critic launched for blind A/B. Lead flagged a possible felt-panel sizing regression." },
-    { "time": "10:33", "event": "Critic R2 verdict: lighting decisively fixed (lighting 2\u21926, effects 3\u21926, color 3\u21926, contrast 3\u21926) BUT the felt is a small framed panel floating in a black void \u2014 the table doesn't exist. Composition regressed 4\u21923. Round 3 dispatched: make felt full-bleed + vignette on the felt, re-center cluster on the lit hotspot." },
-    { "time": "10:57", "event": "Round 3 landed: felt is now a FULL-BLEED table (warm radial key + vignette to corners), cluster re-centered on the hotspot; root-caused 2 Pixi v8 coordinate bugs; kept rim-light/shadows/particles; added idle shimmer + fore/background depth. Main app byte-for-byte unchanged. Gates green (213 tests). Fresh critic launched." },
-    { "time": "11:01", "event": "Critic R3 verdict: composition recovered 3\u21926, depth 4\u21925, color 6\u21927; felt bug confirmed gone \u2014 now presentable. New biggest gap: cards don't receive the scene's light (flat faces, no AO, no rim on reacting card). Round 4 dispatched for per-card lighting + AO + reacting-card rim + capture DOF." },
-    { "time": "11:22", "event": "Round 4 landed: per-card directional shade gradient, tight near-black AO contact shadow, gold rim/backlight on reacting cards, DOF-dim on non-hero cards during capture, gold particle burst, deeper vignette. Gates green; main app unchanged. Fresh critic launched." },
-    { "time": "11:44", "event": "Critic R4 verdict: depth 5\u21927, lighting 6\u21927, contrast 6\u21927. But the capture POP clamps to pure white and obliterates the hero card (gold particles became a white blowout). Round 5 dispatched: gold-tinted non-clamping bloom that keeps the card readable + layered gold particles + edge-hugging rim + scale-pop." },
-    { "time": "12:05", "event": "User delivered 6 AI-generated theme samples and picked Gelato + Moderno as primaries. Published to art-review branch and opened review issue #15 with all 6 embedded. Card-art fidelity jump locked." },
-    { "time": "12:20", "event": "Round 5 build landed (213 tests green): capture bloom additive\u2192screen + gold-tinted, edge-glow wraps the card, all particles gold\u2192amber (0 white), lingering embers, scale-pop. Live capture confirms the settebello card stays fully legible. Fresh R6 critic dispatched." },
-    { "time": "12:34", "event": "Critic R6 verdict: white blowout FIXED, card legible (color 7). New gap \u2014 the glow was a lopsided flare BESIDE the card, not a halo AROUND it. Round 6 dispatched: build the halo from the sprite's own alpha (dilate+blur, gold, screen, centered), kill the detached flare, cap the hot core, emit embers radially, visible scale-pop, vignette + optical-center pull." },
-    { "time": "12:52", "event": "Round 6 build landed & captured: at the settebello capture the glow now reads as a warm SYMMETRIC gold halo radiating FROM the cards (Snap look) \u2014 detached side-flare gone, cards fully legible inside the bloom, motes spread symmetrically, corners vignetted. Promoted r7-a/b/c. Fresh R7 critic dispatched to blind-A/B the capture frame vs the bar." },
-    { "time": "13:05", "event": "Critic R7 verdict: side-flare fixed (glow centered), but cores still clipped toward white and the light read as 'a lamp on the table', not cards emitting. Round 7 dispatched: clamp face luminance, move energy to a warm RIM on the card silhouette, true radial falloff on the centroid, kill the orange leak, deepen vignette to 0.6, spark-ring particles + cooler accent, tighten framing, settebello as the hero." },
-    { "time": "13:18", "event": "Round 7 build landed (213 tests green, main app unchanged): brightest pixels are now a warm gold RIM ON the card silhouettes (Snap ignition), glow radiates FROM the cards via a pow(1-d,2.2) radial falloff, ~120+ sparks eject in a ring with a cooler 0x9fd0ff accent, vignette 0.22\u21920.5 + contrast S-curve, settebello punched to the brightest/most-centered card. Captured r8-a/b/c \u2014 pips legible, no blowout. Fresh R8 critic dispatched." },
-    { "time": "13:30", "event": "Critic R8 verdict: closest yet \u2014 loses only narrowly. Rim ignition ~70% there, but the glow's brightest mass floated in the felt beside the cards + a stray horizontal streak, so the centroid sat off the cluster. Round 8 dispatched: drive the glow from a union card ALPHA MASK (RenderTexture\u2192blur\u2192add), kill the streak/beam, erode interiors so only the rim ignites, recenter vignette+glow on the cluster centroid, spawn sparks along the card edges." },
-    { "time": "13:44", "event": "Round 8 build landed (213 tests green, main app unchanged): deleted the free-floating glow pool + the beam/streak system entirely; glow is now a blurred RenderTexture of the involved cards' silhouettes composited additively so it HUGS the outlines; vignette+halo anchored to the capture bbox center; face gel deepened so the rim stays brightest; non-involved cards stay cool; 'Scopa!'/'Settebello!' title lands on the contact frame. Captured r9-a/b/c. Fresh R9 critic dispatched." },
-    { "time": "13:56", "event": "Critic R9 verdict: milestone \u2014 now TIES Balatro on card feel, loses to Snap only narrowly. Halo hugs the hero card, but the single hottest patch was the felt SEAM between the king and baton cards (backlight leak), and the red-back cards stayed flat inside their own halo. Round 9 dispatched: split rim vs outward-radial layers so peak luminance lands on card edges; rim-light the red backs; cross-talk warm bounce; contour sparks; anchored contact shadow." },
-    { "time": "14:08", "event": "Round 9 build landed (213 tests green, main app unchanged): edge rim raised to glow*1.15 and outward radial dropped ~40% so the card EDGES are the hottest pixels (seam hot-core gone); all 8 cards incl. red backs rim-lit by one shared light; warm cross-talk screen-bounce on adjacent faces; elliptical contour spark emission + hero lower-left burst; contact/AO shadows pushed darker & lower. Captured r10-a/b/c. Fresh R10 critic dispatched \u2014 may reach the bar." },
-    { "time": "14:20", "event": "Critic R10 verdict: ties Balatro, loses to Snap by a small-but-real margin. The gap narrowed to DYNAMIC RANGE \u2014 nothing approached white, the payoff sat mid-tone warm-on-warm and the brightest bloom still pooled in the gap above the front card. Round 10 dispatched: filmic-style hot core clipping toward white, a crisp near-white inner rim over the gold, tighter halo, a Balatro face-gloss hotspot, denser gold\u2192white sparks." },
-    { "time": "14:34", "event": "Round 10 build landed (213 tests green, main app unchanged): a thin near-white additive rim now ignites ON strongly-reacting card silhouettes over the soft gold (threshold curve \u2014 hero brightest, captures less, backs a kiss); halo blur 16\u219211 + peak dropped so edges out-brighten the seams; felt floor deepened (vignette 0.5\u21920.56, contrast 0.16\u21920.2); per-face glossy catch-light; ~290 sparks ramping gold\u2192near-white. Captured r11-a/b/c \u2014 real near-white\u2192deep-green range, pips legible. Also stood up the public demo host at keyrabbit.github.io/Test/scopa. Fresh R11 critic dispatched." },
-    { "time": "14:48", "event": "Round 11 build landed (213 tests green, main app unchanged): the white filament is now truly WHITE (alpha 0.92 / threshold 0.18, 0xfffdf7) composited ABOVE the gold with a threshold-bloom spike toward 255, so the reacting card edges are the frame's peak luminance; the title is demoted (base #bcae90, opacity 0.78) so it no longer steals brightest-element; a dense near-white edge-spark layer replaces the old blue accent (the green streak artifact is gone); face gloss 0.16\u21920.24. Captured r12-a (Scopa! hot rim), r12-b (settebello lift), r12-c (sweep) \u2014 the near-white rim now clearly out-brightens the gold halo. Refreshed the public demo host. Fresh R12 critic dispatched to confirm the 250\u2013255 spike + tie-or-better vs Snap." },
-    { "time": "15:02", "event": "Critic R12 verdict (pulled actual pixel luminance): the fix substantially landed \u2014 the rim genuinely hits 255 (4,567 pure-white px in the Scopa! frame), a scanline shows a discrete rim spike 245\u2013255 sitting clearly ABOVE the gold halo (132\u2013184) and the card face (~168), title crushed to ~147. But still LOSES to Snap narrowly: the rim's peak hue is warm IVORY (255,255,199), pure white only clusters at the top corners, and the bloom feathers into a wide diffuse gold smear (~20+px) \u2014 reads as 'glowing paper', not Snap's tight 1\u20133px electric-white filament. Round 12 dispatched: split rim into a 1\u20132px pure-white no-blur core + a separate 4\u20136px glow, desaturate the rim toward B\u2265235, tighten bloom threshold to 0.92 so only the filament blooms, clamp the rim floor to 0.85 so the WHOLE silhouette carries it (not just corners), 40\u201370 fine white sub-pixel sparks, + give the sweep beat its own hot rim." },
-    { "time": "15:18", "event": "Card-art (parallel, non-conflicting while the render builder runs): shipped the Batch-2 full-deck generation spec as issue #16 \u2014 exact per-asset OpenAI prompts + a theme style bible for both winners. Scoped tight: only 16 source images per theme (4 suit symbols + 12 rig-ready Fante/Cavallo/Re faces); the 1\u20137 pips, Arabic numerals, frame and foil/parallax animation are all composited in-engine, so the user's asset load is minimal. Awaiting the generated PNGs to start the living-card compositing + A/B loop." },
-    { "time": "15:40", "event": "Round 12 build landed (213 tests green, main app unchanged): killed the ivory-gold smear \u2014 the rim is now a pure-#FFFFFF 1\u20132px no-blur core + a tight 4\u20136px white glow (screen), the wide gold falloff pulled OFF the rim (gold only in the background halo), bloom threshold tightened, rim clamped to a 0.85 floor so the WHOLE silhouette carries the white filament (not just corners), + a dense fine white sub-pixel spark burst. Builder pixel-readback: whitest rim pixel (255,255,255), near-white spanning the full cluster height. Sweep beat now earns its own rim; non-reacting cards dim ~20\u201338%. Captured r13-a (Settebello! tight white filament + spark), r13-b (settebello lift), r13-c (sweep). Refreshed the public demo host. Fresh R13 critic dispatched \u2014 asking for the explicit beat/tie call vs Snap." },
-    { "time": "16:02", "event": "Critic R13 (INDEPENDENT pixel readback on the rim EDGE) caught a real setback the self-readback had missed: the rim is STILL GOLD (blue 147\u2013207 the whole length), pure white only at the top ~2 corners + a detached spark (gold:white \u224813:1). The builder had measured the bright card FACES + the spark, not the edge. Root cause = two structural bugs: the 1\u20132px core still multiplies by a warm ~(1,1,0.64) tint, and the rim is lit by a POSITIONAL light (bright-top\u2192dark-bottom), so white can't reach the sides/bottom. Round 13 dispatched with the architectural fix: trace the rim as a UNIFORM-WIDTH edge-distance outline (constant intensity vs Y, full silhouette), force the core to literal vec3(1.0) with a PER-CHANNEL 0.90 floor, gold only in the >6px outer halo, sparks emitted FROM the silhouette, bloom the edge \u2014 and verify blue\u2265230 at top/middle/bottom of the rim." },
-    { "time": "16:40", "event": "MILESTONE \u2014 Critic R14 (its own rim-edge pixel readback) delivered the definitive call: rim blue 255/254/249 (clean) & 255/252/245 (money shot), gold:white ~0 at the edge, white the outermost band ~8\u201317:1 \u2014 verified the lead's numbers and ruled we now TIE Marvel Snap on the capture. Said STOP iterating the rim (multi-round gold-rim gap closed; scores 7\u20138/10 across the board). It's a TIE not a clean BEAT for a NON-rim reason: cream card FACES (~255,250,189) rival the rim's luminance so the edge doesn't singularly dominate, and there are no discrete energy particles \u2014 a global-tonemap+particle gap. Round 14 dispatched (rim untouched): drop reacting-card face interior ~15\u201320%, add ~12\u201324 discrete bright particles on the reacting card's bloom, warm/strengthen the hero halo, deepen the darks, tighten the contact shadow \u2014 to convert tie\u2192beat and lock the piece." }
+    {
+      "time": "09:18",
+      "event": "Foundation verified green: 213 tests pass, typecheck clean, production build succeeds."
+    },
+    {
+      "time": "09:21",
+      "event": "Captured visual baseline (menu + gameplay table) as the critics' 'before'."
+    },
+    {
+      "time": "09:22",
+      "event": "Round 1 builder launched on the GPU render layer (hero slice: deal, play, capture)."
+    },
+    {
+      "time": "09:26",
+      "event": "Live progress page built and verified (gauntlet/index.html). This is it."
+    },
+    {
+      "time": "09:52",
+      "event": "Round 1 render layer landed on PixiJS: GPU shadows, felt lighting, spring card motion, Snap-style capture reaction. All 213 tests still green, build clean, Pixi code-split (only loads on ?hero=1)."
+    },
+    {
+      "time": "09:55",
+      "event": "Fresh-context critic launched to blind A/B the hero scene vs Balatro/Marvel Snap and name the single biggest gap for Round 2."
+    },
+    {
+      "time": "09:58",
+      "event": "Critic verdict: Round 1 does NOT beat the bar. Biggest gap — capture light is a background wash that never touches the cards; cards stay matte/unlit. Fix: rim-light + controlled gold + vignette + scale-punch + layered particles."
+    },
+    {
+      "time": "09:59",
+      "event": "Round 2 builder dispatched with the critic's fix. Making the light live ON the cards."
+    },
+    {
+      "time": "10:03",
+      "event": "QUEUED (user request): card artwork overhaul — the front/back figures look crude/low-fidelity. Invest in high-quality faces + backs and multiple themes (Classico, Moderno, Comic, …). Starts as soon as the render round returns (same art files — avoiding two concurrent writers)."
+    },
+    {
+      "time": "10:14",
+      "event": "Art direction set: user prefers modern/playful themes with Arabic numerals (1 traditional option), OK with AI-generated art. Cards MUST animate — so pipeline = AI static art as source → engine foil/parallax shaders on all cards + cutout rig (Spine/Live2D) on hero cards. Exact OpenAI prompts delivered for review; numerals/frame composited in-engine."
+    },
+    {
+      "time": "10:28",
+      "event": "Round 2 render landed & rebuilt: flat bloom killed; felt vignette; gold rim-light + specular ON the cards; scale-punch + offset contact shadow; layered directional particles. Gates green. Re-captured; fresh critic launched for blind A/B. Lead flagged a possible felt-panel sizing regression."
+    },
+    {
+      "time": "10:33",
+      "event": "Critic R2 verdict: lighting decisively fixed (lighting 2→6, effects 3→6, color 3→6, contrast 3→6) BUT the felt is a small framed panel floating in a black void — the table doesn't exist. Composition regressed 4→3. Round 3 dispatched: make felt full-bleed + vignette on the felt, re-center cluster on the lit hotspot."
+    },
+    {
+      "time": "10:57",
+      "event": "Round 3 landed: felt is now a FULL-BLEED table (warm radial key + vignette to corners), cluster re-centered on the hotspot; root-caused 2 Pixi v8 coordinate bugs; kept rim-light/shadows/particles; added idle shimmer + fore/background depth. Main app byte-for-byte unchanged. Gates green (213 tests). Fresh critic launched."
+    },
+    {
+      "time": "11:01",
+      "event": "Critic R3 verdict: composition recovered 3→6, depth 4→5, color 6→7; felt bug confirmed gone — now presentable. New biggest gap: cards don't receive the scene's light (flat faces, no AO, no rim on reacting card). Round 4 dispatched for per-card lighting + AO + reacting-card rim + capture DOF."
+    },
+    {
+      "time": "11:22",
+      "event": "Round 4 landed: per-card directional shade gradient, tight near-black AO contact shadow, gold rim/backlight on reacting cards, DOF-dim on non-hero cards during capture, gold particle burst, deeper vignette. Gates green; main app unchanged. Fresh critic launched."
+    },
+    {
+      "time": "11:44",
+      "event": "Critic R4 verdict: depth 5→7, lighting 6→7, contrast 6→7. But the capture POP clamps to pure white and obliterates the hero card (gold particles became a white blowout). Round 5 dispatched: gold-tinted non-clamping bloom that keeps the card readable + layered gold particles + edge-hugging rim + scale-pop."
+    },
+    {
+      "time": "12:05",
+      "event": "User delivered 6 AI-generated theme samples and picked Gelato + Moderno as primaries. Published to art-review branch and opened review issue #15 with all 6 embedded. Card-art fidelity jump locked."
+    },
+    {
+      "time": "12:20",
+      "event": "Round 5 build landed (213 tests green): capture bloom additive→screen + gold-tinted, edge-glow wraps the card, all particles gold→amber (0 white), lingering embers, scale-pop. Live capture confirms the settebello card stays fully legible. Fresh R6 critic dispatched."
+    },
+    {
+      "time": "12:34",
+      "event": "Critic R6 verdict: white blowout FIXED, card legible (color 7). New gap — the glow was a lopsided flare BESIDE the card, not a halo AROUND it. Round 6 dispatched: build the halo from the sprite's own alpha (dilate+blur, gold, screen, centered), kill the detached flare, cap the hot core, emit embers radially, visible scale-pop, vignette + optical-center pull."
+    },
+    {
+      "time": "12:52",
+      "event": "Round 6 build landed & captured: at the settebello capture the glow now reads as a warm SYMMETRIC gold halo radiating FROM the cards (Snap look) — detached side-flare gone, cards fully legible inside the bloom, motes spread symmetrically, corners vignetted. Promoted r7-a/b/c. Fresh R7 critic dispatched to blind-A/B the capture frame vs the bar."
+    },
+    {
+      "time": "13:05",
+      "event": "Critic R7 verdict: side-flare fixed (glow centered), but cores still clipped toward white and the light read as 'a lamp on the table', not cards emitting. Round 7 dispatched: clamp face luminance, move energy to a warm RIM on the card silhouette, true radial falloff on the centroid, kill the orange leak, deepen vignette to 0.6, spark-ring particles + cooler accent, tighten framing, settebello as the hero."
+    },
+    {
+      "time": "13:18",
+      "event": "Round 7 build landed (213 tests green, main app unchanged): brightest pixels are now a warm gold RIM ON the card silhouettes (Snap ignition), glow radiates FROM the cards via a pow(1-d,2.2) radial falloff, ~120+ sparks eject in a ring with a cooler 0x9fd0ff accent, vignette 0.22→0.5 + contrast S-curve, settebello punched to the brightest/most-centered card. Captured r8-a/b/c — pips legible, no blowout. Fresh R8 critic dispatched."
+    },
+    {
+      "time": "13:30",
+      "event": "Critic R8 verdict: closest yet — loses only narrowly. Rim ignition ~70% there, but the glow's brightest mass floated in the felt beside the cards + a stray horizontal streak, so the centroid sat off the cluster. Round 8 dispatched: drive the glow from a union card ALPHA MASK (RenderTexture→blur→add), kill the streak/beam, erode interiors so only the rim ignites, recenter vignette+glow on the cluster centroid, spawn sparks along the card edges."
+    },
+    {
+      "time": "13:44",
+      "event": "Round 8 build landed (213 tests green, main app unchanged): deleted the free-floating glow pool + the beam/streak system entirely; glow is now a blurred RenderTexture of the involved cards' silhouettes composited additively so it HUGS the outlines; vignette+halo anchored to the capture bbox center; face gel deepened so the rim stays brightest; non-involved cards stay cool; 'Scopa!'/'Settebello!' title lands on the contact frame. Captured r9-a/b/c. Fresh R9 critic dispatched."
+    },
+    {
+      "time": "13:56",
+      "event": "Critic R9 verdict: milestone — now TIES Balatro on card feel, loses to Snap only narrowly. Halo hugs the hero card, but the single hottest patch was the felt SEAM between the king and baton cards (backlight leak), and the red-back cards stayed flat inside their own halo. Round 9 dispatched: split rim vs outward-radial layers so peak luminance lands on card edges; rim-light the red backs; cross-talk warm bounce; contour sparks; anchored contact shadow."
+    },
+    {
+      "time": "14:08",
+      "event": "Round 9 build landed (213 tests green, main app unchanged): edge rim raised to glow*1.15 and outward radial dropped ~40% so the card EDGES are the hottest pixels (seam hot-core gone); all 8 cards incl. red backs rim-lit by one shared light; warm cross-talk screen-bounce on adjacent faces; elliptical contour spark emission + hero lower-left burst; contact/AO shadows pushed darker & lower. Captured r10-a/b/c. Fresh R10 critic dispatched — may reach the bar."
+    },
+    {
+      "time": "14:20",
+      "event": "Critic R10 verdict: ties Balatro, loses to Snap by a small-but-real margin. The gap narrowed to DYNAMIC RANGE — nothing approached white, the payoff sat mid-tone warm-on-warm and the brightest bloom still pooled in the gap above the front card. Round 10 dispatched: filmic-style hot core clipping toward white, a crisp near-white inner rim over the gold, tighter halo, a Balatro face-gloss hotspot, denser gold→white sparks."
+    },
+    {
+      "time": "14:34",
+      "event": "Round 10 build landed (213 tests green, main app unchanged): a thin near-white additive rim now ignites ON strongly-reacting card silhouettes over the soft gold (threshold curve — hero brightest, captures less, backs a kiss); halo blur 16→11 + peak dropped so edges out-brighten the seams; felt floor deepened (vignette 0.5→0.56, contrast 0.16→0.2); per-face glossy catch-light; ~290 sparks ramping gold→near-white. Captured r11-a/b/c — real near-white→deep-green range, pips legible. Also stood up the public demo host at keyrabbit.github.io/Test/scopa. Fresh R11 critic dispatched."
+    },
+    {
+      "time": "14:48",
+      "event": "Round 11 build landed (213 tests green, main app unchanged): the white filament is now truly WHITE (alpha 0.92 / threshold 0.18, 0xfffdf7) composited ABOVE the gold with a threshold-bloom spike toward 255, so the reacting card edges are the frame's peak luminance; the title is demoted (base #bcae90, opacity 0.78) so it no longer steals brightest-element; a dense near-white edge-spark layer replaces the old blue accent (the green streak artifact is gone); face gloss 0.16→0.24. Captured r12-a (Scopa! hot rim), r12-b (settebello lift), r12-c (sweep) — the near-white rim now clearly out-brightens the gold halo. Refreshed the public demo host. Fresh R12 critic dispatched to confirm the 250–255 spike + tie-or-better vs Snap."
+    },
+    {
+      "time": "15:02",
+      "event": "Critic R12 verdict (pulled actual pixel luminance): the fix substantially landed — the rim genuinely hits 255 (4,567 pure-white px in the Scopa! frame), a scanline shows a discrete rim spike 245–255 sitting clearly ABOVE the gold halo (132–184) and the card face (~168), title crushed to ~147. But still LOSES to Snap narrowly: the rim's peak hue is warm IVORY (255,255,199), pure white only clusters at the top corners, and the bloom feathers into a wide diffuse gold smear (~20+px) — reads as 'glowing paper', not Snap's tight 1–3px electric-white filament. Round 12 dispatched: split rim into a 1–2px pure-white no-blur core + a separate 4–6px glow, desaturate the rim toward B≥235, tighten bloom threshold to 0.92 so only the filament blooms, clamp the rim floor to 0.85 so the WHOLE silhouette carries it (not just corners), 40–70 fine white sub-pixel sparks, + give the sweep beat its own hot rim."
+    },
+    {
+      "time": "15:18",
+      "event": "Card-art (parallel, non-conflicting while the render builder runs): shipped the Batch-2 full-deck generation spec as issue #16 — exact per-asset OpenAI prompts + a theme style bible for both winners. Scoped tight: only 16 source images per theme (4 suit symbols + 12 rig-ready Fante/Cavallo/Re faces); the 1–7 pips, Arabic numerals, frame and foil/parallax animation are all composited in-engine, so the user's asset load is minimal. Awaiting the generated PNGs to start the living-card compositing + A/B loop."
+    },
+    {
+      "time": "15:40",
+      "event": "Round 12 build landed (213 tests green, main app unchanged): killed the ivory-gold smear — the rim is now a pure-#FFFFFF 1–2px no-blur core + a tight 4–6px white glow (screen), the wide gold falloff pulled OFF the rim (gold only in the background halo), bloom threshold tightened, rim clamped to a 0.85 floor so the WHOLE silhouette carries the white filament (not just corners), + a dense fine white sub-pixel spark burst. Builder pixel-readback: whitest rim pixel (255,255,255), near-white spanning the full cluster height. Sweep beat now earns its own rim; non-reacting cards dim ~20–38%. Captured r13-a (Settebello! tight white filament + spark), r13-b (settebello lift), r13-c (sweep). Refreshed the public demo host. Fresh R13 critic dispatched — asking for the explicit beat/tie call vs Snap."
+    },
+    {
+      "time": "16:02",
+      "event": "Critic R13 (INDEPENDENT pixel readback on the rim EDGE) caught a real setback the self-readback had missed: the rim is STILL GOLD (blue 147–207 the whole length), pure white only at the top ~2 corners + a detached spark (gold:white ≈13:1). The builder had measured the bright card FACES + the spark, not the edge. Root cause = two structural bugs: the 1–2px core still multiplies by a warm ~(1,1,0.64) tint, and the rim is lit by a POSITIONAL light (bright-top→dark-bottom), so white can't reach the sides/bottom. Round 13 dispatched with the architectural fix: trace the rim as a UNIFORM-WIDTH edge-distance outline (constant intensity vs Y, full silhouette), force the core to literal vec3(1.0) with a PER-CHANNEL 0.90 floor, gold only in the >6px outer halo, sparks emitted FROM the silhouette, bloom the edge — and verify blue≥230 at top/middle/bottom of the rim."
+    },
+    {
+      "time": "16:40",
+      "event": "MILESTONE — Critic R14 (its own rim-edge pixel readback) delivered the definitive call: rim blue 255/254/249 (clean) & 255/252/245 (money shot), gold:white ~0 at the edge, white the outermost band ~8–17:1 — verified the lead's numbers and ruled we now TIE Marvel Snap on the capture. Said STOP iterating the rim (multi-round gold-rim gap closed; scores 7–8/10 across the board). It's a TIE not a clean BEAT for a NON-rim reason: cream card FACES (~255,250,189) rival the rim's luminance so the edge doesn't singularly dominate, and there are no discrete energy particles — a global-tonemap+particle gap. Round 14 dispatched (rim untouched): drop reacting-card face interior ~15–20%, add ~12–24 discrete bright particles on the reacting card's bloom, warm/strengthen the hero halo, deepen the darks, tighten the contact shadow — to convert tie→beat and lock the piece."
+    },
+    {
+      "time": "13:24",
+      "event": "Round 14 build landed & judged (independent node+pngjs readback on the FLYING settebello): the tie→beat changes all took. Rim UNREGRESSED — pure white (top 253/250/246, mid 254/252/249), gold:white = 3:1438 (~0) at the edge. Face interior knocked to 107–145 luma vs the ~250 rim → the edge now singularly dominates (rim−face margin ~100+). A discrete warm-white comet particle + trail rides the flying card, and the corner vignette/darks are visibly deeper. Captured r15-a (flying money shot w/ comet), r15-b (Settebello! lift), r15-c (deal spread w/ deep darks). Refreshing the public demo host. Fresh R15 critic dispatched for the definitive beat/tie call vs Snap."
+    }
   ]
 }
