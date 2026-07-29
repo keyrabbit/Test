@@ -8,19 +8,19 @@
     "typecheck": "clean",
     "build": "ok (275 KB JS, 87 KB gzip)"
   },
-  "updated": "2026-07-29T13:33",
+  "updated": "2026-07-29T14:03",
   "pieces": [
     {
       "id": "render-foundation",
       "title": "GPU render layer (Canvas2D → Pixi/Three), keep rules core + spring model",
       "status": "won",
-      "round": 15,
-      "biggest_gap": "WON. Optional decisive-polish backlog (thin beat to rout): distributed 40-80 additive-dot particle FIELD + impact burst (vs single comet), two-tone hot-core/high-chroma energy so the halo never muds into the felt, stacked additive radials + a real bloom pass, lift black floor ~0.02 (corners currently clip to 0,0,0), even out the left rim edge (223 vs 250+).",
+      "round": 16,
+      "biggest_gap": "WON — decisively. R16 closed the last named gap: single comet → distributed particle FIELD (~256 additive dots, verified ~20.7k warm-bright pixels sprayed around the cluster), two-tone hot-core/amber energy, stacked pulsing radials, black floor lifted (corners now 14–37 with felt weave visible, no dead 0,0,0), rim wrap evened to blue 255 on ALL FOUR edges. Nothing material left on the render layer.",
       "verdict": "WON — beats both bars. R15 critic (independent pixel readback): narrowly BEATS Marvel Snap and ties/beats Balatro. Rim pure-white on all edges (blue 249-255, gold regression stays fixed), hero card singularly dominates (rim luma ~250 vs face median ~155), discrete comet has a real L255 core, deep table darks. Scores 8.0-8.5/10 across depth, lighting, juice, composition, color, contrast.",
       "afters": [
-        "shots/r15-a.png",
-        "shots/r15-b.png",
-        "shots/r15-c.png"
+        "shots/r16-a.png",
+        "shots/r16-b.png",
+        "shots/r16-c.png"
       ]
     },
     {
@@ -264,6 +264,10 @@
     {
       "time": "13:52",
       "event": "WON — render-foundation beats the bar. Fresh R15 critic (its OWN node+pngjs readback of the flying settebello) ruled we now narrowly BEAT Marvel Snap: rim pure-white on every edge (blue 249/255 top, 253 right, 249 bottom, 216-223 left — neutral white, gold regression stays fixed), the reacting card singularly dominates (rim luma ~250 vs face median ~155, cream peak knocked to ~205), and the discrete comet is a genuine pure-white L255 core with an additive glow trail + warm gold halo. Scores 8.0-8.5/10 across all six axes. Milestone: we now beat BOTH reference bars (Balatro since ~R9, Snap as of R15). Piece marked WON. Firing one final decisive-polish round (particle FIELD + bloom pass + lifted black floor) to convert the thin beat into a rout, then moving to the next piece."
+    },
+    {
+      "time": "14:06",
+      "event": "ROUT — Round 16 decisive-polish landed and verified in-engine; render-foundation now DECISIVELY beats the bar. The R15 critic's one gap (single soft comet vs a distributed spark burst) is closed: a distributed additive particle FIELD (~256 dots: near-white hot-core + high-chroma amber layers + a flight tail; pool 420→760) sprays around the cluster on a scopa — independent readback counts ~20,700 warm-bright field pixels. Two stacked additive radials (tight pulsing white inner + wide amber outer) replace the single gaussian; energy saturation lifted so it no longer muds into the felt. Black floor lifted (contrast matrix out=1.2·in+0.028, vignette 0.60→0.52) — corners now read 14–37 with the felt weave visible instead of clipping to 0,0,0. Rim wrap evened — settebello rim blue = 255 on ALL FOUR edges (top/right/bottom/left), pure white, not regressed. 213 tests green, main app unchanged. Captured r16-a (Settebello! with the full particle field + visible felt), r16-b (gather w/ felt weave), r16-c (opening deal). render-foundation LOCKED as won. Moving to the next piece: sideload-builds (installable PWA + Android/Kindle APK for the user's own devices)."
     }
   ]
 }
