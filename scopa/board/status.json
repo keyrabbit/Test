@@ -8,15 +8,15 @@
     "typecheck": "clean",
     "build": "ok (275 KB JS, 87 KB gzip)"
   },
-  "updated": "2026-07-29T13:24",
+  "updated": "2026-07-29T13:33",
   "pieces": [
     {
       "id": "render-foundation",
       "title": "GPU render layer (Canvas2D → Pixi/Three), keep rules core + spring model",
-      "status": "looping",
+      "status": "won",
       "round": 15,
-      "biggest_gap": "Tie→beat conversion verified in-engine: reacting rim pure-white (top 253/250/246, mid 254/252/249), gold:white 3:1438; face interior knocked to 107–145 luma vs ~250 rim; discrete comet particle + deep vignette present. Awaiting fresh R15 critic for the definitive BEAT call.",
-      "verdict": "TIE with Snap achieved (both Balatro & Snap now tied/at-parity) and critic-verified by independent pixel readback. Rim declared DONE. One focused tonemap+particle round to convert tie→beat, then render-foundation is won.",
+      "biggest_gap": "WON. Optional decisive-polish backlog (thin beat to rout): distributed 40-80 additive-dot particle FIELD + impact burst (vs single comet), two-tone hot-core/high-chroma energy so the halo never muds into the felt, stacked additive radials + a real bloom pass, lift black floor ~0.02 (corners currently clip to 0,0,0), even out the left rim edge (223 vs 250+).",
+      "verdict": "WON — beats both bars. R15 critic (independent pixel readback): narrowly BEATS Marvel Snap and ties/beats Balatro. Rim pure-white on all edges (blue 249-255, gold regression stays fixed), hero card singularly dominates (rim luma ~250 vs face median ~155), discrete comet has a real L255 core, deep table darks. Scores 8.0-8.5/10 across depth, lighting, juice, composition, color, contrast.",
       "afters": [
         "shots/r15-a.png",
         "shots/r15-b.png",
@@ -260,6 +260,10 @@
     {
       "time": "13:24",
       "event": "Round 14 build landed & judged (independent node+pngjs readback on the FLYING settebello): the tie→beat changes all took. Rim UNREGRESSED — pure white (top 253/250/246, mid 254/252/249), gold:white = 3:1438 (~0) at the edge. Face interior knocked to 107–145 luma vs the ~250 rim → the edge now singularly dominates (rim−face margin ~100+). A discrete warm-white comet particle + trail rides the flying card, and the corner vignette/darks are visibly deeper. Captured r15-a (flying money shot w/ comet), r15-b (Settebello! lift), r15-c (deal spread w/ deep darks). Refreshing the public demo host. Fresh R15 critic dispatched for the definitive beat/tie call vs Snap."
+    },
+    {
+      "time": "13:52",
+      "event": "WON — render-foundation beats the bar. Fresh R15 critic (its OWN node+pngjs readback of the flying settebello) ruled we now narrowly BEAT Marvel Snap: rim pure-white on every edge (blue 249/255 top, 253 right, 249 bottom, 216-223 left — neutral white, gold regression stays fixed), the reacting card singularly dominates (rim luma ~250 vs face median ~155, cream peak knocked to ~205), and the discrete comet is a genuine pure-white L255 core with an additive glow trail + warm gold halo. Scores 8.0-8.5/10 across all six axes. Milestone: we now beat BOTH reference bars (Balatro since ~R9, Snap as of R15). Piece marked WON. Firing one final decisive-polish round (particle FIELD + bloom pass + lifted black floor) to convert the thin beat into a rout, then moving to the next piece."
     }
   ]
 }
