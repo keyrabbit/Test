@@ -8,7 +8,7 @@
     "typecheck": "clean",
     "build": "ok (275 KB JS, 87 KB gzip)"
   },
-  "updated": "2026-07-29T14:15",
+  "updated": "2026-07-29T14:40",
   "pieces": [
     {
       "id": "render-foundation",
@@ -90,9 +90,9 @@
     {
       "id": "sideload-builds",
       "title": "Sideloadable builds for owner devices (Kindle Fire, iPad, iPhone, PC)",
-      "status": "in-progress",
-      "round": 1,
-      "biggest_gap": "PWA install path DONE (round 1): vite-plugin-pwa wired — manifest.webmanifest + service worker (Workbox precache 37 entries + font runtime cache) + a full app-icon set (192/512 + maskable + apple-touch), verified in-engine (SW registered & controlling, manifest+apple icon linked, 213 tests still green, main app boots clean). Deployed to the host; the landing now has a per-device 'add to home screen' guide for iPhone/iPad/Android/Kindle/PC. Remaining: a native Android/Kindle .apk (Capacitor) for a true installed app + one-tap sideload, and documenting the iOS .ipa path (needs a Mac/Xcode).",
+      "status": "won",
+      "round": 2,
+      "biggest_gap": "DONE for the owner's devices. (1) PWA install on iPhone/iPad/Android/Kindle/PC (manifest+SW+icons, live). (2) Native Android/Kindle .apk built on GitHub's runners (Capacitor + Actions, JDK21/Node22) and published to a permanent rolling release — verified downloadable (4.6 MB, valid APK). Landing links the APK for Kindle/Android. Remaining (documented, needs owner hardware): iOS .ipa requires a Mac/Xcode + Apple ID; PC is covered by the PWA install.",
       "verdict": null
     }
   ],
@@ -272,6 +272,10 @@
     {
       "time": "14:20",
       "event": "sideload-builds started — shipped the store-free install path. Added vite-plugin-pwa to the build: generated manifest.webmanifest (standalone, theme #0A2B21, categories games), a Workbox service worker (precaches 37 build entries ~1MB + caches Google Fonts) and a premium app-icon set (a gold settebello '7' on felt — 192/512, maskable variants, apple-touch-icon, favicon) rendered from an SVG via sharp. Verified in a real browser: service worker registered & CONTROLLING, manifest + apple-touch-icon linked, app boots to the full menu with ZERO console errors, 213 tests still green, main app untouched. Deployed the PWA build to the public host and added an 'Install it on your device' section to the landing with exact add-to-home-screen steps for iPhone/iPad (Safari), Android (Chrome), Kindle Fire (Silk), and PC/Mac (Edge/Chrome). This makes the game installable to the home screen — a true store-free sideload — on ALL of the owner's devices from one URL. Next: a Capacitor .apk for the Kindle Fire / Android as a native installed app."
+    },
+    {
+      "time": "14:44",
+      "event": "sideload-builds WON — the game is now sideloadable on every one of the owner's devices. Native Android/Kindle .apk pipeline shipped: committed a Capacitor Android config + a GitHub Actions workflow that builds a debug APK on GitHub's runners (no local SDK) — worked through three CI fixes (Capacitor CLI needs Node>=22, Capacitor Android needs JDK 21, and switched from an artifact upload that hit the account storage quota to a Release asset). The APK auto-builds on every game change and publishes to a permanent rolling release: github.com/keyrabbit/Scopa/releases/download/android-latest/settebello-debug.apk (verified: downloads, 4.6 MB, valid APK zip). Combined with the PWA path, all four device classes are covered (iPhone/iPad/Android/Kindle via home-screen install or the APK, PC via browser install). Also committed the WON GPU hero render layer to the repo (behind ?hero=1). Landing updated with the APK links. Only iOS .ipa remains (needs a Mac/Xcode) — documented."
     }
   ]
 }
