@@ -45,7 +45,7 @@
 <body>
 <main>
   <h1>Focus Pet</h1>
-  <p class="sub">v0.1.0 &middot; current gate <strong>G5</strong> &middot; updated 07/30/2026 22:17:33</p>
+  <p class="sub">v0.1.0 &middot; current gate <strong>G5</strong> &middot; updated 07/30/2026 23:09:48</p>
 
   <p class="headline">G5 Hardening is in progress and honest about its results: idle CPU measures 0.14% of one core against a 1% budget, and DPI placement is exact at 200% live plus pinned at 100-200% by 16 unit tests over a pure placement function. Two section 8 budgets are missed and recorded as missed - 104.5 MB working set against 80 MB (only 22.2 MB of it private) and 178 MB installed against 120 MB - measured on a machine with WPF render tier 0, with the single-file fix tried and rejected because it quadruples private memory. G4 Packaging is in review with both targets proven on a fresh machine. G3 still needs the charm test, which needs real people.</p>
 
@@ -57,11 +57,11 @@
   <h2>Build health</h2>
   <table>
     <tr><th>Build</th><td>passing</td></tr>
-    <tr><th>Tests</th><td>16 passed / 0 failed</td></tr>
-    <tr><th>Line coverage</th><td>36.6%</td></tr>
+    <tr><th>Tests</th><td>72 passed / 0 failed</td></tr>
+    <tr><th>Line coverage</th><td>59.4% (Pet.Core 91.5%, Pet.Platform.Windows 6.2%)</td></tr>
     <tr><th>MSIX target</th><td>building</td></tr>
     <tr><th>Steam target</th><td>building</td></tr>
-    <tr><th>Last CI run</th><td>07/30/2026 22:17:33</td></tr>
+    <tr><th>Last CI run</th><td>07/30/2026 23:09:48</td></tr>
   </table>
 
   <h2>Gates</h2>
@@ -170,6 +170,7 @@
   </div>
   <h2>Log</h2>
   <table>
+    <tr><td><time>07/30/2026 23:10:00</time></td><td>G5 measured rather than asserted: idle CPU 0.14% and DPI placement exact at 200%, plus 16 unit tests pinning the placement arithmetic from 100% to 200%. Against that, a 104.5 MB working set and a 178 MB install both miss their budgets and are recorded as missing them. Single-file packaging was tried and rejected on measurement - it quadruples private memory to halve the download. A 46-minute endurance run completed a real focus session with memory and handle counts flat throughout.</td></tr>
     <tr><td><time>07/30/2026 21:20:00</time></td><td>Art prompts B-E filed as issues #3-#6, closing out the art thread and handing it to the owner, then G4 Packaging built out. The MSIX and the Steam folder were both proven on a genuinely fresh machine: the six-hour-old Sandbox was destroyed and a new one launched, confirmed to have no .NET and no package, and both targets installed and ran there. Two things changed as a result rather than being assumed. First, tools/build-packages.ps1 gained a -SelfSign switch, because an unsigned MSIX simply cannot be installed and &#39;the layout looks right&#39; is not the same claim as &#39;it installs&#39;. Second, packaged autostart stopped being a stand-in: UnavailableAutostartService is replaced by a real PackagedAutostartService over the WinRT StartupTask API, verified by driving the actual tray menu in Sandbox - state moved Disabled to Enabled to Disabled, and when forced to DisabledByUser the app left it alone instead of overriding the user. One gap is recorded honestly: the balloon that explains a refusal could not be verified, because Sandbox surfaces no toasts at all, which a control probe confirmed.</td></tr>
     <tr><td><time>07/30/2026 20:40:00</time></td><td>The character stopped being a placeholder. The owner&#39;s approved Prompt A sheet was traced into MascotControl.xaml from programmatic measurements rather than by eye, and the result was checked against a live render: body aspect matches to three decimals, the width profile to 3.4%, the eyes to 0.7 px. Two findings worth keeping. First, the sheet&#39;s apparent extra colours - mouth, blush, eye highlights - are all canonical palette colours composited at reduced opacity, so the five-colour rule needed no amendment and the decision request I had expected to send was never necessary. Second, the placeholder-to-final swap touched art only: no rig change, no code change beyond one line that shows the blush while celebrating, which is exactly what the manifest rig contract was written to guarantee. Risk #1 drops from open to mitigated; what remains is the charm test, which cannot be self-assessed.</td></tr>
     <tr><td><time>07/30/2026 18:55:00</time></td><td>G3 accessibility criterion met: 0 unnamed or unreachable elements of our own on either surface (the remainder are OS window chrome and WPF ScrollBar/Slider template parts), every palette text pair passes WCAG AA (5.36:1 worst case), and both surfaces now pass the 44px touch-target check after the shop tabs and the duration slider were enlarged. Four unimplemented features from the brief list were built and verified in Sandbox: custom session length, harvest, completion sound, and launch with Windows.</td></tr>
