@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Focus Pet - project dashboard</title>
+<style>
+  :root {
+    --cream:#F5EBDC; --sand:#E6D8C3; --navy:#1F2A44; --sage:#8FA98A; --coral:#E8836B;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:2rem 1.25rem 4rem; background:var(--navy); color:var(--cream);
+         font:16px/1.6 "Segoe UI Variable Text","Segoe UI",system-ui,sans-serif; }
+  main { max-width:60rem; margin:0 auto; }
+  h1 { font-size:2rem; margin:0 0 .25rem; }
+  h2 { font-size:1.15rem; margin:2.5rem 0 .75rem; color:var(--sand); font-weight:600; }
+  .sub { color:var(--sage); margin:0 0 2rem; }
+  .headline { background:rgba(245,235,220,.06); border-left:3px solid var(--coral);
+              padding:.9rem 1.1rem; border-radius:0 8px 8px 0; margin:0 0 2rem; }
+  .overall { font-size:3.25rem; font-weight:700; line-height:1; }
+  .bar { height:10px; border-radius:5px; background:rgba(245,235,220,.12); overflow:hidden; margin:.5rem 0 0; }
+  .bar > i { display:block; height:100%; background:var(--coral); }
+  table { width:100%; border-collapse:collapse; }
+  th,td { text-align:left; padding:.5rem .6rem; border-bottom:1px solid rgba(245,235,220,.12); vertical-align:top; }
+  th { color:var(--sage); font-weight:600; font-size:.85rem; text-transform:uppercase; letter-spacing:.04em; }
+  .gate { margin:0 0 1.25rem; background:rgba(245,235,220,.04); border-radius:10px; padding:1rem 1.1rem; }
+  .gate header { display:flex; justify-content:space-between; align-items:baseline; gap:1rem; }
+  .gate h3 { margin:0; font-size:1rem; }
+  .pill { font-size:.75rem; padding:.15rem .55rem; border-radius:99px; background:rgba(245,235,220,.12); color:var(--sand); }
+  ul.criteria { list-style:none; margin:.75rem 0 0; padding:0; }
+  ul.criteria li { padding:.2rem 0 .2rem 1.6rem; position:relative; color:var(--sand); }
+  ul.criteria li::before { position:absolute; left:0; }
+  li.done::before { content:"\2713"; color:var(--sage); }
+  li.todo::before { content:"\25CB"; color:rgba(245,235,220,.35); }
+  .risk { border-left:3px solid var(--coral); padding:.6rem .9rem; margin:0 0 .9rem;
+          background:rgba(232,131,107,.07); border-radius:0 8px 8px 0; }
+  .risk.low { border-left-color:var(--sage); background:rgba(143,169,138,.07); }
+  .risk h3 { margin:0 0 .2rem; font-size:1rem; }
+  .risk p { margin:.2rem 0; font-size:.92rem; color:var(--sand); }
+  time { color:var(--sage); font-variant-numeric:tabular-nums; }
+  a { color:var(--coral); }
+  footer { margin-top:3rem; color:var(--sage); font-size:.85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Focus Pet</h1>
+  <p class="sub">v0.1.0 &middot; current gate <strong>G1</strong> &middot; updated 07/30/2026 17:10:00</p>
+
+  <p class="headline">G0 passed. CI is green on a hosted runner - 36 tests, 84.4% line coverage, and both packaging targets built from one commit. Character art remains the critical path.</p>
+
+  <h2>Overall completion</h2>
+  <div class="overall">34.9%</div>
+  <div class="bar"><i style="width:34.9%"></i></div>
+  <p class="sub" style="margin-top:.6rem">Computed from weighted gate exit criteria. Not an estimate.</p>
+
+  <h2>Build health</h2>
+  <table>
+    <tr><th>Build</th><td>passing</td></tr>
+    <tr><th>Tests</th><td>36 passed / 0 failed</td></tr>
+    <tr><th>Line coverage</th><td>84.4%</td></tr>
+    <tr><th>MSIX target</th><td>building</td></tr>
+    <tr><th>Steam target</th><td>building</td></tr>
+    <tr><th>Last CI run</th><td>07/30/2026 17:04:10</td></tr>
+  </table>
+
+  <h2>Gates</h2>
+  <section class="gate">
+    <header><h3>G0 &middot; Foundation</h3><span class="pill">passed &middot; 100%</span></header>
+    <div class="bar"><i style="width:100%"></i></div>
+    <ul class="criteria">
+      <li class="done">Repository initialised and architecture agreed</li>
+      <li class="done">Chromeless per-pixel-alpha window above the taskbar, confirmed with recorded evidence</li>
+      <li class="done">Animation technique chosen with recorded evidence</li>
+      <li class="done">art/manifest.json standing up a placeholder mascot on the full animation rig</li>
+      <li class="done">Prompt A issued to the owner</li>
+      <li class="done">project-status.json schema defined and validated</li>
+      <li class="done">Basic countdown working in the widget</li>
+      <li class="done">CI green, building both packaging targets from one commit</li>
+      <li class="done">Dashboard published</li>
+    </ul>
+  </section>
+  <section class="gate">
+    <header><h3>G1 &middot; Timer that survives reality</h3><span class="pill">in-progress &middot; 78.6%</span></header>
+    <div class="bar"><i style="width:78.6%"></i></div>
+    <ul class="criteria">
+      <li class="done">Elapsed time is monotonic; wall-clock changes cannot complete a session</li>
+      <li class="done">Sleep/hibernate handled without inventing progress</li>
+      <li class="done">Atomic save with backup generation and corrupt-file recovery</li>
+      <li class="done">Interrupted session recovered after a restart</li>
+      <li class="todo">Verified against real sleep/resume on hardware</li>
+    </ul>
+  </section>
+  <section class="gate">
+    <header><h3>G2 &middot; Progression and habitat</h3><span class="pill">in-progress &middot; 53.8%</span></header>
+    <div class="bar"><i style="width:53.8%"></i></div>
+    <ul class="criteria">
+      <li class="done">A session grants its reward at most once</li>
+      <li class="done">Economy numbers live in one place and are covered by tests</li>
+      <li class="done">Streaks and daily/weekly totals</li>
+      <li class="todo">Habitat renders decorations and plant growth</li>
+      <li class="todo">Themes purchasable and applied</li>
+    </ul>
+  </section>
+  <section class="gate">
+    <header><h3>G3 &middot; Charm</h3><span class="pill">not-started &middot; 0%</span></header>
+    <div class="bar"><i style="width:0%"></i></div>
+    <ul class="criteria">
+      <li class="todo">Final character art landed through the manifest</li>
+      <li class="todo">Charm test passed with real people (cannot be self-assessed)</li>
+      <li class="todo">Accessibility sweep clean</li>
+      <li class="todo">Tray, autostart and reduced-motion verified on hardware</li>
+    </ul>
+  </section>
+  <section class="gate">
+    <header><h3>G4 &middot; Packaging</h3><span class="pill">not-started &middot; 0%</span></header>
+    <div class="bar"><i style="width:0%"></i></div>
+    <ul class="criteria">
+      <li class="todo">MSIX installs and runs clean on a fresh machine</li>
+      <li class="todo">Self-contained folder build runs on a fresh machine</li>
+      <li class="todo">Autostart works in both packaged and unpackaged builds</li>
+      <li class="todo">Privacy statement and store metadata drafted</li>
+    </ul>
+  </section>
+  <section class="gate">
+    <header><h3>G5 &middot; Hardening</h3><span class="pill">not-started &middot; 0%</span></header>
+    <div class="bar"><i style="width:0%"></i></div>
+    <ul class="criteria">
+      <li class="todo">100/150/200% and multi-monitor matrix clean</li>
+      <li class="todo">Steady-state working set under 80 MB in Release</li>
+      <li class="todo">Idle CPU negligible</li>
+      <li class="todo">Multi-day soak with sleep/resume cycles</li>
+    </ul>
+  </section>
+  <section class="gate">
+    <header><h3>G6 &middot; Launch</h3><span class="pill">not-started &middot; 0%</span></header>
+    <div class="bar"><i style="width:0%"></i></div>
+    <ul class="criteria">
+      <li class="todo">Explicit owner authorization to submit</li>
+      <li class="todo">Store and Steam submissions prepared</li>
+    </ul>
+  </section>
+  <h2>Risks</h2>
+  <div class="risk">
+    <h3>#1 The character is the product <span class="pill">critical &middot; open</span></h3>
+    <p>A focus timer is a commodity; the reason someone keeps this on screen is that they like the creature. The shipping mascot is still a placeholder and the reference sheet is on a human&#39;s clock. Every downstream asset (poses, decorations, app icon, Steam capsules) is conditioned on it, so a late or weak sheet compounds.</p>
+    <p><strong>Mitigation.</strong> Prompt A issued to the owner on day one as issue #2. The placeholder is wired to the full animation rig through art/manifest.json so the swap touches art, not behaviour.</p>
+    <p><a href="https://github.com/keyrabbit/Pet/issues/2">https://github.com/keyrabbit/Pet/issues/2</a></p>
+  </div>
+  <div class="risk low">
+    <h3>#2 Dashboard cannot auto-publish <span class="pill">low &middot; mitigated</span></h3>
+    <p>DASHBOARD_PUSH_TOKEN does not exist, so CI cannot push to keyrabbit/Test.</p>
+    <p><strong>Mitigation.</strong> Dashboard published to docs/dashboard/ in this repo and mirrored by hand to Test/pet/. See DECISIONS.md D8.</p>
+  </div>
+  <div class="risk low">
+    <h3>#3 MSIX build on a hosted runner is unverified <span class="pill">medium &middot; open</span></h3>
+    <p>Packaging for the Store needs Windows SDK tooling (MakeAppx) that has not yet been exercised on a GitHub-hosted runner. Discovering a gap here late would block submission.</p>
+    <p><strong>Mitigation.</strong> CI builds both packaging targets from the same commit starting at G0, so a gap surfaces immediately rather than at G5.</p>
+  </div>
+  <div class="risk low">
+    <h3>#4 Only 200% scaling is testable on the dev host <span class="pill">medium &middot; open</span></h3>
+    <p>The development display is fixed at 2880x1920 @ 200%. 100% and 150% cannot be exercised locally without changing display settings.</p>
+    <p><strong>Mitigation.</strong> Windows Sandbox is used as a second DPI/theme surface, and display set-dpi is available there. Full matrix runs at G5.</p>
+  </div>
+  <h2>Log</h2>
+  <table>
+    <tr><td><time>07/30/2026 17:10:00</time></td><td>G0 declared passed - all nine exit criteria met with machine-verified evidence. Moving to G1.</td></tr>
+    <tr><td><time>07/30/2026 17:05:00</time></td><td>First CI runs failed honestly: MSB1009 because .NET 10 uses the Pet.slnx solution format. Fixed; the run is now green with 36/36 tests and 84.4% line coverage. Artifact upload is disabled by an account storage quota and is recorded as a known limitation rather than hidden.</td></tr>
+    <tr><td><time>07/30/2026 16:45:00</time></td><td>Prompt A issued to the owner as issue #2. The character is logged as risk #1.</td></tr>
+    <tr><td><time>07/30/2026 16:40:00</time></td><td>UIA sweep found the mascot had no accessible name. Fixed - it now exposes a live-region name tracking its state.</td></tr>
+    <tr><td><time>07/30/2026 16:35:00</time></td><td>G0 review run inside Windows Sandbox against a real desktop. Two genuine defects found and fixed: the desktop was being misread as a fullscreen app (the pet vanished when you clicked the wallpaper), and the tray escape hatch was undone by the next ambient tick.</td></tr>
+    <tr><td><time>07/30/2026 16:20:00</time></td><td>Visual review iteration 1: plant pot was clipped at the window edge and baselines were misaligned. Pet column restructured into a single 96x110 canvas; fixed.</td></tr>
+    <tr><td><time>07/30/2026 16:10:00</time></td><td>WPF confirmation spike passed. Layered window with genuine per-pixel alpha, always-on-top, above the taskbar, per-monitor DPI aware. SkiaSharp not needed - zero third-party dependencies.</td></tr>
+    <tr><td><time>07/30/2026 15:50:00</time></td><td>Core domain landed with 36 passing unit tests: monotonic timer, atomic save store with migration and corrupt-file recovery, reward idempotency, streaks.</td></tr>
+    <tr><td><time>07/30/2026 15:20:00</time></td><td>Solution scaffolded: Pet.Core, Pet.Platform.Windows, Pet.App, Pet.Core.Tests. Targeting .NET 10 (current LTS) - the only SDK available on the host.</td></tr>
+    <tr><td><time>07/30/2026 14:55:00</time></td><td>Repository connected to keyrabbit/Pet. Hyperloop + Windows Sandbox verified working end to end on the dev host.</td></tr>
+  </table>
+  <footer>
+    Generated from <code>project-status.json</code> by <code>tools/build-dashboard.ps1</code>.
+    Every number on this page is computed; none of it is typed in by hand.
+  </footer>
+</main>
+</body>
+</html>
+
