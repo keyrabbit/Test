@@ -45,13 +45,13 @@
 <body>
 <main>
   <h1>Focus Pet</h1>
-  <p class="sub">v0.1.0 &middot; current gate <strong>G1</strong> &middot; updated 07/30/2026 17:10:00</p>
+  <p class="sub">v0.1.0 &middot; current gate <strong>G3</strong> &middot; updated 07/30/2026 17:10:00</p>
 
-  <p class="headline">G0 passed. CI is green on a hosted runner - 36 tests, 84.4% line coverage, and both packaging targets built from one commit. Character art remains the critical path.</p>
+  <p class="headline">G2 passed: the habitat, twelve decorations and four themes ship, with a live theme switch verified on a real desktop. G1 waits only on sleep/resume on physical hardware. Character art remains the critical path.</p>
 
   <h2>Overall completion</h2>
-  <div class="overall">34.9%</div>
-  <div class="bar"><i style="width:34.9%"></i></div>
+  <div class="overall">41.8%</div>
+  <div class="bar"><i style="width:41.8%"></i></div>
   <p class="sub" style="margin-top:.6rem">Computed from weighted gate exit criteria. Not an estimate.</p>
 
   <h2>Build health</h2>
@@ -61,7 +61,7 @@
     <tr><th>Line coverage</th><td>84.4%</td></tr>
     <tr><th>MSIX target</th><td>building</td></tr>
     <tr><th>Steam target</th><td>building</td></tr>
-    <tr><th>Last CI run</th><td>07/30/2026 17:04:10</td></tr>
+    <tr><th>Last CI run</th><td>07/30/2026 17:10:06</td></tr>
   </table>
 
   <h2>Gates</h2>
@@ -92,14 +92,14 @@
     </ul>
   </section>
   <section class="gate">
-    <header><h3>G2 &middot; Progression and habitat</h3><span class="pill">in-progress &middot; 53.8%</span></header>
-    <div class="bar"><i style="width:53.8%"></i></div>
+    <header><h3>G2 &middot; Progression and habitat</h3><span class="pill">passed &middot; 100%</span></header>
+    <div class="bar"><i style="width:100%"></i></div>
     <ul class="criteria">
       <li class="done">A session grants its reward at most once</li>
       <li class="done">Economy numbers live in one place and are covered by tests</li>
       <li class="done">Streaks and daily/weekly totals</li>
-      <li class="todo">Habitat renders decorations and plant growth</li>
-      <li class="todo">Themes purchasable and applied</li>
+      <li class="done">Habitat renders decorations and plant growth</li>
+      <li class="done">Themes purchasable and applied</li>
     </ul>
   </section>
   <section class="gate">
@@ -164,6 +164,7 @@
   </div>
   <h2>Log</h2>
   <table>
+    <tr><td><time>07/30/2026 17:55:00</time></td><td>G2 declared passed. Three defects were found only by driving the app in Windows Sandbox: the shelf rendered in front of the pet, multi-layer decorations came apart because each layer was positioned by its own geometry bounds, and demo mode clamped an impossible balance to &quot;0 seeds&quot;. All three are fixed and recorded as D11, D13 and D12. G1 stays open on hardware sleep/resume, which this host cannot perform.</td></tr>
     <tr><td><time>07/30/2026 17:10:00</time></td><td>G0 declared passed - all nine exit criteria met with machine-verified evidence. Moving to G1.</td></tr>
     <tr><td><time>07/30/2026 17:05:00</time></td><td>First CI runs failed honestly: MSB1009 because .NET 10 uses the Pet.slnx solution format. Fixed; the run is now green with 36/36 tests and 84.4% line coverage. Artifact upload is disabled by an account storage quota and is recorded as a known limitation rather than hidden.</td></tr>
     <tr><td><time>07/30/2026 16:45:00</time></td><td>Prompt A issued to the owner as issue #2. The character is logged as risk #1.</td></tr>
