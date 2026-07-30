@@ -1,22 +1,31 @@
 {
   "project": "REALISH — Human or AI?",
   "objective": "Prove that a two-minute daily 'human or AI' test makes people want to come back tomorrow.",
-  "updatedUtc": "2026-07-29T23:00:00Z",
-  "phase": "Milestone 2 — publish, install, validate the demo",
-  "currentTask": "Publishing the offline iPhone PWA demo and opening the go/no-go feedback issue.",
+  "updatedUtc": "2026-07-30T03:05:00Z",
+  "phase": "Milestone 2 complete — awaiting owner go/no-go",
+  "currentTask": "Demo 0.1 was re-published after an independent critic pass that found two answer-leaking defects. Waiting on the owner to play it and answer issue #3.",
   "agentMonitoring": false,
   "agentMonitoringNote": "This agent cannot observe GitHub after its process exits. Re-run `pwsh scripts/sync_owner_inbox.ps1` in the IQ repository to pull new issues and comments into the work queue.",
+  "links": {
+    "demo": "https://keyrabbit.github.io/Test/realish/demo/",
+    "dashboard": "https://keyrabbit.github.io/Test/realish/",
+    "repo": "https://github.com/keyrabbit/IQ",
+    "feedbackIssue": "https://github.com/keyrabbit/IQ/issues/3",
+    "contentBlockerIssue": "https://github.com/keyrabbit/IQ/issues/2"
+  },
   "latestCompleted": [
-    "Resolved the IQ repository and the existing keyrabbit/Test Pages configuration",
-    "Installed the Flutter SDK and created the shared client",
-    "Authored 21 provenance-verified demo items across three date-keyed packs",
-    "Built the seven-round Daily Test, reveal, result and tomorrow screens",
-    "30 unit, content-integrity and widget tests passing; static analysis clean"
+    "Independent critic pass on demo 0.1: 14 defects found, all fixed and recorded in QUALITY_REPORT.md",
+    "Closed two P0 answer leaks — category correlated perfectly with the answer, and alt text named the source work to screen reader users",
+    "Rewrote every AI item as register-matched period pastiche, so the game tests 'human or AI' rather than 'old or modern'",
+    "Replaced opaque prompt references with the verbatim generation prompt, now visible to the player",
+    "Fixed daylight-saving scheduling, midnight rollover, stale streak display, WCAG AA contrast and Dynamic Type clipping",
+    "Published demo 0.1 to GitHub Pages under /realish/, leaving existing site content untouched",
+    "Verified the live build end to end in a headless browser with no console errors"
   ],
   "milestones": [
     { "id": 0, "title": "Repository discovery and control plane", "status": "done" },
     { "id": 1, "title": "Offline iPhone demo vertical slice", "status": "done" },
-    { "id": 2, "title": "Publish, install and validate the demo", "status": "in-progress" },
+    { "id": 2, "title": "Publish, install and validate the demo", "status": "done" },
     { "id": 3, "title": "Owner interest gate", "status": "blocked-on-owner" },
     { "id": 4, "title": "Backend and content operations", "status": "gated" },
     { "id": 5, "title": "Viral loop", "status": "gated" },
@@ -25,37 +34,46 @@
     { "id": 8, "title": "Cross-platform expansion", "status": "gated" }
   ],
   "nextThree": [
-    "Owner plays the demo on a real iPhone and answers the go/no-go issue",
-    "Fix any P0/P1 defects raised in demo feedback",
-    "Acquire licensed image, audio and video assets with verified provenance"
+    "Owner plays the demo on a real iPhone and answers the five questions in issue #3",
+    "Fix any P0/P1 defects raised in that feedback",
+    "Owner decides the licensed-media acquisition path in issue #2"
   ],
   "blockers": [
     {
       "title": "Licensed image / audio / video assets are unavailable",
       "severity": "p0",
-      "detail": "This environment cannot lawfully source licensed human photography or produce AI media with recorded generation provenance. The demo therefore ships text-only rounds.",
-      "issue": null
+      "detail": "This environment cannot lawfully source licensed human photography, nor generate AI media with honest provenance. The demo therefore ships text-only rounds. Four acquisition paths are costed in the issue; the recommendation is to stay text-only until retention is proven.",
+      "issue": 2
     },
     {
       "title": "Real-iPhone validation pending",
       "severity": "p1",
-      "detail": "No physical iOS device is available. Offline and standalone behaviour has been verified in a desktop browser only.",
-      "issue": null
+      "detail": "No physical iOS device is available here. Offline play, standalone install and layout were verified only in a headless browser at iPhone dimensions. The owner is the first real-device test.",
+      "issue": 3
+    },
+    {
+      "title": "Owner go/no-go not yet given",
+      "severity": "p1",
+      "detail": "Milestone 3 onward — backend, accounts, leagues, notifications, monetization, app-store builds — is deliberately not started and will not start without an explicit go-ahead in issue #3.",
+      "issue": 3
     }
   ],
   "ownerDecisionsAwaitingImplementation": [],
   "demo": {
     "version": "0.1.0",
-    "commitSha": "pending",
-    "buildTimeUtc": "pending",
+    "commitSha": "c4e8d48",
+    "buildTimeUtc": "2026-07-30T03:12:00Z",
     "contentPacks": 3,
     "contentItems": 21,
+    "modalities": ["text"],
+    "firstLoadSizeMb": 40,
     "offlineValidated": "browser-emulation-only",
     "realDeviceValidated": false
   },
   "quality": {
     "staticAnalysis": "clean",
-    "tests": "30 passing",
-    "criticPass": "pending"
+    "tests": "44 passing",
+    "browserGoldenPath": "passing against the live URL",
+    "criticPass": "pass 1 complete 2026-07-30; 2 P0, 5 P1 and 7 P2 defects found and fixed — see QUALITY_REPORT.md"
   }
 }
