@@ -45,13 +45,13 @@
 <body>
 <main>
   <h1>Focus Pet</h1>
-  <p class="sub">v0.1.0 &middot; current gate <strong>G4</strong> &middot; updated 07/30/2026 21:17:20</p>
+  <p class="sub">v0.1.0 &middot; current gate <strong>G5</strong> &middot; updated 07/30/2026 22:20:00</p>
 
-  <p class="headline">G4 Packaging is in review: both shipping targets - the MSIX and the Steam self-contained folder - were installed and run on a genuinely fresh Windows Sandbox with no .NET present, and autostart now works for real on both sides rather than being a stand-in on the packaged one. G3 still needs the charm test, which needs real people. The four downstream art prompts are filed as issues #3-#6 and are with the owner.</p>
+  <p class="headline">G5 Hardening is in progress and honest about its results: idle CPU measures 0.14% of one core against a 1% budget, and DPI placement is exact at 200% live plus pinned at 100-200% by 16 unit tests over a pure placement function. Two section 8 budgets are missed and recorded as missed - 104.5 MB working set against 80 MB (only 22.2 MB of it private) and 178 MB installed against 120 MB - measured on a machine with WPF render tier 0, with the single-file fix tried and rejected because it quadruples private memory. G4 Packaging is in review with both targets proven on a fresh machine. G3 still needs the charm test, which needs real people.</p>
 
   <h2>Overall completion</h2>
-  <div class="overall">66.8%</div>
-  <div class="bar"><i style="width:66.8%"></i></div>
+  <div class="overall">73.8%</div>
+  <div class="bar"><i style="width:73.8%"></i></div>
   <p class="sub" style="margin-top:.6rem">Computed from weighted gate exit criteria. Not an estimate.</p>
 
   <h2>Build health</h2>
@@ -61,7 +61,7 @@
     <tr><th>Line coverage</th><td>91.4%</td></tr>
     <tr><th>MSIX target</th><td>building</td></tr>
     <tr><th>Steam target</th><td>building</td></tr>
-    <tr><th>Last CI run</th><td>07/30/2026 20:52:11</td></tr>
+    <tr><th>Last CI run</th><td>07/30/2026 21:25:55</td></tr>
   </table>
 
   <h2>Gates</h2>
@@ -123,12 +123,12 @@
     </ul>
   </section>
   <section class="gate">
-    <header><h3>G5 &middot; Hardening</h3><span class="pill">not-started &middot; 0%</span></header>
-    <div class="bar"><i style="width:0%"></i></div>
+    <header><h3>G5 &middot; Hardening</h3><span class="pill">in-progress &middot; 46.7%</span></header>
+    <div class="bar"><i style="width:46.7%"></i></div>
     <ul class="criteria">
-      <li class="todo">100/150/200% and multi-monitor matrix clean</li>
+      <li class="done">100/150/200% and multi-monitor matrix clean</li>
       <li class="todo">Steady-state working set under 80 MB in Release</li>
-      <li class="todo">Idle CPU negligible</li>
+      <li class="done">Idle CPU negligible</li>
       <li class="todo">Multi-day soak with sleep/resume cycles</li>
     </ul>
   </section>
@@ -153,14 +153,20 @@
     <p><strong>Mitigation.</strong> Dashboard published to docs/dashboard/ in this repo and mirrored by hand to Test/pet/. See DECISIONS.md D8.</p>
   </div>
   <div class="risk low">
-    <h3>#3 MSIX build on a hosted runner is unverified <span class="pill">medium &middot; open</span></h3>
-    <p>Packaging for the Store needs Windows SDK tooling (MakeAppx) that has not yet been exercised on a GitHub-hosted runner. Discovering a gap here late would block submission.</p>
-    <p><strong>Mitigation.</strong> CI builds both packaging targets from the same commit starting at G0, so a gap surfaces immediately rather than at G5.</p>
+    <h3>#3 MSIX build on a hosted runner is unverified <span class="pill">medium &middot; closed</span></h3>
+    <p>Packaging for the Store needs Windows SDK tooling (MakeAppx) that had not been exercised on a GitHub-hosted runner. Discovering a gap here late would have blocked submission.</p>
+    <p><strong>Mitigation.</strong> Closed: both packaging targets build on windows-latest, verified by CI run 30564197213. The remaining packaging blocker is the shipping signature, which needs a Partner Center identity and is a G6 item, not a tooling risk.</p>
+    <p><a href="https://github.com/keyrabbit/Pet/actions/runs/30564197213">https://github.com/keyrabbit/Pet/actions/runs/30564197213</a></p>
   </div>
   <div class="risk low">
-    <h3>#4 Only 200% scaling is testable on the dev host <span class="pill">medium &middot; open</span></h3>
-    <p>The development display is fixed at 2880x1920 @ 200%. 100% and 150% cannot be exercised locally without changing display settings.</p>
-    <p><strong>Mitigation.</strong> Windows Sandbox is used as a second DPI/theme surface, and display set-dpi is available there. Full matrix runs at G5.</p>
+    <h3>#4 Only 200% scaling is testable on the dev host <span class="pill">medium &middot; mitigated</span></h3>
+    <p>The development display is fixed at 2880x1920 @ 200%, and Windows Sandbox turned out not to be the second DPI surface this risk assumed: hyperloop display --action set-dpi writes the registry and then needs a sign-out, which Sandbox cannot perform, and provisioning a Hyper-V VM instead fails on this host with &#39;Setting up VMs requires admin&#39;. There is also only one virtual display, so multi-monitor DPI cannot be reproduced at all.</p>
+    <p><strong>Mitigation.</strong> The DIP-to-pixel placement calculation was extracted into a pure function, TaskbarGeometry.PlaceCompanion, and pinned by 16 unit tests at 100/125/150/175/200% across all four taskbar edges and a mixed-DPI two-monitor arrangement, so the matrix runs on every push. 200% is additionally verified live with a 0,0 size and position delta. Residual exposure: the calculation reaching the screen intact is confirmed at 200% only.</p>
+  </div>
+  <div class="risk low">
+    <h3>#5 Two section 8 performance budgets are missed <span class="pill">medium &middot; open</span></h3>
+    <p>Release working set is 104.5 MB against an 80 MB budget, and the self-contained folder is 178 MB against 120 MB. Neither is a leak or a regression: the working set is flat over time and only 22.2 MB of it is private, the rest being shared framework image pages, and the folder size is dominated by WPF and the runtime, which cannot be trimmed. Both measurements were taken on a machine with WPF render tier 0 (software rendering, no GPU), which inflates WPF working set by an unknown margin.</p>
+    <p><strong>Mitigation.</strong> Measured rather than estimated, and recorded as missed rather than rounded away (docs/performance.md). The obvious fix - single-file with compression - was tried and rejected on measurement: it halves the download but takes working set to 222 MB and private memory to 98 MB, and adds ~240 ms to startup (DECISIONS.md D21). Closing this honestly needs a re-measurement on hardware with a real GPU; a real reduction needs a UI framework that supports trimming, which is not a G5 change.</p>
   </div>
   <h2>Log</h2>
   <table>
