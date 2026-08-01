@@ -53,8 +53,8 @@
   <p class="lede">A first-person escape room with no assets — every texture and
   sound generated in code. This page is generated from the repository, so it
   cannot disagree with it.</p>
-  <p class="stamp">Built 2026-08-01T14:01:14.378Z from
-    <code>1d7494f</code> Room three, il cortile: the portone opens inward (ADR-008)</p>
+  <p class="stamp">Built 2026-08-01T22:05:18.558Z from
+    <code>3088f2c</code> Room three's lock: six cellars, three witnesses, and a sun that reached through a wall</p>
 
   <a class="play" href="../">Play the demo</a>
 
@@ -62,22 +62,22 @@
   <div class="grid">
     <div class="card ">
       <div class="label">Rooms playable</div>
-      <div class="value">2<span class="dim">/12</span></div>
+      <div class="value">3<span class="dim">/12</span></div>
       <div class="note">of the twelve spaces in ADR-007</div>
     </div>
     <div class="card good">
       <div class="label">Assertions</div>
-      <div class="value">331<span class="dim">/331</span></div>
-      <div class="note">11 routes · all green · 14m ago</div>
+      <div class="value">348<span class="dim">/349</span></div>
+      <div class="note">12 routes · all green · 10m ago</div>
     </div>
     <div class="card good">
       <div class="label">Draw calls</div>
-      <div class="value">134</div>
-      <div class="note">budget 250 · using 54% · 21m ago</div>
+      <div class="value">194</div>
+      <div class="note">budget 250 · using 78% · 7m ago</div>
     </div>
     <div class="card ">
       <div class="label">Triangles</div>
-      <div class="value">32,030</div>
+      <div class="value">54,906</div>
       <div class="note">budget 150,000</div>
     </div>
     <div class="card ">
@@ -87,7 +87,7 @@
     </div>
     <div class="card ">
       <div class="label">Screenshots</div>
-      <div class="value">32</div>
+      <div class="value">36</div>
       <div class="note">regenerable evidence, byte-deterministic</div>
     </div></div>
 
@@ -97,38 +97,44 @@
       <table>
     <tr>
       <td><code>?probe=solve</code></td>
-      <td class="num">27/27</td>
-      <td class="num dim">26.4s</td>
-      <td class="ok">pass</td>
+      <td class="num">26/27</td>
+      <td class="num dim">44.7s</td>
+      <td class="no">FAIL</td>
     </tr>
     <tr>
       <td><code>?probe=fail</code></td>
       <td class="num">8/8</td>
-      <td class="num dim">18.2s</td>
+      <td class="num dim">20s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve2</code></td>
       <td class="num">25/25</td>
-      <td class="num dim">35.5s</td>
+      <td class="num dim">36.1s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=fail2</code></td>
       <td class="num">11/11</td>
-      <td class="num dim">20.3s</td>
+      <td class="num dim">19.2s</td>
+      <td class="ok">pass</td>
+    </tr>
+    <tr>
+      <td><code>?probe=solve3</code></td>
+      <td class="num">18/18</td>
+      <td class="num dim">26s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=walk</code></td>
       <td class="num">95/95</td>
-      <td class="num dim">75.4s</td>
+      <td class="num dim">74.9s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=carry</code></td>
       <td class="num">17/17</td>
-      <td class="num dim">21.7s</td>
+      <td class="num dim">21.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
@@ -140,25 +146,25 @@
     <tr>
       <td><code>?probe=perf</code></td>
       <td class="num">7/7</td>
-      <td class="num dim">13.3s</td>
+      <td class="num dim">13.6s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=light</code></td>
       <td class="num">66/66</td>
-      <td class="num dim">60.8s</td>
+      <td class="num dim">60.1s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=sound</code></td>
       <td class="num">12/12</td>
-      <td class="num dim">18.4s</td>
+      <td class="num dim">19s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=touch</code></td>
       <td class="num">28/28</td>
-      <td class="num dim">61.1s</td>
+      <td class="num dim">60.5s</td>
       <td class="ok">pass</td>
     </tr></table>
     </div>
@@ -192,8 +198,8 @@
     <tr>
       <td>desktop, in the courtyard</td>
       <td class="num dim">1600×900</td>
-      <td class="num">134</td>
-      <td class="num">31,934</td>
+      <td class="num">194</td>
+      <td class="num">54,906</td>
     </tr></table>
            <p class="note">Gated on draw calls and triangles, never milliseconds:
            those two describe what the scene asks of the GPU, so they mean the
@@ -222,12 +228,12 @@
       <td>shape match, no text</td>
       <td class="ok">playable</td>
     </tr>
-    <tr class="">
+    <tr class="shipped">
       <td class="num dim">3</td>
       <td>Il cortile</td>
       <td class="dim">full</td>
       <td>correspondence — which cellar belongs to 14</td>
-      <td class="dim">to build</td>
+      <td class="ok">playable</td>
     </tr>
     <tr class="">
       <td class="num dim">4</td>
@@ -329,35 +335,35 @@
     <div>
       <h2>Recent commits</h2>
       <ul>
+    <li><code>3088f2c</code> Room three's lock: six cellars, three witnesses, and a sun that reached through a wall
+      <span class="dim">1m ago</span></li>
     <li><code>1d7494f</code> Room three, il cortile: the portone opens inward (ADR-008)
-      <span class="dim">0m ago</span></li>
-    <li><code>b307695</code> Add the phone to the sizes that are measured, and name it on the demo page
-      <span class="dim">5h ago</span></li>
-    <li><code>51b6337</code> PLAN: the three twelve-room preconditions are done
-      <span class="dim">5h ago</span></li>
-    <li><code>2f4d586</code> Draw the room you are in and the ones you have a door to
-      <span class="dim">5h ago</span></li>
-    <li><code>dd85288</code> Ask whether every room can be walked to, instead of walking one typed line
-      <span class="dim">6h ago</span></li>
-    <li><code>93c1ba1</code> Dashboard reads the twelve spaces from ADR-007 instead of a typed count
-      <span class="dim">6h ago</span></li>
-    <li><code>74e833a</code> Give the party wall its real thickness; derive rooms from the shell
-      <span class="dim">6h ago</span></li>
-    <li><code>42a84a6</code> The assembly was already declared - it is the scene graph
       <span class="dim">8h ago</span></li>
+    <li><code>b307695</code> Add the phone to the sizes that are measured, and name it on the demo page
+      <span class="dim">13h ago</span></li>
+    <li><code>51b6337</code> PLAN: the three twelve-room preconditions are done
+      <span class="dim">13h ago</span></li>
+    <li><code>2f4d586</code> Draw the room you are in and the ones you have a door to
+      <span class="dim">13h ago</span></li>
+    <li><code>dd85288</code> Ask whether every room can be walked to, instead of walking one typed line
+      <span class="dim">14h ago</span></li>
+    <li><code>93c1ba1</code> Dashboard reads the twelve spaces from ADR-007 instead of a typed count
+      <span class="dim">14h ago</span></li>
+    <li><code>74e833a</code> Give the party wall its real thickness; derive rooms from the shell
+      <span class="dim">14h ago</span></li>
+    <li><code>42a84a6</code> The assembly was already declared - it is the scene graph
+      <span class="dim">16h ago</span></li>
     <li><code>fbf8565</code> The tile was never asked what the wall was doing with it
-      <span class="dim">10h ago</span></li>
+      <span class="dim">18h ago</span></li>
     <li><code>6f80cc2</code> A leg has to stand somewhere, and boxes cannot say where
-      <span class="dim">11h ago</span></li>
+      <span class="dim">19h ago</span></li>
     <li><code>44ec297</code> The support you named is not the support that was there
-      <span class="dim">12h ago</span></li>
-    <li><code>21210db</code> The walls had a grid on them for the whole project
-      <span class="dim">13h ago</span></li></ul>
+      <span class="dim">20h ago</span></li></ul>
     </div>
   </div>
 
   <p class="foot">
-    12,638 lines of game source · source at
+    13,386 lines of game source · source at
     <a href="https://github.com/keyrabbit/Escape">github.com/keyrabbit/Escape</a>.
     Regenerated by <code>npm run publish:demo</code>.
   </p>
