@@ -27,6 +27,11 @@
   td{padding:5px 8px;border-bottom:1px solid #1c2027}
   .num{text-align:right;font-variant-numeric:tabular-nums}
   .ok{color:#6fbf7a}.no{color:#e2686a;font-weight:600}
+  th{padding:5px 8px;text-align:left;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:#858b93;font-weight:600;border-bottom:1px solid #22262d}
+  th.num{text-align:right}
+  tr.shipped td{color:#e9eaec}
+  table.wide tbody tr:not(.shipped) td{color:#8d939b}
   .dim{color:#6c727a}
   code{background:#1a1e25;padding:1px 5px;border-radius:4px;font-size:12px;
     font-family:ui-monospace,Consolas,monospace}
@@ -48,8 +53,8 @@
   <p class="lede">A first-person escape room with no assets — every texture and
   sound generated in code. This page is generated from the repository, so it
   cannot disagree with it.</p>
-  <p class="stamp">Built 2026-08-01T07:27:27.499Z from
-    <code>74e833a</code> Give the party wall its real thickness; derive rooms from the shell</p>
+  <p class="stamp">Built 2026-08-01T07:37:13.304Z from
+    <code>93c1ba1</code> Dashboard reads the twelve spaces from ADR-007 instead of a typed count</p>
 
   <a class="play" href="../">Play the demo</a>
 
@@ -57,13 +62,13 @@
   <div class="grid">
     <div class="card ">
       <div class="label">Rooms playable</div>
-      <div class="value">2</div>
-      <div class="note">Flat 14, and the atrio beyond it</div>
+      <div class="value">2<span class="dim">/12</span></div>
+      <div class="note">of the twelve spaces in ADR-007</div>
     </div>
     <div class="card good">
       <div class="label">Assertions</div>
       <div class="value">322<span class="dim">/322</span></div>
-      <div class="note">11 routes · all green · 11m ago</div>
+      <div class="note">11 routes · all green · 21m ago</div>
     </div>
     <div class="card good">
       <div class="label">Draw calls</div>
@@ -184,8 +189,101 @@
     </div>
   </div>
 
+  <h2>The twelve spaces</h2>
+  <p class="dim" style="margin:-6px 0 12px;font-size:13px">Read from
+    <code>docs/decisions/ADR-007-twelve-spaces.md</code>. Each space owes the game one
+    kind of question that no other space asks; the twelfth asks for all of them at once.</p>
+  <table class="wide">
+    <thead><tr><th class="num">#</th><th>space</th><th>size</th><th>the question it asks</th><th>state</th></tr></thead>
+    <tbody>
+    <tr class="shipped">
+      <td class="num dim">1</td>
+      <td>Flat 14</td>
+      <td class="dim">full</td>
+      <td>combinatorial, from a person's life</td>
+      <td class="ok">playable</td>
+    </tr>
+    <tr class="shipped">
+      <td class="num dim">2</td>
+      <td>L'atrio</td>
+      <td class="dim">full</td>
+      <td>shape match, no text</td>
+      <td class="ok">playable</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">3</td>
+      <td>Il cortile</td>
+      <td class="dim">full</td>
+      <td>correspondence — which cellar belongs to 14</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">4</td>
+      <td>La cantina</td>
+      <td class="dim">full</td>
+      <td>light-dependent perception</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">5</td>
+      <td>L'ascensore</td>
+      <td class="dim">small</td>
+      <td>mechanical sequence</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">6</td>
+      <td>La portineria</td>
+      <td class="dim">small</td>
+      <td>cross-referencing records</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">7</td>
+      <td>La rimessa</td>
+      <td class="dim">full</td>
+      <td>continuity — what is connected to what</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">8</td>
+      <td>La scala</td>
+      <td class="dim">full</td>
+      <td>vertical — the stairs stop being scenery</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">9</td>
+      <td>Il sottotetto</td>
+      <td class="dim">small</td>
+      <td>sound</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">10</td>
+      <td>La terrazza</td>
+      <td class="dim">full</td>
+      <td>sightline</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">11</td>
+      <td>L'archivio</td>
+      <td class="dim">small</td>
+      <td>language</td>
+      <td class="dim">to build</td>
+    </tr>
+    <tr class="">
+      <td class="num dim">12</td>
+      <td>La strada</td>
+      <td class="dim">full</td>
+      <td>synthesis</td>
+      <td class="dim">to build</td>
+    </tr></tbody>
+  </table>
+
   <h2>What is next</h2>
-  <ul><li><span class="n">1</span> A stranger plays it — before anything else is built</li><li><span class="n">2</span> A stranger plays it on a tablet — issue #12 is now about people, not code</li><li><span class="n">3</span> Rooms as data, before room three exists</li><li><span class="n">4</span> Name and trademark search</li></ul>
+  <ul><li><span class="n">1</span> A stranger plays it — before anything else is built</li><li><span class="n">2</span> A stranger plays it on a tablet — issue #12 is now about people, not code</li><li><span class="n">3</span> Rooms as data, before room three exists</li><li><span class="n">4</span> The three things twelve rooms need, before room three is built</li><li><span class="n">5</span> Name and trademark search</li></ul>
 
   <div class="cols">
     <div>
@@ -217,30 +315,30 @@
     <div>
       <h2>Recent commits</h2>
       <ul>
+    <li><code>93c1ba1</code> Dashboard reads the twelve spaces from ADR-007 instead of a typed count
+      <span class="dim">0m ago</span></li>
     <li><code>74e833a</code> Give the party wall its real thickness; derive rooms from the shell
-      <span class="dim">7m ago</span></li>
+      <span class="dim">17m ago</span></li>
     <li><code>42a84a6</code> The assembly was already declared - it is the scene graph
-      <span class="dim">1h ago</span></li>
+      <span class="dim">2h ago</span></li>
     <li><code>fbf8565</code> The tile was never asked what the wall was doing with it
       <span class="dim">3h ago</span></li>
     <li><code>6f80cc2</code> A leg has to stand somewhere, and boxes cannot say where
-      <span class="dim">4h ago</span></li>
-    <li><code>44ec297</code> The support you named is not the support that was there
       <span class="dim">5h ago</span></li>
+    <li><code>44ec297</code> The support you named is not the support that was there
+      <span class="dim">6h ago</span></li>
     <li><code>21210db</code> The walls had a grid on them for the whole project
       <span class="dim">7h ago</span></li>
     <li><code>9eae50b</code> Nine keys, and nothing had looked at the numbers
       <span class="dim">8h ago</span></li>
     <li><code>bd74d15</code> The coat that hung near its hook
-      <span class="dim">8h ago</span></li>
+      <span class="dim">9h ago</span></li>
     <li><code>d08da52</code> Nothing may stand where the doormat is dragged to
       <span class="dim">9h ago</span></li>
     <li><code>918b4d4</code> A round bowl scattered with square coordinates
       <span class="dim">10h ago</span></li>
     <li><code>448079a</code> The ball the player was told to look for under the desk
-      <span class="dim">11h ago</span></li>
-    <li><code>7af9d5b</code> The notice the game told you was curled
-      <span class="dim">12h ago</span></li></ul>
+      <span class="dim">11h ago</span></li></ul>
     </div>
   </div>
 
