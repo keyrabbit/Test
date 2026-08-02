@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-02T19:43:36+02:00",
+  "generated_at": "2026-08-02T23:25:45+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit 1fd0846 publishes the web build with provisional opponent portraits."
+    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit bc81277 publishes the web build from connect4 commit 5989dac."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 7/11 = 9.5455; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 12/14 = 8.5714; QA, release, and store readiness: 5 * 13/19 = 3.4211; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.1379 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 8/14 = 8.5714; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 13/15 = 8.6667; QA, release, and store readiness: 5 * 16/21 = 3.8095; Public status dashboard: 5 * 5/5 = 5.0000; total = 88.6476 of 100"
   },
-  "overall_percent_complete": 89.14,
+  "overall_percent_complete": 88.65,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -25,7 +25,7 @@
         },
         {
           "done": true,
-          "evidence": "LEARNING.md exists and records environment/tooling lessons L-001 through L-029 after commit 03751f8."
+          "evidence": "LEARNING.md exists and records environment/tooling lessons through L-029 after commit 03751f8."
         },
         {
           "done": true,
@@ -33,7 +33,7 @@
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main is at 03751f8 and includes 9095433 (five provisional opponent portraits shipped as runtime assets) plus 03751f8 (L-026 through L-029)."
+          "evidence": "connect4 origin/main is at 5989dac and includes f3d5855, 3c5e0af, 24cfa9f, and 5989dac as the verified commits in this refresh."
         }
       ],
       "criteria_done": 4,
@@ -101,7 +101,11 @@
         },
         {
           "done": true,
-          "evidence": "Commit 9095433 ships five provisional opponent portraits in assets/runtime/opponents/*.png; each is 256x256 RGBA and appears on the home-screen opponent tiles, so asset work is no longer blocking app development."
+          "evidence": "Commit 9095433 ships five provisional opponent portraits in assets/runtime/opponents/*.png; each is 256x256 RGBA and appears on home-screen opponent tiles, so asset work is no longer blocking app development."
+        },
+        {
+          "done": true,
+          "evidence": "Commit 3c5e0af ships three optional provisional theme backgrounds, off by default; commit 24cfa9f re-encodes them as JPEG q84, and commit 5989dac adds a separate 9:16 study-dusk portrait master."
         },
         {
           "done": false,
@@ -117,13 +121,21 @@
         },
         {
           "done": false,
-          "evidence": "Stage 3 is not accepted: portrait manifest entries say provisional — in use as a temporary asset, NOT owner-approved, with known limitations including inconsistent scale/camera, uneven accents, residual key-hue tint, Rookie reading like a machined hex nut, and crop limits."
+          "evidence": "Stage 3 is not accepted: portrait manifest entries say provisional — temporary asset, NOT owner-approved, with known limitations recorded per asset."
+        },
+        {
+          "done": false,
+          "evidence": "Stage 4 is not complete: four themes were briefed but only three exist; renders are 1344x768 against a 3840x2160 brief, only study-at-dusk has a portrait master, no 4:3 tablet masters exist, and outdoor terrace is not rendered."
+        },
+        {
+          "done": false,
+          "evidence": "Stage 5 textures are still in progress on CPU-only FLUX.1-schnell: graphite and walnut have rendered, ceramic is rendering, and none are accepted or in the app."
         }
       ],
-      "criteria_done": 7,
-      "criteria_total": 11,
-      "percent_complete": 63.64,
-      "weighted_points": 9.5455
+      "criteria_done": 8,
+      "criteria_total": 14,
+      "percent_complete": 57.14,
+      "weighted_points": 8.5714
     },
     {
       "name": "Playable Flutter game implementation",
@@ -240,6 +252,10 @@
           "evidence": "A test asserts that no lesson screen contains unlock, upgrade, buy, or premium, and another asserts the home-screen entry says Twenty short lessons. All free."
         },
         {
+          "done": true,
+          "evidence": "Optional theme backgrounds obey accessibility constraints by test: every image sits under a palette scrim of at least 0.55, high-contrast suppresses backgrounds entirely, images are excluded from semantics, and an unknown stored id falls back to none."
+        },
+        {
           "done": false,
           "evidence": "premium_strategy_pack has an honest purchase surface in lib/data/entitlements.dart and lib/ui/premium_screen.dart, but no real store backend is wired up. Default backend is unavailable, buy is disabled as Not on sale yet, and real sale requires owner-held store product IDs."
         },
@@ -248,10 +264,10 @@
           "evidence": "No production store privacy disclosure or store metadata implementation was verified."
         }
       ],
-      "criteria_done": 12,
-      "criteria_total": 14,
-      "percent_complete": 85.71,
-      "weighted_points": 8.5714
+      "criteria_done": 13,
+      "criteria_total": 15,
+      "percent_complete": 86.67,
+      "weighted_points": 8.6667
     },
     {
       "name": "QA, release, and store readiness",
@@ -259,15 +275,31 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run at 9095433 and reported clean."
+          "evidence": "dart format was run at 5989dac and reported clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at 9095433 and reported No issues found."
+          "evidence": "flutter analyze was run at 5989dac and reported No issues found!."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at 9095433: 99/99 passed, including test/assets_test.dart portrait bundle checks."
+          "evidence": "flutter test was run at 5989dac: 118/118 passing."
+        },
+        {
+          "done": true,
+          "evidence": "flutter test integration_test -d windows was run at 5989dac on a real Windows device and passed three consecutive times."
+        },
+        {
+          "done": true,
+          "evidence": "integration_test/app_test.dart from f3d5855 plays a whole match against Rookie through the real UI and asserts the Move That Mattered insight appears."
+        },
+        {
+          "done": true,
+          "evidence": "test/manifest_test.dart from 3c5e0af makes the asset manifest a gate; it found two records with no legal note and five records whose provenance path pointed into a gitignored directory when introduced."
+        },
+        {
+          "done": true,
+          "evidence": "Theme-background tests from 3c5e0af enforce scrim strength, high-contrast suppression, semantic exclusion, and fallback to none for unknown stored ids."
         },
         {
           "done": true,
@@ -295,19 +327,15 @@
         },
         {
           "done": true,
-          "evidence": "test/smoke_test.dart from 63ceb67 builds the real LinefallApp, walks every route reachable from home, and asserts a settings palette change persists across navigation and changes the rendered Scaffold background."
+          "evidence": "flutter build apk --release was run at 5989dac and succeeded; release APK size is 45.3 MB."
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release was run at 9095433 and succeeded; APK size was 45.1 MB, up from 44.6 MB due to the portraits."
+          "evidence": "flutter build windows --release was run at 5989dac and succeeded."
         },
         {
           "done": true,
-          "evidence": "flutter build windows --release was run at 9095433 and succeeded."
-        },
-        {
-          "done": true,
-          "evidence": "flutter build web --release was run at 9095433 and succeeded; keyrabbit/Test commit 1fd0846 publishes that web build to /demo/."
+          "evidence": "flutter build web --release was run at 5989dac and succeeded; keyrabbit/Test commit bc81277 publishes that web build to /demo/."
         },
         {
           "done": false,
@@ -315,15 +343,11 @@
         },
         {
           "done": false,
-          "evidence": "Device/integration tests are not started. The smoke coverage is widget-level only and must not be counted as device/integration testing."
-        },
-        {
-          "done": false,
           "evidence": "Golden tests are still not implemented or verified."
         },
         {
           "done": false,
-          "evidence": "CI is not installed. docs/ci/ci.yml and docs/ci/README.md exist, but pushing to .github/workflows/ was rejected because the available GitHub tokens lack workflow scope; issue #7 is open."
+          "evidence": "CI is not installed and no CI has ever run. docs/ci/ci.yml and docs/ci/README.md exist, but pushing to .github/workflows/ was rejected because the available GitHub tokens lack workflow scope; issue #7 is open."
         },
         {
           "done": false,
@@ -334,10 +358,10 @@
           "evidence": "Store screenshots, signing, and production submission are not ready."
         }
       ],
-      "criteria_done": 13,
-      "criteria_total": 19,
-      "percent_complete": 68.42,
-      "weighted_points": 3.4211
+      "criteria_done": 16,
+      "criteria_total": 21,
+      "percent_complete": 76.19,
+      "weighted_points": 3.8095
     },
     {
       "name": "Public status dashboard",
@@ -349,7 +373,7 @@
         },
         {
           "done": true,
-          "evidence": "index.html renders status.json at runtime with no build step or external CDN dependencies."
+          "evidence": "index.html renders status.json at runtime, including recent_changes, with no build step or external CDN dependencies."
         },
         {
           "done": true,
@@ -361,7 +385,7 @@
         },
         {
           "done": true,
-          "evidence": "keyrabbit/Test commit 1fd0846 publishes the 9095433 web build to demo/; /demo/ and /demo/assets/assets/runtime/opponents/guard.png return HTTP 200."
+          "evidence": "keyrabbit/Test commit bc81277 publishes the 5989dac web build to demo/; /demo/ and a new background asset URL return HTTP 200."
         }
       ],
       "criteria_done": 5,
@@ -390,7 +414,7 @@
       "issue": "#5",
       "url": "https://github.com/keyrabbit/connect4/issues/5",
       "status": "open",
-      "impact": "Requires regenerated accepted external assets before using that batch; current portraits are separate provisional assets."
+      "impact": "Requires regenerated accepted external assets before using that batch; current portraits/backgrounds are separate provisional assets."
     },
     {
       "title": "Canonical amber/teal fail the colour-independence rule",
@@ -404,22 +428,20 @@
       "issue": "#7",
       "url": "https://github.com/keyrabbit/connect4/issues/7",
       "status": "open",
-      "impact": "CI workflow is staged in docs/ci but cannot be installed under .github/workflows/ until the owner grants a token with workflow scope."
+      "impact": "CI workflow is staged in docs/ci but cannot be installed under .github/workflows/ until the owner grants a token with workflow scope; no CI has ever run."
     }
   ],
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main is at 03751f8 Record L-026 through L-029.",
-    "connect4 origin/main includes 9095433 Ship the five opponent portraits as provisional runtime assets.",
-    "All five opponent portraits are committed in assets/runtime/opponents/*.png as 256x256 RGBA files, 27-44 KB each, and are served by the deployed demo.",
-    "Portraits are provisional temporary runtime assets, not owner-approved accepted Stage 3 assets; Stage 3 remains not done.",
-    "Portraits are decorative and excluded from screen-reader semantics; opponent tiles already announce name, blurb, and record, and unloadable portraits degrade to a quiet placeholder.",
-    "Accepted source portraits are committed under assets/source/portrait-*-v01.png; lineup references are assets/reference/portrait-lineup-01.png and portrait-lineup-grey-01.png.",
-    "Recorded validation at 9095433: dart format clean; flutter analyze No issues found; flutter test 99/99 passed; web release build succeeded; Android APK release build succeeded at 45.1 MB; Windows release build succeeded.",
-    "tools/assetgen/check-metadata.js re-run reported clean.",
-    "keyrabbit/Test commit 1fd0846 publishes the web build of 9095433 to https://keyrabbit.github.io/Test/demo/.",
-    "FLUX.1-schnell has moved on to Stage 4 theme backgrounds, but no Stage 4 or Stage 5 asset is accepted or in the app yet.",
+    "connect4 origin/main is at 5989dac Use the recomposed portrait master on tall screens.",
+    "connect4 origin/main includes f3d5855, 3c5e0af, 24cfa9f, and 5989dac as the verified commits in this update.",
+    "Recorded validation at 5989dac: dart format clean; flutter analyze No issues found!; flutter test 118/118 passing; Windows integration test command passed three consecutive times; web/APK/Windows release builds succeeded; APK is 45.3 MB.",
+    "keyrabbit/Test commit bc81277 publishes the web build of 5989dac to https://keyrabbit.github.io/Test/demo/.",
+    "Stage 3 portraits are shipping as provisional temporary runtime assets, not owner-approved accepted assets; colour-independence is verified on a desaturated lineup and known limitations are recorded per asset.",
+    "Stage 4 backgrounds are provisional and incomplete: three of four themes exist, only study-at-dusk has a portrait master, no 4:3 tablet masters exist, and outdoor terrace is missing.",
+    "Stage 5 textures are still in progress on CPU-only FLUX.1-schnell; graphite and walnut rendered, ceramic rendering, nothing accepted or in the app.",
+    "CI is not running; workflow files are staged in docs/ci because workflow OAuth scope is missing.",
     "Flutter 3.44.8 stable and Dart 3.12.2 are installed at C:\\src\\flutter.",
     "Android SDK 36.0.0 and Windows desktop toolchains are verified by flutter doctor.",
     "iOS builds are impossible on this Windows machine without a macOS runner."
@@ -427,9 +449,9 @@
   "not_run": [
     "No iOS build was run; it is unavailable on Windows.",
     "CI is not installed or running; workflow installation is blocked by missing workflow token scope.",
-    "Device/integration tests and golden tests were not run or verified.",
+    "Golden tests were not run or verified.",
     "No production store-package validation, signing, store metadata finalization, or submission was run.",
-    "Stage 3 portrait owner approval was not granted; Stage 4 backgrounds and Stage 5 textures are not accepted or in the app.",
+    "Stage 3 portrait owner approval was not granted; Stage 4 backgrounds and Stage 5 textures are not accepted.",
     "A real premium_strategy_pack store backend is not implemented or verified."
   ],
   "environment": [
@@ -464,6 +486,24 @@
     {
       "name": "Pages source",
       "value": "keyrabbit/Test main branch root, HTTPS enforced"
+    }
+  ],
+  "recent_changes": [
+    {
+      "commit": "f3d5855",
+      "summary": "Added the first device-level Windows integration test: plays a whole match against Rookie through the real UI and verifies the Move That Mattered insight appears."
+    },
+    {
+      "commit": "3c5e0af",
+      "summary": "Added optional theme backgrounds, off by default, with tests enforcing scrim strength, high-contrast suppression, semantic exclusion, fallback to none, and asset-manifest legal/provenance gates."
+    },
+    {
+      "commit": "24cfa9f",
+      "summary": "Re-encoded theme backgrounds from PNG to JPEG q84: 2.5 MB to 194 KB, a 92% reduction."
+    },
+    {
+      "commit": "5989dac",
+      "summary": "Tall screens now use a separately composed 9:16 study-dusk portrait master rather than cover-cropping the 16:9 background."
     }
   ]
 }
