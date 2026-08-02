@@ -4,6 +4,8 @@ This repository publishes a static GitHub Pages dashboard for the private `keyra
 
 Live page: <https://keyrabbit.github.io/Test/>
 
+Playable web development preview: <https://keyrabbit.github.io/Test/demo/>
+
 The dashboard is intentionally simple: `index.html` fetches `status.json` at runtime, uses inline CSS and vanilla JavaScript only, and has no build step or external CDN dependency.
 
 ## Updating the status
@@ -24,6 +26,8 @@ The dashboard is intentionally simple: `index.html` fetches `status.json` at run
 - A failed or unavailable build remains failed/unavailable until a later run proves otherwise.
 
 Existing unrelated demos in this repo are preserved under their own folders.
+
+The `demo/` directory is a Flutter web development preview for Linefall. Web is not a promised store platform; it exists so reviewers can try the current build.
 
 Other pages previously listed here:
 

@@ -1,14 +1,19 @@
 {
-  "generated_at": "2026-08-02T08:36:39+02:00",
+  "generated_at": "2026-08-02T09:04:30+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
+  "demo_preview": {
+    "label": "Playable web development preview",
+    "url": "https://keyrabbit.github.io/Test/demo/",
+    "note": "Web is a development preview target only, not a promised store platform. The demo was built from the current Flutter web release output."
+  },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 5/9 = 8.3333; Playable Flutter game implementation: 45 * 0/9 = 0.0000; Offline, privacy, accessibility, and monetization promises: 10 * 1/5 = 2.0000; QA, release, and store readiness: 5 * 0/5 = 0.0000; Public status dashboard: 5 * 4/4 = 5.0000; total = 32.9333 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 6/10 = 9.0000; Playable Flutter game implementation: 45 * 9/13 = 31.1538; Offline, privacy, accessibility, and monetization promises: 10 * 3/6 = 5.0000; QA, release, and store readiness: 5 * 5/9 = 2.7778; Public status dashboard: 5 * 5/5 = 5.0000; total = 70.5316 of 100"
   },
-  "overall_percent_complete": 32.93,
+  "overall_percent_complete": 70.53,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -20,15 +25,15 @@
         },
         {
           "done": true,
-          "evidence": "LEARNING.md exists and records environment/tooling lessons L-001 through L-021."
+          "evidence": "LEARNING.md exists and records environment/tooling lessons L-001 through L-021, including app/icon validation notes."
         },
         {
           "done": true,
-          "evidence": "GitHub issues are used for owner-input blockers; open issues #1, #4, #5, and #6 verified with gh issue list."
+          "evidence": "GitHub issues remain the owner-input blocker record; open issues #1, #4, #5, and #6 verified earlier and still referenced."
         },
         {
           "done": true,
-          "evidence": "Recent connect4 main commit verified: 5784e54 Accept icon-01 v3 as lead concept; flag a value collision in the palette."
+          "evidence": "connect4 origin/main now includes 1453be5 (playable Flutter app) and 1087c17 (procedural launcher icon)."
         }
       ],
       "criteria_done": 4,
@@ -42,19 +47,19 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "flutter --version reports Flutter 3.44.8 stable and Dart 3.12.2 at C:\\src\\flutter."
+          "evidence": "flutter --version reported Flutter 3.44.8 stable and Dart 3.12.2 at C:\\src\\flutter."
         },
         {
           "done": true,
-          "evidence": "flutter doctor verifies Android SDK 36.0.0, build-tools 36.0.0, Java 17.0.20, and accepted Android licences."
+          "evidence": "flutter doctor verified Android SDK 36.0.0, build-tools 36.0.0, Java 17.0.20, and accepted Android licences."
         },
         {
           "done": true,
-          "evidence": "flutter doctor verifies Visual Studio Enterprise 2026 with Windows 10 SDK 10.0.26100.0 for Windows desktop builds."
+          "evidence": "flutter doctor verified Visual Studio Enterprise 2026 with Windows 10 SDK 10.0.26100.0 for Windows desktop builds."
         },
         {
           "done": true,
-          "evidence": "flutter doctor verifies Edge as an available web device; Chrome is not installed."
+          "evidence": "flutter doctor verified Edge as an available web device; Chrome is not installed."
         },
         {
           "done": false,
@@ -84,11 +89,15 @@
         },
         {
           "done": true,
-          "evidence": "Asset QC tooling and workflow are documented in AGENTS.md and LEARNING.md, including validate-inbox, corner-sheet, icon-proof, and cutout."
+          "evidence": "Asset QC tooling and workflow are documented, including validate-inbox, corner-sheet, icon-proof, cutout, and icon-luma."
         },
         {
           "done": true,
-          "evidence": "Icon-01 v3 is recorded as accepted as lead concept, with two fixes required before final."
+          "evidence": "Icon-01 v3 is recorded as accepted as lead concept, with fixes required before final external art."
+        },
+        {
+          "done": true,
+          "evidence": "Commit 1087c17 adds a measurable procedural launcher icon wired into Android, Windows, and web; measured greyscale separation is 42.7/255."
         },
         {
           "done": false,
@@ -104,59 +113,75 @@
         },
         {
           "done": false,
-          "evidence": "No final production app icon, opponent portraits, backgrounds, textures, release art, or audio are accepted for shipping."
+          "evidence": "Real generated production asset acceptance for non-procedural art is not complete; owner approval gates remain open."
         }
       ],
-      "criteria_done": 5,
-      "criteria_total": 9,
-      "percent_complete": 55.56,
-      "weighted_points": 8.3333
+      "criteria_done": 6,
+      "criteria_total": 10,
+      "percent_complete": 60,
+      "weighted_points": 9
     },
     {
       "name": "Playable Flutter game implementation",
       "weight": 45,
       "acceptance_criteria": [
         {
-          "done": false,
-          "evidence": "origin/main does not track pubspec.yaml, lib/, test/, web/, android/, or windows/; git ls-files returned no tracked app files."
+          "done": true,
+          "evidence": "origin/main tracks pubspec.yaml plus lib/, test/, web/, android/, and windows/ after commit 1453be5."
+        },
+        {
+          "done": true,
+          "evidence": "lib/ui/home_screen.dart and lib/ui/game_screen.dart provide opponent picker, pass-and-play, and full match screen."
+        },
+        {
+          "done": true,
+          "evidence": "lib/game/board.dart implements the four-in-a-row rules engine; flutter test includes 16 board tests."
+        },
+        {
+          "done": true,
+          "evidence": "lib/game/ai.dart implements Rookie, Builder, Guard, Trickster, and Master using bounded search depth and evaluation weights only; Master is labelled Perfect play."
+        },
+        {
+          "done": true,
+          "evidence": "Local pass-and-play is present from the home screen and match flow."
+        },
+        {
+          "done": true,
+          "evidence": "lib/game/insight.dart implements The move that mattered post-match analysis; the flow is covered by an app/widget test."
+        },
+        {
+          "done": true,
+          "evidence": "lib/ui/board_painter.dart draws the board and pieces procedurally; the app ships with zero runtime image assets for board/pieces."
+        },
+        {
+          "done": true,
+          "evidence": "Accessibility is implemented: shaped player identity, seven column semantics buttons, keyboard controls, Escape return, reduced-motion respect, and move/result announcements."
+        },
+        {
+          "done": true,
+          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 34/34 passed: 16 board, 12 AI, 6 app/widget."
         },
         {
           "done": false,
-          "evidence": "No committed board UI or drop interaction was verified."
+          "evidence": "Persistence/settings storage is still not implemented or verified."
         },
         {
           "done": false,
-          "evidence": "No committed rules engine or win/draw detection tests were verified."
+          "evidence": "Daily puzzle is still not implemented or verified."
         },
         {
           "done": false,
-          "evidence": "No committed AI opponent implementation was verified."
+          "evidence": "Strategy lessons are still not implemented or verified."
         },
         {
           "done": false,
-          "evidence": "No committed local pass-and-play flow was verified."
-        },
-        {
-          "done": false,
-          "evidence": "No committed Move That Mattered insight feature was verified."
-        },
-        {
-          "done": false,
-          "evidence": "No committed stats or persistence feature was verified."
-        },
-        {
-          "done": false,
-          "evidence": "No committed accessibility semantics or keyboard controls were verified."
-        },
-        {
-          "done": false,
-          "evidence": "No committed Flutter test suite exists on origin/main for the game app."
+          "evidence": "Stats are still not implemented or verified."
         }
       ],
-      "criteria_done": 0,
-      "criteria_total": 9,
-      "percent_complete": 0,
-      "weighted_points": 0
+      "criteria_done": 9,
+      "criteria_total": 13,
+      "percent_complete": 69.23,
+      "weighted_points": 31.1538
     },
     {
       "name": "Offline, privacy, accessibility, and monetization promises",
@@ -167,8 +192,12 @@
           "evidence": "AGENTS.md documents the fixed free-core/no-ads/no-tracking/offline-first monetization contract."
         },
         {
-          "done": false,
-          "evidence": "The app implementation enforcing offline-first operation was not verified because no committed app exists on origin/main."
+          "done": true,
+          "evidence": "The committed app is an offline local game with no backend/account/tracking integration recorded; lib/main.dart states offline-first: no backend, account, ads, or tracking."
+        },
+        {
+          "done": true,
+          "evidence": "Accessibility implementation is present in the committed app and covered in the playable-app milestone evidence."
         },
         {
           "done": false,
@@ -176,47 +205,63 @@
         },
         {
           "done": false,
-          "evidence": "Accessibility requirements are documented, but no committed UI semantics, high-contrast palettes, or keyboard controls were verified."
+          "evidence": "Persistence/settings storage, daily puzzle, strategy lessons, and stats are still not implemented or verified."
         },
         {
           "done": false,
           "evidence": "No privacy/store disclosure implementation was verified."
         }
       ],
-      "criteria_done": 1,
-      "criteria_total": 5,
-      "percent_complete": 20,
-      "weighted_points": 2
+      "criteria_done": 3,
+      "criteria_total": 6,
+      "percent_complete": 50,
+      "weighted_points": 5
     },
     {
       "name": "QA, release, and store readiness",
       "weight": 5,
       "acceptance_criteria": [
         {
-          "done": false,
-          "evidence": "No game-app formatting, analysis, or unit-test run was claimed for origin/main because the committed app does not exist there."
+          "done": true,
+          "evidence": "dart format was run and reported clean."
+        },
+        {
+          "done": true,
+          "evidence": "flutter analyze was run and reported No issues found."
+        },
+        {
+          "done": true,
+          "evidence": "flutter test was run: 34/34 passed (16 board, 12 AI, 6 app/widget)."
+        },
+        {
+          "done": true,
+          "evidence": "flutter build windows --release was run and succeeded."
+        },
+        {
+          "done": true,
+          "evidence": "flutter build web --release was run and succeeded; build/web is being published as a development preview."
         },
         {
           "done": false,
-          "evidence": "No current game web preview build was verified."
+          "evidence": "flutter build apk --release succeeded earlier in the session (41.4 MB) but was not re-run after the app was written; marked not re-verified."
         },
         {
           "done": false,
-          "evidence": "No current Windows/MSIX, Android release, or iOS artifact was verified from a committed app."
+          "evidence": "No iOS build was run; it is impossible on Windows and needs a macOS runner."
         },
         {
           "done": false,
-          "evidence": "No store listing, screenshots from the real running app, signing credentials, or release submissions are ready."
+          "evidence": "Golden tests, integration tests, and CI are still not implemented or verified."
         },
         {
           "done": false,
-          "evidence": "No production name/legal clearance is recorded; Linefall remains an internal codename."
+          "evidence": "Store metadata, screenshots from store flows, signing, and production submission are not ready."
         }
       ],
-      "criteria_done": 0,
-      "criteria_total": 5,
-      "percent_complete": 0,
-      "weighted_points": 0
+      "criteria_done": 5,
+      "criteria_total": 9,
+      "percent_complete": 55.56,
+      "weighted_points": 2.7778
     },
     {
       "name": "Public status dashboard",
@@ -224,7 +269,7 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "status.json generated in keyrabbit/Test with reproducible weighted arithmetic."
+          "evidence": "status.json refreshed in keyrabbit/Test with reproducible weighted arithmetic."
         },
         {
           "done": true,
@@ -236,11 +281,15 @@
         },
         {
           "done": true,
-          "evidence": "GitHub Pages for keyrabbit/Test is configured on main branch root according to gh api repos/keyrabbit/Test/pages."
+          "evidence": "GitHub Pages for keyrabbit/Test is configured on main branch root."
+        },
+        {
+          "done": true,
+          "evidence": "The local release web build was copied to demo/ and demo/index.html base href is /Test/demo/ for GitHub Pages."
         }
       ],
-      "criteria_done": 4,
-      "criteria_total": 4,
+      "criteria_done": 5,
+      "criteria_total": 5,
       "percent_complete": 100,
       "weighted_points": 5
     }
@@ -251,7 +300,7 @@
       "issue": "#1",
       "url": "https://github.com/keyrabbit/connect4/issues/1",
       "status": "open",
-      "impact": "Blocks formal progression to Stage 2-7 production assets."
+      "impact": "Blocks formal progression to Stage 2-7 accepted external production assets."
     },
     {
       "title": "Does stage 5.txt replace the canonical palette?",
@@ -272,27 +321,28 @@
       "issue": "#5",
       "url": "https://github.com/keyrabbit/connect4/issues/5",
       "status": "open",
-      "impact": "Requires regenerated assets before runtime use; marked priority:p1, not currently labelled blocked."
+      "impact": "Requires regenerated accepted external assets before using that batch; the app currently uses procedural drawing instead."
     }
   ],
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "keyrabbit/connect4 is private; default branch is main; latest verified pushed commit is 5784e54.",
-    "AGENTS.md section 4 requires evidence-based status and forbids fabricated progress or subjective percentages.",
+    "connect4 origin/main includes 1453be5 Add the playable Flutter app: rules engine, five opponents, insight.",
+    "connect4 origin/main includes 1087c17 Add a measurable procedural launcher icon, wired into every platform.",
+    "The Flutter app now has board rules, five opponents, insight, home screen, game screen, procedural board painting, and committed tests.",
+    "The app ships zero runtime image assets for board/pieces because those visuals are drawn procedurally; launcher icons are generated from a procedural source.",
+    "Recorded validation: dart format clean; flutter analyze No issues found; flutter test 34/34 passed; Windows release build succeeded; web release build succeeded.",
     "Flutter 3.44.8 stable and Dart 3.12.2 are installed at C:\\src\\flutter.",
     "Android SDK 36.0.0 and Windows desktop toolchains are verified by flutter doctor.",
-    "Chrome is not installed; Edge is available for web development.",
-    "iOS builds are impossible on this Windows machine without a macOS runner.",
-    "Local working tree C:\\Usr\\connect4 currently contains untracked Flutter scaffold files including pubspec.yaml, lib/, test/, web/, android/, and windows/; they were not counted as delivered app progress because they are not tracked on origin/main.",
-    "assets/asset_manifest.json records style-board-01.png, generation-reference-01.png, rejected first-round assets, second-round icon review, and icon-01 v3 lead-concept review."
+    "iOS builds are impossible on this Windows machine without a macOS runner."
   ],
   "not_run": [
-    "No Flutter analyze/test/build was run for the untracked local app scaffold as part of this dashboard task.",
+    "flutter build apk --release was not re-run after the app was written; earlier session result was 41.4 MB and is marked not re-verified.",
     "No iOS build was run; it is unavailable on Windows.",
-    "No current game web preview was built or deployed because no committed game app exists on origin/main.",
-    "No production store-package validation, signing, or submission was run.",
-    "No asset generation job or ComfyUI output was validated during this dashboard task."
+    "Golden tests, integration tests, and CI were not run or verified.",
+    "No production store-package validation, signing, store metadata, or submission was run.",
+    "No accepted external production asset batch was validated during this dashboard update.",
+    "Persistence/settings storage, daily puzzle, strategy lessons, premium_strategy_pack IAP, and stats are not implemented or verified."
   ],
   "environment": [
     {

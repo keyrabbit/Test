@@ -52,6 +52,22 @@
     .overall { display: flex; flex-direction: column; gap: 16px; }
     .big-number { font-size: clamp(3rem, 11vw, 7rem); line-height: .9; font-weight: 800; letter-spacing: -0.06em; }
     .stamp, .note, .meta { color: var(--muted); }
+    .preview-card {
+      border-color: rgba(255,178,63,.42);
+      background: linear-gradient(140deg, rgba(255,178,63,.12), rgba(48,207,192,.08)), rgba(58,52,47,.95);
+    }
+    .preview-link {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 16px;
+      padding: 10px 15px;
+      border-radius: 999px;
+      background: var(--amber);
+      color: #241f1b;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .preview-link:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
     .meta { display: grid; gap: 10px; }
     .meta div { border-top: 1px solid var(--line); padding-top: 10px; }
     .progress-shell {
@@ -169,6 +185,13 @@
         </article>`).join('') || '<p class="note">No blockers recorded.</p>';
 
       const environment = (data.environment || []).map(e => `<div><strong>${esc(e.name)}</strong><br>${esc(e.value)}</div>`).join('');
+      const preview = data.demo_preview?.url ? `
+        <section class="card preview-card" aria-labelledby="preview-heading">
+          <p class="eyebrow">Development preview</p>
+          <h2 id="preview-heading">${esc(data.demo_preview.label || 'Playable web preview')}</h2>
+          <p class="note">${esc(data.demo_preview.note || 'Web is a development preview target only.')}</p>
+          <a class="preview-link" href="${esc(data.demo_preview.url)}">Open playable preview</a>
+        </section>` : '';
 
       app.innerHTML = `
         <section class="grid summary" aria-labelledby="overall-heading">
@@ -188,6 +211,8 @@
             <div><strong>Calculation</strong><br>${esc(data.methodology?.arithmetic || '')}</div>
           </aside>
         </section>
+
+        ${preview}
 
         <section aria-labelledby="milestones-heading">
           <h2 id="milestones-heading">Milestone breakdown</h2>
