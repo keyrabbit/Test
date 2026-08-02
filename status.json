@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-02T09:18:46+02:00",
+  "generated_at": "2026-08-02T09:32:02+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. The demo was refreshed from the release web build that includes settings, persisted preferences, and local statistics."
+    "note": "Web is a development preview target only, not a promised store platform. The demo was refreshed from the release web build that includes the verified daily puzzle."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 6/10 = 9.0000; Playable Flutter game implementation: 45 * 11/13 = 38.0769; Offline, privacy, accessibility, and monetization promises: 10 * 7/10 = 7.0000; QA, release, and store readiness: 5 * 6/9 = 3.3333; Public status dashboard: 5 * 5/5 = 5.0000; total = 80.0103 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 6/10 = 9.0000; Playable Flutter game implementation: 45 * 12/13 = 41.5385; Offline, privacy, accessibility, and monetization promises: 10 * 9/12 = 7.5000; QA, release, and store readiness: 5 * 6/10 = 3.0000; Public status dashboard: 5 * 5/5 = 5.0000; total = 83.6385 of 100"
   },
-  "overall_percent_complete": 80.01,
+  "overall_percent_complete": 83.64,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -33,7 +33,7 @@
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main includes 1453be5 (playable Flutter app), 1087c17 (procedural launcher icon), and 9695ac9 (offline persistence, settings screen, and local statistics)."
+          "evidence": "connect4 origin/main includes 1453be5 (playable Flutter app), 1087c17 (procedural launcher icon), 9695ac9 (offline persistence/settings/statistics), and 0d1c69d (verified daily puzzle)."
         }
       ],
       "criteria_done": 4,
@@ -159,7 +159,7 @@
         },
         {
           "done": true,
-          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 45/45 passed, including 11 persistence-layer tests added in 9695ac9."
+          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 56/56 passed, including 11 puzzle and puzzle-screen tests added in 0d1c69d."
         },
         {
           "done": true,
@@ -170,18 +170,18 @@
           "evidence": "Local statistics are implemented as per-opponent win/loss/draw counts, shown on opponent tiles and in lib/ui/settings_screen.dart with confirm-guarded Reset statistics."
         },
         {
-          "done": false,
-          "evidence": "Daily puzzle is still not implemented or verified."
+          "done": true,
+          "evidence": "Daily puzzle is implemented in lib/game/puzzle.dart and lib/ui/puzzle_screen.dart, reachable from the home screen; one puzzle per day is derived from the local calendar date alone."
         },
         {
           "done": false,
           "evidence": "Strategy lessons are still not implemented or verified."
         }
       ],
-      "criteria_done": 11,
+      "criteria_done": 12,
       "criteria_total": 13,
-      "percent_complete": 84.62,
-      "weighted_points": 38.0769
+      "percent_complete": 92.31,
+      "weighted_points": 41.5385
     },
     {
       "name": "Offline, privacy, accessibility, and monetization promises",
@@ -216,22 +216,30 @@
           "evidence": "Stats are local counts only: per-opponent win/loss/draw records, no timestamps, no move logs, nothing identifying; pass-and-play is deliberately not recorded."
         },
         {
+          "done": true,
+          "evidence": "The daily puzzle has no countdown, no streak, no penalty for a wrong guess, and the correct answer still works after a wrong one; only solved days are stored and the list is bounded to 400 entries."
+        },
+        {
+          "done": true,
+          "evidence": "The daily puzzle is fully playable with no store at all, covered by a test, and is free with no gate or purchase prompt."
+        },
+        {
           "done": false,
           "evidence": "The premium_strategy_pack IAP and Restore Purchases flow are not implemented or verified."
         },
         {
           "done": false,
-          "evidence": "Daily puzzle and strategy lessons are still not implemented or verified."
+          "evidence": "Strategy lessons are still not implemented or verified."
         },
         {
           "done": false,
           "evidence": "No production store privacy disclosure or store metadata implementation was verified."
         }
       ],
-      "criteria_done": 7,
-      "criteria_total": 10,
-      "percent_complete": 70,
-      "weighted_points": 7
+      "criteria_done": 9,
+      "criteria_total": 12,
+      "percent_complete": 75,
+      "weighted_points": 7.5
     },
     {
       "name": "QA, release, and store readiness",
@@ -239,27 +247,31 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run on 9695ac9 and reported clean."
+          "evidence": "dart format was run on 0d1c69d and reported clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run on 9695ac9 and reported No issues found."
+          "evidence": "flutter analyze was run on 0d1c69d and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run on 9695ac9: 45/45 passed, including 11 persistence-layer tests."
+          "evidence": "flutter test was run on 0d1c69d: 56/56 passed, including 11 puzzle and puzzle-screen tests."
         },
         {
           "done": true,
-          "evidence": "flutter build windows --release was run on 9695ac9 and succeeded."
+          "evidence": "test/puzzle_test.dart re-derives a whole month of puzzles independently and confirms each offered puzzle has exactly one winning column, satisfying the puzzle/solver verification rung."
         },
         {
           "done": true,
-          "evidence": "flutter build web --release was run on 9695ac9 and succeeded; build/web is being published as a development preview."
+          "evidence": "flutter build windows --release was run on 0d1c69d and succeeded."
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release was re-run on 9695ac9 and succeeded; APK size was 42.6 MB."
+          "evidence": "flutter build web --release was run on 0d1c69d and succeeded; build/web is being published as a development preview."
+        },
+        {
+          "done": false,
+          "evidence": "flutter build apk --release succeeded at 42.6 MB on the previous commit but was not re-run after the daily puzzle landed; marked not re-verified for 0d1c69d."
         },
         {
           "done": false,
@@ -275,9 +287,9 @@
         }
       ],
       "criteria_done": 6,
-      "criteria_total": 9,
-      "percent_complete": 66.67,
-      "weighted_points": 3.3333
+      "criteria_total": 10,
+      "percent_complete": 60,
+      "weighted_points": 3
     },
     {
       "name": "Public status dashboard",
@@ -301,7 +313,7 @@
         },
         {
           "done": true,
-          "evidence": "The release web build was refreshed in demo/ and demo/index.html base href is /Test/demo/ for GitHub Pages."
+          "evidence": "The release web build including daily puzzle was refreshed in demo/ and demo/index.html base href is /Test/demo/ for GitHub Pages."
         }
       ],
       "criteria_done": 5,
@@ -346,19 +358,22 @@
     "connect4 origin/main includes 1453be5 Add the playable Flutter app: rules engine, five opponents, insight.",
     "connect4 origin/main includes 1087c17 Add a measurable procedural launcher icon, wired into every platform.",
     "connect4 origin/main includes 9695ac9 Add offline persistence, a settings screen, and local statistics.",
-    "The Flutter app now has board rules, five opponents, insight, home screen, game screen, settings screen, local persistence, local statistics, procedural board painting, and committed tests.",
-    "The app ships zero runtime image assets for board/pieces because those visuals are drawn procedurally; launcher icons are generated from a procedural source.",
-    "Recorded validation on 9695ac9: dart format clean; flutter analyze No issues found; flutter test 45/45 passed; Windows release build succeeded; web release build succeeded; Android APK release build succeeded at 42.6 MB.",
+    "connect4 origin/main includes 0d1c69d Add the verified daily puzzle.",
+    "The Flutter app now has board rules, five opponents, insight, home screen, game screen, settings screen, local persistence, local statistics, verified daily puzzle, procedural board painting, and committed tests.",
+    "A daily puzzle is only offered if generation verifies exactly one legal column forces a win for the side to move; otherwise the UI says no verified puzzle is available.",
+    "Recorded validation on 0d1c69d: dart format clean; flutter analyze No issues found; flutter test 56/56 passed; Windows release build succeeded; web release build succeeded.",
+    "Android APK release build succeeded at 42.6 MB on 9695ac9 but was not re-run after 0d1c69d.",
     "Flutter 3.44.8 stable and Dart 3.12.2 are installed at C:\\src\\flutter.",
     "Android SDK 36.0.0 and Windows desktop toolchains are verified by flutter doctor.",
     "iOS builds are impossible on this Windows machine without a macOS runner."
   ],
   "not_run": [
+    "flutter build apk --release was not re-run after the daily puzzle landed; previous verified APK was 42.6 MB on 9695ac9.",
     "No iOS build was run; it is unavailable on Windows.",
     "Golden tests, integration tests, and CI were not run or verified.",
     "No production store-package validation, signing, store metadata, or submission was run.",
     "No accepted external production asset batch was validated during this dashboard update.",
-    "Daily puzzle, strategy lessons, and premium_strategy_pack IAP are not implemented or verified."
+    "Strategy lessons and premium_strategy_pack IAP are not implemented or verified."
   ],
   "environment": [
     {
