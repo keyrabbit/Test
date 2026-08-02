@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linefall project status</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #2e2a26;
+      --panel: #3a342f;
+      --panel-2: #463f38;
+      --text: #f4eadb;
+      --muted: #cdbfae;
+      --dim: #9e9082;
+      --amber: #ffb23f;
+      --teal: #30cfc0;
+      --danger: #ff8f70;
+      --line: rgba(244, 234, 219, 0.14);
+      --shadow: rgba(0, 0, 0, 0.28);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(255,178,63,0.14), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(48,207,192,0.10), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: #8ee8de; }
+    header, main, footer { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    header { padding: 56px 0 28px; }
+    .eyebrow { color: var(--amber); text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 700; }
+    h1 { margin: 8px 0 10px; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: .95; }
+    h2 { margin: 0 0 18px; font-size: clamp(1.35rem, 3vw, 2rem); }
+    h3 { margin: 0; font-size: 1.05rem; }
+    p { margin: 0; }
+    .lede { max-width: 760px; color: var(--muted); font-size: 1.08rem; }
+    .grid { display: grid; gap: 18px; }
+    .summary { grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); align-items: stretch; margin: 22px 0; }
+    .card {
+      background: linear-gradient(160deg, rgba(70,63,56,.95), rgba(58,52,47,.95));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 18px 48px var(--shadow);
+    }
+    .overall { display: flex; flex-direction: column; gap: 16px; }
+    .big-number { font-size: clamp(3rem, 11vw, 7rem); line-height: .9; font-weight: 800; letter-spacing: -0.06em; }
+    .stamp, .note, .meta { color: var(--muted); }
+    .meta { display: grid; gap: 10px; }
+    .meta div { border-top: 1px solid var(--line); padding-top: 10px; }
+    .progress-shell {
+      height: 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #241f1b;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--amber), var(--teal));
+      border-radius: inherit;
+      transition: width .4s ease;
+    }
+    section { margin: 28px 0; }
+    .milestone { display: grid; gap: 14px; }
+    .milestone-head { display: flex; gap: 14px; justify-content: space-between; align-items: baseline; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 10px;
+      color: var(--text);
+      background: rgba(36,31,27,.55);
+      white-space: nowrap;
+      font-size: .9rem;
+    }
+    .criteria { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .criteria li, .fact-list li, .blocker {
+      border: 1px solid var(--line);
+      background: rgba(36,31,27,.35);
+      border-radius: 16px;
+      padding: 13px 14px;
+    }
+    .status-label { font-weight: 700; margin-right: 8px; }
+    .done { color: #9ee8ba; }
+    .not-done { color: var(--danger); }
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .fact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .blockers { display: grid; gap: 12px; }
+    .blocker strong { display: block; margin-bottom: 4px; }
+    .error {
+      border: 2px solid var(--danger);
+      background: rgba(255,143,112,.10);
+    }
+    footer { color: var(--dim); padding: 36px 0 56px; }
+    code { color: var(--amber); }
+    @media (max-width: 780px) {
+      .summary, .two-col { grid-template-columns: 1fr; }
+      header { padding-top: 34px; }
+      .card { padding: 19px; border-radius: 20px; }
+      .milestone-head { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Project evidence dashboard</p>
+    <h1>Linefall status</h1>
+    <p class="lede">A quiet, evidence-based view of the private game project. Percentages are derived from milestone weights and completed acceptance criteria; missing evidence is shown as not done or not run.</p>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <section class="card">
+      <h2>Loading status.json…</h2>
+      <p class="stamp">If this message remains, the dashboard could not read its source data.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>No external scripts, no build step. Source of truth: <code>status.json</code>.</p>
+  </footer>
+
+  <script>
+    const app = document.getElementById('app');
+    const pct = value => `${Number(value).toFixed(2)}%`;
+    const esc = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+    const link = item => item.url ? `<a href="${esc(item.url)}">${esc(item.issue || item.url)}</a>` : esc(item.issue || '');
+
+    function progress(value, label) {
+      const safe = Math.max(0, Math.min(100, Number(value) || 0));
+      return `<div class="progress-shell" role="progressbar" aria-label="${esc(label)}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${safe.toFixed(2)}"><div class="progress-fill" style="width:${safe}%"></div></div>`;
+    }
+
+    function renderList(items, emptyText) {
+      if (!items || items.length === 0) return `<p class="note">${esc(emptyText)}</p>`;
+      return `<ul class="fact-list">${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
+    }
+
+    function render(data) {
+      document.title = `Linefall status — ${pct(data.overall_percent_complete)}`;
+      const milestones = (data.milestones || []).map(m => `
+        <article class="card milestone">
+          <div class="milestone-head">
+            <h3>${esc(m.name)}</h3>
+            <span class="pill">${pct(m.percent_complete)} · ${esc(m.criteria_done)}/${esc(m.criteria_total)} criteria · weight ${esc(m.weight)}</span>
+          </div>
+          ${progress(m.percent_complete, `${m.name} completion`)}
+          <ul class="criteria">
+            ${(m.acceptance_criteria || []).map(c => `
+              <li>
+                <span class="status-label ${c.done ? 'done' : 'not-done'}">${c.done ? 'Done' : 'Not done'}:</span>${esc(c.evidence)}
+              </li>`).join('')}
+          </ul>
+        </article>`).join('');
+
+      const blockers = (data.blockers || []).map(b => `
+        <article class="blocker">
+          <strong>${esc(b.title)} ${link(b)}</strong>
+          <p><span class="status-label not-done">${esc(b.status || 'open')}:</span>${esc(b.impact)}</p>
+        </article>`).join('') || '<p class="note">No blockers recorded.</p>';
+
+      const environment = (data.environment || []).map(e => `<div><strong>${esc(e.name)}</strong><br>${esc(e.value)}</div>`).join('');
+
+      app.innerHTML = `
+        <section class="grid summary" aria-labelledby="overall-heading">
+          <div class="card overall">
+            <div>
+              <h2 id="overall-heading">Overall weighted completion</h2>
+              <div class="big-number">${pct(data.overall_percent_complete)}</div>
+            </div>
+            ${progress(data.overall_percent_complete, 'Overall weighted completion')}
+            <p class="stamp">Generated: <time datetime="${esc(data.generated_at)}">${esc(data.generated_at)}</time></p>
+            <p class="note">${esc(data.methodology?.summary || '')}</p>
+          </div>
+          <aside class="card meta" aria-labelledby="method-heading">
+            <h2 id="method-heading">Arithmetic</h2>
+            <div><strong>Formula</strong><br><code>${esc(data.methodology?.formula || '')}</code></div>
+            <div><strong>Source</strong><br>${esc(data.source_repository)} → ${esc(data.dashboard_repository)}</div>
+            <div><strong>Calculation</strong><br>${esc(data.methodology?.arithmetic || '')}</div>
+          </aside>
+        </section>
+
+        <section aria-labelledby="milestones-heading">
+          <h2 id="milestones-heading">Milestone breakdown</h2>
+          <div class="grid">${milestones}</div>
+        </section>
+
+        <section aria-labelledby="blockers-heading">
+          <h2 id="blockers-heading">Blocked / awaiting owner decision</h2>
+          <div class="blockers">${blockers}</div>
+        </section>
+
+        <section class="grid two-col">
+          <div class="card" aria-labelledby="verified-heading">
+            <h2 id="verified-heading">Verified</h2>
+            ${renderList(data.verified_facts, 'No verified facts recorded.')}
+          </div>
+          <div class="card" aria-labelledby="not-run-heading">
+            <h2 id="not-run-heading">Not run / unavailable</h2>
+            ${renderList(data.not_run, 'Nothing listed as not run.')}
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="environment-heading">
+          <h2 id="environment-heading">Environment</h2>
+          <div class="meta">${environment}</div>
+        </section>`;
+    }
+
+    fetch('status.json', { cache: 'no-store' })
+      .then(response => {
+        if (!response.ok) throw new Error(`HTTP ${response.status} while loading status.json`);
+        return response.json();
+      })
+      .then(render)
+      .catch(error => {
+        app.innerHTML = `<section class="card error" role="alert"><h2>Status data failed to load</h2><p>The dashboard did not render fallback numbers. Fix <code>status.json</code> or the Pages deployment.</p><p>${esc(error.message)}</p></section>`;
+      });
+  </script>
+</body>
+</html>
