@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-02T18:50:12+02:00",
+  "generated_at": "2026-08-02T19:02:43+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. The demo was refreshed from the release web build that includes the 20 free strategy lessons."
+    "note": "Web is a development preview target only, not a promised store platform. The demo was refreshed from the release web build that includes the purchase surface."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 6/10 = 9.0000; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 12/14 = 8.5714; QA, release, and store readiness: 5 * 8/11 = 3.6364; Public status dashboard: 5 * 5/5 = 5.0000; total = 88.8078 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 6/10 = 9.0000; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 12/14 = 8.5714; QA, release, and store readiness: 5 * 8/13 = 3.0769; Public status dashboard: 5 * 5/5 = 5.0000; total = 88.2484 of 100"
   },
-  "overall_percent_complete": 88.81,
+  "overall_percent_complete": 88.25,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -21,7 +21,7 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "AGENTS.md exists and defines project identity, legal constraints, honesty rules, and operating loop."
+          "evidence": "AGENTS.md exists and defines project identity, legal constraints, honesty rules, monetization contract, and operating loop."
         },
         {
           "done": true,
@@ -29,11 +29,11 @@
         },
         {
           "done": true,
-          "evidence": "GitHub issues remain the owner-input blocker record; owner gates #1, #4, #5, and #6 are still open and unanswered."
+          "evidence": "GitHub issues remain the owner-input blocker record; owner gates #1, #4, #5, #6, and #7 are open."
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main includes f2fe6bb (20 free strategy lessons), plus housekeeping commits ecf0246 and 4c8c639."
+          "evidence": "connect4 origin/main includes 018fe66 (premium_strategy_pack purchase surface, honestly unsold) and 04b1a0e (CI workflow staged in docs/ci because workflow scope is unavailable)."
         }
       ],
       "criteria_done": 4,
@@ -237,7 +237,7 @@
         },
         {
           "done": false,
-          "evidence": "The premium_strategy_pack IAP and Restore Purchases flow are not implemented or verified."
+          "evidence": "premium_strategy_pack has an honest purchase surface in lib/data/entitlements.dart and lib/ui/premium_screen.dart, but no real store backend is wired up. Default backend is unavailable, buy is disabled as Not on sale yet, and real sale requires owner-held store product IDs."
         },
         {
           "done": false,
@@ -255,15 +255,15 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run on f2fe6bb and reported clean."
+          "evidence": "dart format was run on 018fe66 and reported clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run on f2fe6bb and reported No issues found."
+          "evidence": "flutter analyze was run on 018fe66 and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run on f2fe6bb: 79/79 passed, including 23 lesson-related tests."
+          "evidence": "flutter test was run on 018fe66: 95/95 passed, including 16 purchase-surface and entitlement tests."
         },
         {
           "done": true,
@@ -275,15 +275,19 @@
         },
         {
           "done": true,
-          "evidence": "flutter build windows --release was run on f2fe6bb and succeeded."
+          "evidence": "Purchase-contract tests fail if the purchase screen contains subscribe, per month, coins, gems, energy, lives, limited time, hurry, expires, or offer ends; a separate test fails if a match screen mentions buy, purchase, unlock, upgrade, or premium."
         },
         {
           "done": true,
-          "evidence": "flutter build web --release was run on f2fe6bb and succeeded; build/web is being published as a development preview."
+          "evidence": "flutter build windows --release was run on 018fe66 and succeeded."
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release was run on f2fe6bb and succeeded; APK size was 44.6 MB."
+          "evidence": "flutter build web --release was run on 018fe66 and succeeded; build/web is being published as a development preview."
+        },
+        {
+          "done": false,
+          "evidence": "flutter build apk --release succeeded at 44.6 MB on f2fe6bb but was not re-run after the IAP surface landed; marked not re-verified for 018fe66."
         },
         {
           "done": false,
@@ -291,7 +295,11 @@
         },
         {
           "done": false,
-          "evidence": "Golden tests, integration tests, smoke tests, and CI workflow are still not implemented or verified."
+          "evidence": "Golden tests and integration/smoke tests are still not implemented or verified."
+        },
+        {
+          "done": false,
+          "evidence": "CI is not installed. docs/ci/ci.yml and docs/ci/README.md exist, but pushing to .github/workflows/ was rejected because the available GitHub tokens lack workflow scope."
         },
         {
           "done": false,
@@ -299,9 +307,9 @@
         }
       ],
       "criteria_done": 8,
-      "criteria_total": 11,
-      "percent_complete": 72.73,
-      "weighted_points": 3.6364
+      "criteria_total": 13,
+      "percent_complete": 61.54,
+      "weighted_points": 3.0769
     },
     {
       "name": "Public status dashboard",
@@ -325,7 +333,7 @@
         },
         {
           "done": true,
-          "evidence": "The release web build including strategy lessons was refreshed in demo/ and demo/index.html base href is /Test/demo/ for GitHub Pages."
+          "evidence": "The release web build including the purchase surface was refreshed in demo/ and demo/index.html base href is /Test/demo/ for GitHub Pages."
         }
       ],
       "criteria_done": 5,
@@ -362,27 +370,38 @@
       "url": "https://github.com/keyrabbit/connect4/issues/6",
       "status": "open",
       "impact": "Blocks final colour-independent production art decisions; the procedural in-app tokens carry shape identity."
+    },
+    {
+      "title": "Owner input: grant the workflow scope so CI can be installed",
+      "issue": "#7",
+      "url": "https://github.com/keyrabbit/connect4/issues/7",
+      "status": "open",
+      "impact": "CI workflow is staged in docs/ci but cannot be installed under .github/workflows/ until the owner grants a token with workflow scope."
     }
   ],
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main includes f2fe6bb Add the 20 free strategy lessons.",
-    "connect4 origin/main also includes housekeeping commits ecf0246 and 4c8c639 after the lesson feature commit.",
-    "The Flutter app now has board rules, five opponents, insight, home screen, game screen, settings screen, local persistence, local statistics, verified daily puzzle, 20 verified free strategy lessons, procedural board painting, and committed tests.",
-    "Strategy lessons are authored as data: setup move list, kind, and answer. test/lessons_test.dart re-derives claims from the rules engine so lesson content cannot silently drift false.",
-    "lib/game/board.dart includes winningMoves(player) and threatsAfter(col, player), supporting lesson verification and out-of-turn threat questions.",
-    "Recorded validation on f2fe6bb: dart format clean; flutter analyze No issues found; flutter test 79/79 passed; Windows release build succeeded; web release build succeeded; Android APK release build succeeded at 44.6 MB.",
+    "connect4 origin/main includes 018fe66 Add the premium_strategy_pack purchase surface, honestly unsold.",
+    "connect4 origin/main includes 04b1a0e Stage the CI workflow in docs/ci; it cannot be pushed without the workflow scope.",
+    "The purchase surface defines one non-consumable product premium_strategy_pack at target US $4.99, with no subscription, currency, consumable, energy, lives, or pressure wording.",
+    "The purchase screen leads with Classic play stays free forever, offers Restore Purchases, states purchases are store-specific, and the demo backend shows DEMO PURCHASES — nothing here charges money.",
+    "No real store backend is wired up; the default UnavailablePurchaseBackend disables buying and shows Not on sale yet.",
+    "docs/ci/ci.yml and docs/ci/README.md exist, but CI is not installed because pushing workflows requires workflow token scope.",
+    "Recorded validation on 018fe66: dart format clean; flutter analyze No issues found; flutter test 95/95 passed; Windows release build succeeded; web release build succeeded.",
+    "Android APK release build succeeded at 44.6 MB on f2fe6bb but was not re-run after 018fe66.",
     "Flutter 3.44.8 stable and Dart 3.12.2 are installed at C:\\src\\flutter.",
     "Android SDK 36.0.0 and Windows desktop toolchains are verified by flutter doctor.",
     "iOS builds are impossible on this Windows machine without a macOS runner."
   ],
   "not_run": [
+    "flutter build apk --release was not re-run after the IAP surface landed; previous verified APK was 44.6 MB on f2fe6bb.",
     "No iOS build was run; it is unavailable on Windows.",
-    "Golden tests, integration tests, smoke tests, and CI workflow were not run or verified.",
+    "CI is not installed or running; workflow installation is blocked by missing workflow token scope.",
+    "Golden tests and integration/smoke tests were not run or verified.",
     "No production store-package validation, signing, store metadata, or submission was run.",
     "No accepted external production asset batch was validated during this dashboard update.",
-    "premium_strategy_pack IAP is not implemented or verified."
+    "A real premium_strategy_pack store backend is not implemented or verified."
   ],
   "environment": [
     {
