@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-02T23:25:45+02:00",
+  "generated_at": "2026-08-03T10:08:01+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit bc81277 publishes the web build from connect4 commit 5989dac."
+    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit 8200be3 publishes the demo refreshed from connect4 commit 001e245."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 8/14 = 8.5714; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 13/15 = 8.6667; QA, release, and store readiness: 5 * 16/21 = 3.8095; Public status dashboard: 5 * 5/5 = 5.0000; total = 88.6476 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/16 = 9.3750; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 14/16 = 8.7500; QA, release, and store readiness: 5 * 18/22 = 4.0909; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.8159 of 100"
   },
-  "overall_percent_complete": 88.65,
+  "overall_percent_complete": 89.82,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -25,15 +25,15 @@
         },
         {
           "done": true,
-          "evidence": "LEARNING.md exists and records environment/tooling lessons through L-029 after commit 03751f8."
+          "evidence": "LEARNING.md runs through L-039 at connect4 commit 001e245."
         },
         {
           "done": true,
-          "evidence": "GitHub issues remain the owner-input blocker record; owner gates #1, #4, #5, #6, and #7 are open."
+          "evidence": "GitHub issues remain the blocker record; owner blockers #1, #4, #5, #6, and #7 are open, and quality/asset issue #8 records the rejected terrace theme."
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main is at 5989dac and includes f3d5855, 3c5e0af, 24cfa9f, and 5989dac as the verified commits in this refresh."
+          "evidence": "connect4 origin/main is at 001e245 and includes commits 0ad7dba, b845574, 78ae8c1, bfe2889, 4a20cda, 06d7f65, 3b3dc4c, and 001e245."
         }
       ],
       "criteria_done": 4,
@@ -89,7 +89,7 @@
         },
         {
           "done": true,
-          "evidence": "Asset QC tooling and workflow are documented, including validate-inbox, corner-sheet, icon-proof, cutout, icon-luma, png, lineup, runtime-portraits, and manifest-portraits."
+          "evidence": "Asset QC tooling and workflow are documented, including validate-inbox, corner-sheet, icon-proof, cutout, icon-luma, png, lineup, runtime-portraits, manifest-portraits, and flux generation fixes."
         },
         {
           "done": true,
@@ -105,7 +105,15 @@
         },
         {
           "done": true,
-          "evidence": "Commit 3c5e0af ships three optional provisional theme backgrounds, off by default; commit 24cfa9f re-encodes them as JPEG q84, and commit 5989dac adds a separate 9:16 study-dusk portrait master."
+          "evidence": "Commits 3c5e0af/24cfa9f ship three optional provisional theme backgrounds, off by default, re-encoded as JPEG q84: 2.5 MB to 194 KB, a 92% reduction."
+        },
+        {
+          "done": true,
+          "evidence": "Every shipped theme now has both a landscape and recomposed portrait master: study at dusk, tabletop morning, and graphite studio (78ae8c1, 4a20cda, 5989dac)."
+        },
+        {
+          "done": true,
+          "evidence": "Three Stage 5 texture sources are tileable and committed in assets/source only, with zero APK cost: graphite, walnut, and ceramic."
         },
         {
           "done": false,
@@ -121,21 +129,21 @@
         },
         {
           "done": false,
-          "evidence": "Stage 3 is not accepted: portrait manifest entries say provisional — temporary asset, NOT owner-approved, with known limitations recorded per asset."
+          "evidence": "Stage 3 is not accepted: portrait manifest entries say provisional temporary asset, NOT owner-approved, with known limitations recorded per asset."
         },
         {
           "done": false,
-          "evidence": "Stage 4 is not complete: four themes were briefed but only three exist; renders are 1344x768 against a 3840x2160 brief, only study-at-dusk has a portrait master, no 4:3 tablet masters exist, and outdoor terrace is not rendered."
+          "evidence": "Stage 4 is not complete and moved backward: four themes were briefed, terrace was rejected and deleted, so only three shipped themes remain; no 4:3 tablet masters exist."
         },
         {
           "done": false,
-          "evidence": "Stage 5 textures are still in progress on CPU-only FLUX.1-schnell: graphite and walnut have rendered, ceramic is rendering, and none are accepted or in the app."
+          "evidence": "Stage 5 textures are not complete or owner-accepted: amber glass and teal glass are still rendering on CPU-only FLUX, and none are in the app."
         }
       ],
-      "criteria_done": 8,
-      "criteria_total": 14,
-      "percent_complete": 57.14,
-      "weighted_points": 8.5714
+      "criteria_done": 10,
+      "criteria_total": 16,
+      "percent_complete": 62.5,
+      "weighted_points": 9.375
     },
     {
       "name": "Playable Flutter game implementation",
@@ -256,18 +264,22 @@
           "evidence": "Optional theme backgrounds obey accessibility constraints by test: every image sits under a palette scrim of at least 0.55, high-contrast suppresses backgrounds entirely, images are excluded from semantics, and an unknown stored id falls back to none."
         },
         {
+          "done": true,
+          "evidence": "Production privacy disclosure artifact exists: lib/ui/privacy_screen.dart is generated from LocalStore.disclosure, docs/PRIVACY.md records store privacy answers, and test/privacy_test.dart verifies disclosure coverage, no networking markers/dependencies, and no Android INTERNET permission."
+        },
+        {
           "done": false,
           "evidence": "premium_strategy_pack has an honest purchase surface in lib/data/entitlements.dart and lib/ui/premium_screen.dart, but no real store backend is wired up. Default backend is unavailable, buy is disabled as Not on sale yet, and real sale requires owner-held store product IDs."
         },
         {
           "done": false,
-          "evidence": "No production store privacy disclosure or store metadata implementation was verified."
+          "evidence": "Store forms have not been submitted and no developer account exists, so store privacy submission/readiness is not done."
         }
       ],
-      "criteria_done": 13,
-      "criteria_total": 15,
-      "percent_complete": 86.67,
-      "weighted_points": 8.6667
+      "criteria_done": 14,
+      "criteria_total": 16,
+      "percent_complete": 87.5,
+      "weighted_points": 8.75
     },
     {
       "name": "QA, release, and store readiness",
@@ -275,31 +287,47 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run at 5989dac and reported clean."
+          "evidence": "dart format was run at 001e245 and reported clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at 5989dac and reported No issues found!."
+          "evidence": "flutter analyze was run at 001e245 and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at 5989dac: 118/118 passing."
+          "evidence": "flutter test was run at 001e245: 141/141 passed."
         },
         {
           "done": true,
-          "evidence": "flutter test integration_test -d windows was run at 5989dac on a real Windows device and passed three consecutive times."
+          "evidence": "flutter test integration_test -d windows was run at 001e245 on a real Windows device: 2/2 passed, three consecutive clean runs."
         },
         {
           "done": true,
-          "evidence": "integration_test/app_test.dart from f3d5855 plays a whole match against Rookie through the real UI and asserts the Move That Mattered insight appears."
+          "evidence": "integration_test/app_test.dart includes the whole-match Rookie UI test and a home → settings → privacy device test asserting Erase progress is genuinely enabled."
         },
         {
           "done": true,
-          "evidence": "test/manifest_test.dart from 3c5e0af makes the asset manifest a gate; it found two records with no legal note and five records whose provenance path pointed into a gitignored directory when introduced."
+          "evidence": "Golden tests are implemented and verified in test/golden_board_test.dart: BoardPainter renders directly to PictureRecorder, with 7 golden images in test/goldens plus pixel-diff and fixture checks."
         },
         {
           "done": true,
-          "evidence": "Theme-background tests from 3c5e0af enforce scrim strength, high-contrast suppression, semantic exclusion, and fallback to none for unknown stored ids."
+          "evidence": "The first golden render found the winning-line indicator relied on motion only; 06d7f65 fixed it with a permanent white value ring and a pixel-diff test."
+        },
+        {
+          "done": true,
+          "evidence": "test/identity_test.dart has 4 tests and fails shipped strings that use a colour word for a player without also naming the mark word; b845574 fixed Amber/Teal and lesson orange wording."
+        },
+        {
+          "done": true,
+          "evidence": "test/privacy_test.dart has 10 tests and fails if a preference key is added without disclosure, lib/ gains a networking marker, networking/ads/analytics dependencies appear, or Android requests INTERNET."
+        },
+        {
+          "done": true,
+          "evidence": "test/manifest_test.dart makes the asset manifest a gate for legal notes and provenance paths."
+        },
+        {
+          "done": true,
+          "evidence": "Theme-background tests enforce scrim strength, high-contrast suppression, semantic exclusion, and fallback to none for unknown stored ids."
         },
         {
           "done": true,
@@ -319,31 +347,19 @@
         },
         {
           "done": true,
-          "evidence": "tools/assetgen/check-metadata.js was re-run and reported clean, scanning 6 forbidden patterns."
+          "evidence": "flutter build apk --release was run at 001e245 and succeeded; release APK size is 45.3 MB."
         },
         {
           "done": true,
-          "evidence": "Portrait QC recorded in assets/asset_manifest.json: desaturated lineup keeps all five silhouettes distinct, 12% safe margin is verified on written output, and no watermark, signature, or numeral was found on lineup review."
+          "evidence": "flutter build windows --release was run at 001e245 and succeeded."
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release was run at 5989dac and succeeded; release APK size is 45.3 MB."
-        },
-        {
-          "done": true,
-          "evidence": "flutter build windows --release was run at 5989dac and succeeded."
-        },
-        {
-          "done": true,
-          "evidence": "flutter build web --release was run at 5989dac and succeeded; keyrabbit/Test commit bc81277 publishes that web build to /demo/."
+          "evidence": "flutter build web --release was run at 001e245 and succeeded; keyrabbit/Test commit 8200be3 publishes that web build to /demo/."
         },
         {
           "done": false,
           "evidence": "No iOS build was run; it is impossible on Windows and needs a macOS runner."
-        },
-        {
-          "done": false,
-          "evidence": "Golden tests are still not implemented or verified."
         },
         {
           "done": false,
@@ -355,13 +371,13 @@
         },
         {
           "done": false,
-          "evidence": "Store screenshots, signing, and production submission are not ready."
+          "evidence": "Store screenshots, signing, production store forms, and production submission are not ready."
         }
       ],
-      "criteria_done": 16,
-      "criteria_total": 21,
-      "percent_complete": 76.19,
-      "weighted_points": 3.8095
+      "criteria_done": 18,
+      "criteria_total": 22,
+      "percent_complete": 81.82,
+      "weighted_points": 4.0909
     },
     {
       "name": "Public status dashboard",
@@ -373,7 +389,7 @@
         },
         {
           "done": true,
-          "evidence": "index.html renders status.json at runtime, including recent_changes, with no build step or external CDN dependencies."
+          "evidence": "index.html renders status.json at runtime, including recent_changes and regressions, with no build step or external CDN dependencies."
         },
         {
           "done": true,
@@ -385,7 +401,7 @@
         },
         {
           "done": true,
-          "evidence": "keyrabbit/Test commit bc81277 publishes the 5989dac web build to demo/; /demo/ and a new background asset URL return HTTP 200."
+          "evidence": "keyrabbit/Test commit 8200be3 publishes the 001e245 web build to demo/; /demo/ returns HTTP 200 and study-dusk.jpg returns HTTP 200 with 54,295 bytes."
         }
       ],
       "criteria_done": 5,
@@ -429,29 +445,36 @@
       "url": "https://github.com/keyrabbit/connect4/issues/7",
       "status": "open",
       "impact": "CI workflow is staged in docs/ci but cannot be installed under .github/workflows/ until the owner grants a token with workflow scope; no CI has ever run."
+    },
+    {
+      "title": "Terrace theme rejected: game board with red and yellow tokens baked into both masters",
+      "issue": "#8",
+      "url": "https://github.com/keyrabbit/connect4/issues/8",
+      "status": "open",
+      "impact": "Quality/asset issue, no owner action required: records the withdrawn terrace theme and the prompt-generation defect fixed in tools/flux/generate.mjs."
     }
   ],
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main is at 5989dac Use the recomposed portrait master on tall screens.",
-    "connect4 origin/main includes f3d5855, 3c5e0af, 24cfa9f, and 5989dac as the verified commits in this update.",
-    "Recorded validation at 5989dac: dart format clean; flutter analyze No issues found!; flutter test 118/118 passing; Windows integration test command passed three consecutive times; web/APK/Windows release builds succeeded; APK is 45.3 MB.",
-    "keyrabbit/Test commit bc81277 publishes the web build of 5989dac to https://keyrabbit.github.io/Test/demo/.",
-    "Stage 3 portraits are shipping as provisional temporary runtime assets, not owner-approved accepted assets; colour-independence is verified on a desaturated lineup and known limitations are recorded per asset.",
-    "Stage 4 backgrounds are provisional and incomplete: three of four themes exist, only study-at-dusk has a portrait master, no 4:3 tablet masters exist, and outdoor terrace is missing.",
-    "Stage 5 textures are still in progress on CPU-only FLUX.1-schnell; graphite and walnut rendered, ceramic rendering, nothing accepted or in the app.",
+    "connect4 origin/main is at 001e245 Stop asking the image model for the one thing we must never generate.",
+    "LEARNING.md runs through L-039.",
+    "Recorded validation at 001e245: dart format clean; flutter analyze No issues found; flutter test 141/141 passed; Windows integration tests 2/2 passed three consecutive times; web/APK/Windows release builds succeeded; APK is 45.3 MB.",
+    "keyrabbit/Test commit 8200be3 publishes the web build of 001e245 to https://keyrabbit.github.io/Test/demo/.",
+    "demo/assets/assets/runtime/backgrounds/study-dusk.jpg returns HTTP 200 with 54,295 bytes.",
+    "Golden tests are implemented and verified for BoardPainter without widget-tree or font-rendering drift.",
+    "Production privacy disclosure artifacts exist and are verified by tests, but store forms are not submitted.",
+    "Player identity wording and the winning-line reduced-motion defect were found by tests and fixed.",
+    "Stage 4 backgrounds are provisional and incomplete: three themes remain after terrace was rejected and withdrawn; each shipped theme has landscape and portrait masters.",
+    "Stage 5 textures are in progress only: graphite, walnut, and ceramic source textures exist; amber glass and teal glass are still rendering; none are owner-accepted.",
     "CI is not running; workflow files are staged in docs/ci because workflow OAuth scope is missing.",
-    "Flutter 3.44.8 stable and Dart 3.12.2 are installed at C:\\src\\flutter.",
-    "Android SDK 36.0.0 and Windows desktop toolchains are verified by flutter doctor.",
     "iOS builds are impossible on this Windows machine without a macOS runner."
   ],
   "not_run": [
     "No iOS build was run; it is unavailable on Windows.",
     "CI is not installed or running; workflow installation is blocked by missing workflow token scope.",
-    "Golden tests were not run or verified.",
-    "No production store-package validation, signing, store metadata finalization, or submission was run.",
-    "Stage 3 portrait owner approval was not granted; Stage 4 backgrounds and Stage 5 textures are not accepted.",
+    "No production store-package validation, signing, store metadata finalization, store privacy form submission, or production submission was run.",
+    "Stage 1 owner approval was not granted; Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted.",
     "A real premium_strategy_pack store backend is not implemented or verified."
   ],
   "environment": [
@@ -490,20 +513,46 @@
   ],
   "recent_changes": [
     {
-      "commit": "f3d5855",
-      "summary": "Added the first device-level Windows integration test: plays a whole match against Rookie through the real UI and verifies the Move That Mattered insight appears."
+      "commit": "0ad7dba",
+      "summary": "Stopped the inbox validator reporting provenance as a defect; LEARNING now records L-033 through L-035."
     },
     {
-      "commit": "3c5e0af",
-      "summary": "Added optional theme backgrounds, off by default, with tests enforcing scrim strength, high-contrast suppression, semantic exclusion, fallback to none, and asset-manifest legal/provenance gates."
+      "commit": "b845574",
+      "summary": "Stopped naming a player by colour alone; identity now names the sunburst/diamond mark and identity_test.dart guards shipped strings."
     },
     {
-      "commit": "24cfa9f",
-      "summary": "Re-encoded theme backgrounds from PNG to JPEG q84: 2.5 MB to 194 KB, a 92% reduction."
+      "commit": "78ae8c1",
+      "summary": "Added the recomposed portrait master for the morning tabletop theme."
     },
     {
-      "commit": "5989dac",
-      "summary": "Tall screens now use a separately composed 9:16 study-dusk portrait master rather than cover-cropping the 16:9 background."
+      "commit": "bfe2889",
+      "summary": "Made the offline privacy promise checkable and visible: in-app privacy screen, docs/PRIVACY.md, and privacy tests."
+    },
+    {
+      "commit": "4a20cda",
+      "summary": "Added the recomposed portrait master for the graphite studio theme."
+    },
+    {
+      "commit": "06d7f65",
+      "summary": "Fixed the winning-line indicator so it does not rely on motion; golden and pixel-diff tests guard it."
+    },
+    {
+      "commit": "3b3dc4c",
+      "summary": "Device tests now launch the app the way main() does."
+    },
+    {
+      "commit": "001e245",
+      "summary": "Stopped asking the image model for forbidden concepts; terrace rejection is recorded and prompt generation was corrected."
+    }
+  ],
+  "regressions": [
+    {
+      "title": "Terrace theme withdrawn",
+      "evidence": "Both terrace masters were rejected and deleted because they contained a checkerboard game board with red/yellow round tokens in the centre, a recognisable domed skyline, and high-detail centre composition. Stage 4 is now three themes, not four; issue #8 records the defect."
+    },
+    {
+      "title": "CI still not running",
+      "evidence": "docs/ci remains staged but uninstalled because the available token lacks workflow scope; issue #7 is unchanged and no CI has ever run."
     }
   ]
 }

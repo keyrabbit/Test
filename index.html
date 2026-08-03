@@ -170,6 +170,15 @@
       </section>`;
     }
 
+    function renderRegressions(items) {
+      if (!items || items.length === 0) return '';
+      return `<section class="card error" aria-labelledby="regressions-heading">
+        <h2 id="regressions-heading">Moved backward / newly exposed defects</h2>
+        <ul class="fact-list">${items.map(item => `
+          <li><strong>${esc(item.title || 'Regression')}:</strong> ${esc(item.evidence || item)}</li>`).join('')}</ul>
+      </section>`;
+    }
+
     function render(data) {
       document.title = `Linefall status — ${pct(data.overall_percent_complete)}`;
       const milestones = (data.milestones || []).map(m => `
@@ -202,6 +211,7 @@
           <a class="preview-link" href="${esc(data.demo_preview.url)}">Open playable preview</a>
         </section>` : '';
       const changes = renderChanges(data.recent_changes);
+      const regressions = renderRegressions(data.regressions);
 
       app.innerHTML = `
         <section class="grid summary" aria-labelledby="overall-heading">
@@ -225,6 +235,8 @@
         ${preview}
 
         ${changes}
+
+        ${regressions}
 
         <section aria-labelledby="milestones-heading">
           <h2 id="milestones-heading">Milestone breakdown</h2>
