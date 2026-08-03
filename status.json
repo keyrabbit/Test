@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-03T18:40:54+02:00",
+  "generated_at": "2026-08-03T19:16:18+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit c797a2a publishes the demo refreshed from connect4 commit 8988eab."
+    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit dbf0c65 publishes the demo refreshed from connect4 commit e73b7c3."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 17/17 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 16/18 = 8.8889; QA, release, and store readiness: 5 * 22/27 = 4.0741; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.3865 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 18/18 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 16/18 = 8.8889; QA, release, and store readiness: 5 * 24/28 = 4.2857; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.5981 of 100"
   },
-  "overall_percent_complete": 89.39,
+  "overall_percent_complete": 89.6,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -33,7 +33,7 @@
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main is at 8988eab and includes b64d50d, 193e163, a68bf38, 48ea65a, and 8988eab in this refresh."
+          "evidence": "connect4 origin/main is at e73b7c3 and includes the exact/heuristic Move That Mattered update in this refresh."
         }
       ],
       "criteria_done": 4,
@@ -183,6 +183,10 @@
         },
         {
           "done": true,
+          "evidence": "Move That Mattered now has two tiers at e73b7c3: exact late-game solver proof when the remainder fits budget, and a clearly labelled Best guess heuristic fallback when too early to be certain."
+        },
+        {
+          "done": true,
           "evidence": "lib/game/solver.dart implements an exact solver and reports exhausted search budgets as UNRESOLVED, covered by 9 solver tests."
         },
         {
@@ -222,8 +226,8 @@
           "evidence": "Lessons were improved in a68bf38: 7 of 8 passive readings now ask for a move; new mostLines, killerSquare, and onlyMove kinds use positions mined by tool/find_shapes.dart and tool/find_lessons.dart, not authored by eye."
         }
       ],
-      "criteria_done": 17,
-      "criteria_total": 17,
+      "criteria_done": 18,
+      "criteria_total": 18,
       "percent_complete": 100,
       "weighted_points": 45
     },
@@ -315,19 +319,19 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run at 8988eab and reported clean."
+          "evidence": "dart format . was run at e73b7c3 and was clean with 0 files changed."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at 8988eab and reported No issues found."
+          "evidence": "flutter analyze was run at e73b7c3 and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at 8988eab: 182 tests, all passed, in 2m01s."
+          "evidence": "flutter test was run at e73b7c3: 189/189 passed in 2m03s."
         },
         {
           "done": true,
-          "evidence": "flutter test integration_test -d windows was re-run at current head on 2026-08-03 and passed 2/2: a whole match against Rookie plays through to a result, and the privacy disclosure is reachable and honest on a device."
+          "evidence": "flutter test integration_test -d windows was run at e73b7c3 and passed 2/2."
         },
         {
           "done": true,
@@ -371,6 +375,10 @@
         },
         {
           "done": true,
+          "evidence": "test/insight_test.dart adds 7 tests that replay real mined games and re-derive every exact Move That Mattered claim with Solver directly rather than trusting the insight engine report."
+        },
+        {
+          "done": true,
           "evidence": "test/manifest_test.dart makes the asset manifest a gate for legal notes and provenance paths."
         },
         {
@@ -399,11 +407,11 @@
         },
         {
           "done": true,
-          "evidence": "flutter build web --release was run at 8988eab and succeeded; keyrabbit/Test commit c797a2a publishes that web build to /demo/."
+          "evidence": "flutter build web --release was run at e73b7c3 and succeeded; keyrabbit/Test commit dbf0c65 publishes that web build to /demo/."
         },
         {
-          "done": false,
-          "evidence": "No current APK or Windows release build result was provided for 8988eab in this refresh."
+          "done": true,
+          "evidence": "flutter build apk --release and flutter build windows --release were run at e73b7c3 and succeeded; app-release.apk is 45.8 MB, linefall.exe is in a 28.4 MB Windows release bundle. These are unsigned debug-keystore/local builds, not release-signed distributables."
         },
         {
           "done": false,
@@ -422,10 +430,10 @@
           "evidence": "Store screenshots, signing, production store forms, and production submission are not ready."
         }
       ],
-      "criteria_done": 22,
-      "criteria_total": 27,
-      "percent_complete": 81.48,
-      "weighted_points": 4.0741
+      "criteria_done": 24,
+      "criteria_total": 28,
+      "percent_complete": 85.71,
+      "weighted_points": 4.2857
     },
     {
       "name": "Public status dashboard",
@@ -449,7 +457,7 @@
         },
         {
           "done": true,
-          "evidence": "keyrabbit/Test commit c797a2a publishes the 8988eab web build to demo/; /demo/ returns HTTP 200."
+          "evidence": "keyrabbit/Test commit dbf0c65 publishes the e73b7c3 web build to demo/; /demo/ returns HTTP 200."
         }
       ],
       "criteria_done": 5,
@@ -491,25 +499,24 @@
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main is at 8988eab Record the measured-ladder and verified-lesson rules in AGENTS.md.",
-    "Owner gave provisional design approval on 2026-08-02 to unblock development, then asked to pause asset generation and focus on functionality, interactions, clearer turns, difficulty and lessons. It is not legal clearance.",
-    "Measured difficulty ladder changed from Builder/Rookie 98%, Guard/Builder 52%, Trickster/Guard 66%, Master/Trickster 83% to 77%, 82%, 70%, 83% after controlled move-selection changes.",
-    "Recorded validation at 8988eab: dart format clean; flutter analyze No issues found; flutter test 182/182 passed in 2m01s; web release build succeeded.",
-    "Device integration tests were re-run at current head on 2026-08-03: flutter test integration_test -d windows passed 2/2.",
-    "keyrabbit/Test commit c797a2a publishes the web build of 8988eab to https://keyrabbit.github.io/Test/demo/.",
-    "Lessons were materially changed: 7 of 8 passive readings now ask for a move, new mined lesson kinds were added, and claims are re-derived in tests.",
-    "Turn clarity now appears in the match app bar, after undo, and in lesson entry; identity is carried by mark and colour.",
-    "Asset generation is paused; Stage 3/4/5 assets remain provisional or incomplete.",
+    "connect4 origin/main is at e73b7c3 Make the move that mattered a fact where it can be.",
+    "Move That Mattered now distinguishes exact solver-backed claims from heuristic guesses; unresolved early-game analysis is labelled Best guess — too early in the game to be certain.",
+    "Recorded validation at e73b7c3: dart format . clean, 0 files changed; flutter analyze No issues found; flutter test 189/189 passed in 2m03s; integration tests 2/2 passed; APK/Windows/web release builds succeeded.",
+    "Release artifact sizes at e73b7c3: app-release.apk 45.8 MB; Windows release bundle 28.4 MB. These are unsigned debug-keystore/local builds, not release-signed distributables.",
+    "keyrabbit/Test commit dbf0c65 publishes the web build of e73b7c3 to https://keyrabbit.github.io/Test/demo/, which returns HTTP 200.",
+    "tool/insight_cost.dart measured the solver budget: all-ply budget 14 cost 84s and resolved 10/38; targeted budget 20 cost 1.7s and resolved 16/16.",
     "CI is not running; workflow files are staged in docs/ci because workflow OAuth scope is missing.",
-    "iOS builds are impossible on this Windows machine without a macOS runner."
+    "iOS builds are impossible on this Windows machine without a macOS runner.",
+    "Asset work is paused by owner instruction; issues #4, #5, and #6 remain open and unanswered."
   ],
   "not_run": [
     "No iOS build was run; it is unavailable on Windows.",
-    "CI is not installed or running; workflow installation is blocked by missing workflow token scope.",
-    "No current APK or Windows release build result was provided for 8988eab in this refresh.",
-    "No production store-package validation, signing, store metadata finalization, store privacy form submission, or production submission was run.",
+    "CI is not installed or running; workflow installation is blocked by missing workflow token scope and issue #7 remains open.",
+    "No production store-package validation, release signing, store metadata finalization, store privacy form submission, or production submission was run.",
+    "The APK and Windows outputs are unsigned debug-keystore/local builds, not release-signed distributables.",
     "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused.",
-    "A real premium_strategy_pack store backend is not implemented or verified."
+    "A real premium_strategy_pack store backend is not implemented or verified.",
+    "The repository is still named connect4 and must be renamed before it is ever public."
   ],
   "environment": [
     {
@@ -546,6 +553,14 @@
     }
   ],
   "recent_changes": [
+    {
+      "commit": "e73b7c3",
+      "summary": "Move That Mattered is now exact where possible: late-game positions use Solver to prove a forced win or held draw was given up; early-game unresolved positions are labelled Best guess."
+    },
+    {
+      "commit": "tool/insight_cost.dart",
+      "summary": "Insight exact-tier budget was chosen by measurement: solving every ply at budget 14 cost 84s and resolved 10/38; targeted budget 20 cost 1.7s and resolved 16/16."
+    },
     {
       "commit": "2026-08-03",
       "summary": "Correction: device integration tests are current, not stale. flutter test integration_test -d windows passed 2/2 on current head."
