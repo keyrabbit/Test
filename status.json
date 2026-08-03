@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-03T11:26:56+02:00",
+  "generated_at": "2026-08-03T18:39:12+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit e1c82a9 publishes the demo refreshed from connect4 commit edaad8a."
+    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit c797a2a publishes the demo refreshed from connect4 commit 8988eab."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 13/13 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 15/17 = 8.8235; QA, release, and store readiness: 5 * 21/25 = 4.2000; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.4471 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 17/17 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 16/18 = 8.8889; QA, release, and store readiness: 5 * 21/27 = 3.8889; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.2013 of 100"
   },
-  "overall_percent_complete": 89.45,
+  "overall_percent_complete": 89.2,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -25,15 +25,15 @@
         },
         {
           "done": true,
-          "evidence": "LEARNING.md runs through L-039 at connect4 commit 001e245 and later commits record the L-040/L-041 texture lessons."
+          "evidence": "LEARNING.md runs through at least L-046 after commit 48ea65a, and AGENTS.md records measured-ladder and verified-lesson rules at 8988eab."
         },
         {
           "done": true,
-          "evidence": "GitHub issues remain the blocker record; owner blockers #1, #4, #5, #6, and #7 are open. #8 is closed."
+          "evidence": "GitHub issues remain the blocker record; #1 is closed as provisional design approval, #8 is closed, and owner blockers #4, #5, #6, and #7 remain open."
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main is at edaad8a and includes commits 78667bd, fa36585, 6a12405, 8fec514, and edaad8a in this refresh."
+          "evidence": "connect4 origin/main is at 8988eab and includes b64d50d, 193e163, a68bf38, 48ea65a, and 8988eab in this refresh."
         }
       ],
       "criteria_done": 4,
@@ -81,7 +81,11 @@
         },
         {
           "done": true,
-          "evidence": "assets/asset_manifest.json records style-board-01.png as pending-owner-approval with SHA-256 evidence."
+          "evidence": "Issue #1 STYLE APPROVED is closed after provisional owner approval on 2026-08-02; this unblocks development but is not legal clearance or a final completed Stage 1 design sign-off."
+        },
+        {
+          "done": true,
+          "evidence": "assets/asset_manifest.json records style-board-01.png as pending-owner-approval/provisional evidence with SHA-256 history."
         },
         {
           "done": true,
@@ -90,10 +94,6 @@
         {
           "done": true,
           "evidence": "Asset QC tooling and workflow are documented, including validate-inbox, corner-sheet, icon-proof, cutout, icon-luma, png, lineup, runtime-portraits, manifest-portraits, seamless, measure-texture, and flux generation fixes."
-        },
-        {
-          "done": true,
-          "evidence": "Icon-01 v3 is recorded as accepted as lead concept, with fixes required before final external art."
         },
         {
           "done": true,
@@ -117,27 +117,27 @@
         },
         {
           "done": false,
-          "evidence": "Owner has not given the exact STYLE APPROVED gate for Stage 1; GitHub issue #1 remains open, so downstream stages are proceeding under a working assumption only."
+          "evidence": "Asset generation is paused by owner instruction; design iteration is deferred about a week to another PC."
         },
         {
           "done": false,
-          "evidence": "Palette conflict is unresolved; issue #4 asks whether stage 5.txt replaces the canonical palette. Working assumption is teal #1FA396, not owner approval."
+          "evidence": "Palette conflict is unresolved and dormant while asset work is paused; issue #4 asks whether stage 5.txt replaces the canonical palette. Working assumption is teal #1FA396, not owner approval."
         },
         {
           "done": false,
-          "evidence": "Canonical amber/teal value separation is an open P0 accessibility/spec blocker in issue #6; #30CFC0 vs #FFB23F is only about 14/255 luma apart."
+          "evidence": "Canonical amber/teal value separation remains unresolved in issue #6; #30CFC0 vs #FFB23F is only about 14/255 luma apart."
         },
         {
           "done": false,
-          "evidence": "Stage 3 is not accepted: portrait manifest entries say provisional temporary asset, NOT owner-approved, with known limitations recorded per asset."
+          "evidence": "Stage 3 is not accepted: portraits remain provisional temporary assets, NOT owner-approved, with known limitations recorded per asset."
         },
         {
           "done": false,
-          "evidence": "Stage 4 is not complete or accepted: backgrounds are provisional, no 4:3 tablet masters were rendered, and Stage 1 owner approval is still missing."
+          "evidence": "Stage 4 is not complete or accepted: backgrounds are provisional, no 4:3 tablet masters were rendered, and design iteration is deferred."
         },
         {
           "done": false,
-          "evidence": "Stage 5 is not complete or accepted: the glass swatches are 928x928 and 976x976 against a 2048x2048 brief, amber was hue-corrected in post, both glass swatches have little structure, and procedural generation may serve the app better."
+          "evidence": "Stage 5 is not complete or accepted: the glass swatches are below the 2048x2048 brief, amber was hue-corrected in post, both glass swatches have little structure, and procedural generation may serve the app better."
         },
         {
           "done": false,
@@ -167,7 +167,11 @@
         },
         {
           "done": true,
-          "evidence": "lib/game/ai.dart implements Rookie, Builder, Guard, Trickster, and Master using bounded search depth and evaluation weights only; Master is labelled Perfect play."
+          "evidence": "lib/game/ai.dart implements Rookie, Builder, Guard, Trickster, and Master using bounded search depth, evaluation weights, and controlled move selection only; no rule changes or hidden pieces."
+        },
+        {
+          "done": true,
+          "evidence": "Difficulty ladder was measured before and after with tool/difficulty_curve.dart. After: Builder vs Rookie 77%, Guard vs Builder 82%, Trickster vs Guard 70%, Master vs Trickster 83%."
         },
         {
           "done": true,
@@ -179,6 +183,10 @@
         },
         {
           "done": true,
+          "evidence": "lib/game/solver.dart implements an exact solver and reports exhausted search budgets as UNRESOLVED, covered by 9 solver tests."
+        },
+        {
+          "done": true,
           "evidence": "lib/ui/board_painter.dart draws the board and pieces procedurally; the app ships with zero runtime image assets for board/pieces."
         },
         {
@@ -187,7 +195,11 @@
         },
         {
           "done": true,
-          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 79/79 passed, including lesson verification, lesson UI, lesson progress persistence, and home-screen entry tests added in f2fe6bb."
+          "evidence": "Turn clarity delivered: match app bar shows a piece chip plus sentence naming the side to play, undo restates the turn, and lessons open with a learner-side banner. test/turn_clarity_test.dart gates it."
+        },
+        {
+          "done": true,
+          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 182/182 passed at 8988eab."
         },
         {
           "done": true,
@@ -203,11 +215,15 @@
         },
         {
           "done": true,
-          "evidence": "Strategy lessons are implemented in lib/game/lessons.dart and lib/ui/lessons_screen.dart, reachable from the home screen: exactly 20 lessons, all free, in any order, with nothing to unlock."
+          "evidence": "Strategy lessons are implemented in lib/game/lessons.dart and lib/ui/lessons_screen.dart: exactly 20 lessons, all free, in any order, with nothing to unlock."
+        },
+        {
+          "done": true,
+          "evidence": "Lessons were improved in a68bf38: 7 of 8 passive readings now ask for a move; new mostLines, killerSquare, and onlyMove kinds use positions mined by tool/find_shapes.dart and tool/find_lessons.dart, not authored by eye."
         }
       ],
-      "criteria_done": 13,
-      "criteria_total": 13,
+      "criteria_done": 17,
+      "criteria_total": 17,
       "percent_complete": 100,
       "weighted_points": 45
     },
@@ -276,6 +292,10 @@
           "evidence": "Release APK builds and aapt2 dump permissions shows no INTERNET permission."
         },
         {
+          "done": true,
+          "evidence": "Player identity is carried by mark and colour; b845574 replaced colour-only player labels and test/identity_test.dart prevents regression."
+        },
+        {
           "done": false,
           "evidence": "premium_strategy_pack has an honest purchase surface in lib/data/entitlements.dart and lib/ui/premium_screen.dart, but no real store backend is wired up. Default backend is unavailable, buy is disabled as Not on sale yet, and real sale requires owner-held store product IDs."
         },
@@ -284,10 +304,10 @@
           "evidence": "Store forms have not been submitted and no developer account exists, so store privacy submission/readiness is not done."
         }
       ],
-      "criteria_done": 15,
-      "criteria_total": 17,
-      "percent_complete": 88.24,
-      "weighted_points": 8.8235
+      "criteria_done": 16,
+      "criteria_total": 18,
+      "percent_complete": 88.89,
+      "weighted_points": 8.8889
     },
     {
       "name": "QA, release, and store readiness",
@@ -295,19 +315,19 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run at edaad8a and reported clean: 39 files, 0 changed."
+          "evidence": "dart format was run at 8988eab and reported clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at edaad8a and reported No issues found."
+          "evidence": "flutter analyze was run at 8988eab and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at edaad8a: 162/162 passed."
+          "evidence": "flutter test was run at 8988eab: 182 tests, all passed, in 2m01s."
         },
         {
-          "done": true,
-          "evidence": "flutter test integration_test -d windows last verified 2/2 passed with three consecutive clean runs; it was not re-run after that, so this is last-verified rather than current."
+          "done": false,
+          "evidence": "flutter test integration_test -d windows was last verified at 619a2db as 2/2 green with three consecutive clean runs, but was not re-run since the difficulty and lesson changes; stale, not current."
         },
         {
           "done": true,
@@ -323,7 +343,7 @@
         },
         {
           "done": true,
-          "evidence": "test/identity_test.dart has 4 tests and fails shipped strings that use a colour word for a player without also naming the mark word; b845574 fixed Amber/Teal and lesson orange wording."
+          "evidence": "test/identity_test.dart fails shipped strings that use a colour word for a player without also naming the mark word; b845574 fixed Amber/Teal and lesson orange wording."
         },
         {
           "done": true,
@@ -339,7 +359,15 @@
         },
         {
           "done": true,
-          "evidence": "test/privacy_test.dart has 10 tests and fails if a preference key is added without disclosure, lib/ gains a networking marker, networking/ads/analytics dependencies appear, or Android requests INTERNET."
+          "evidence": "test/turn_clarity_test.dart verifies the app clarifies whose turn it is in match and lesson flows, including after undo."
+        },
+        {
+          "done": true,
+          "evidence": "test/solver_test.dart has 9 tests for the exact solver, including exhausted-budget UNRESOLVED behaviour."
+        },
+        {
+          "done": true,
+          "evidence": "test/privacy_test.dart fails if a preference key is added without disclosure, lib/ gains a networking marker, networking/ads/analytics dependencies appear, or Android requests INTERNET."
         },
         {
           "done": true,
@@ -359,7 +387,7 @@
         },
         {
           "done": true,
-          "evidence": "test/lessons_test.dart re-derives every authored lesson claim from the rules engine; it fails if a winning column is not winning or unique, a block lesson should be a win instead, or avoid-trap losing columns are wrong."
+          "evidence": "test/lessons_test.dart re-derives every authored lesson claim from the rules engine, including the newer mined lesson kinds."
         },
         {
           "done": true,
@@ -367,15 +395,15 @@
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release was run at edaad8a and succeeded; release APK size is 45.3 MB."
+          "evidence": "tool/difficulty_curve.dart measured the ladder before and after; after values are monotonic and within the stated ok band."
         },
         {
           "done": true,
-          "evidence": "flutter build windows --release was run at edaad8a and succeeded."
+          "evidence": "flutter build web --release was run at 8988eab and succeeded; keyrabbit/Test commit c797a2a publishes that web build to /demo/."
         },
         {
-          "done": true,
-          "evidence": "flutter build web --release was run at edaad8a and succeeded; keyrabbit/Test commit e1c82a9 publishes that web build to /demo/."
+          "done": false,
+          "evidence": "No current APK or Windows release build result was provided for 8988eab in this refresh."
         },
         {
           "done": false,
@@ -395,9 +423,9 @@
         }
       ],
       "criteria_done": 21,
-      "criteria_total": 25,
-      "percent_complete": 84,
-      "weighted_points": 4.2
+      "criteria_total": 27,
+      "percent_complete": 77.78,
+      "weighted_points": 3.8889
     },
     {
       "name": "Public status dashboard",
@@ -409,7 +437,7 @@
         },
         {
           "done": true,
-          "evidence": "index.html renders status.json at runtime, including recent_changes, regressions, and asset_status, with no build step or external CDN dependencies."
+          "evidence": "index.html renders status.json at runtime, including phase_status, recent_changes, regressions, and asset_status, with no build step or external CDN dependencies."
         },
         {
           "done": true,
@@ -421,7 +449,7 @@
         },
         {
           "done": true,
-          "evidence": "keyrabbit/Test commit e1c82a9 publishes the edaad8a web build to demo/; /demo/ returns HTTP 200 and terrace.jpg returns HTTP 200 with 89,853 bytes."
+          "evidence": "keyrabbit/Test commit c797a2a publishes the 8988eab web build to demo/; /demo/ returns HTTP 200."
         }
       ],
       "criteria_done": 5,
@@ -432,25 +460,18 @@
   ],
   "blockers": [
     {
-      "title": "Owner decision: approve Stage 1 art direction (STYLE APPROVED)",
-      "issue": "#1",
-      "url": "https://github.com/keyrabbit/connect4/issues/1",
-      "status": "open",
-      "impact": "Blocks formal progression to Stage 2-7 accepted external production assets."
-    },
-    {
       "title": "Does stage 5.txt replace the canonical palette?",
       "issue": "#4",
       "url": "https://github.com/keyrabbit/connect4/issues/4",
       "status": "open",
-      "impact": "Blocks palette-stable external asset regeneration and final visual commitments."
+      "impact": "Palette conflict remains unanswered and dormant while asset work is paused."
     },
     {
       "title": "Asset batch 2026-08-01 rejected 19/19 - regeneration required",
       "issue": "#5",
       "url": "https://github.com/keyrabbit/connect4/issues/5",
       "status": "open",
-      "impact": "Requires regenerated accepted external assets before using that batch; current portraits/backgrounds are separate provisional assets."
+      "impact": "Rejected batch remains unresolved; current assets are separate provisional runtime assets."
     },
     {
       "title": "Canonical amber/teal fail the colour-independence rule",
@@ -470,24 +491,25 @@
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main is at edaad8a Add the terrace theme, rendered under the corrected prompt.",
-    "Recorded validation at edaad8a: dart format clean (39 files, 0 changed); flutter analyze No issues found; flutter test 162/162 passed; web/APK/Windows release builds succeeded; APK is 45.3 MB.",
-    "Windows integration tests were last verified as 2/2 passing with three consecutive clean runs, but were not re-run after that verification.",
-    "keyrabbit/Test commit e1c82a9 publishes the web build of edaad8a to https://keyrabbit.github.io/Test/demo/.",
-    "demo/assets/assets/runtime/backgrounds/terrace.jpg returns HTTP 200 with 89,853 bytes.",
-    "Golden tests, keyboard baseline tests, large-text tests, touch-target tests, privacy tests, and no-INTERNET APK permission verification are now part of the measured quality evidence.",
-    "The terrace theme is now shipped after re-rendering under the corrected prompt; issue #8 is closed.",
-    "Stage 4 backgrounds are provisional and incomplete because no 4:3 tablet masters exist and no owner approval exists.",
-    "Stage 5 textures are source-only and not accepted; glass swatches are below the brief size and likely weaker than procedural generation for app use.",
+    "connect4 origin/main is at 8988eab Record the measured-ladder and verified-lesson rules in AGENTS.md.",
+    "Owner gave provisional design approval on 2026-08-02 to unblock development, then asked to pause asset generation and focus on functionality, interactions, clearer turns, difficulty and lessons. It is not legal clearance.",
+    "Measured difficulty ladder changed from Builder/Rookie 98%, Guard/Builder 52%, Trickster/Guard 66%, Master/Trickster 83% to 77%, 82%, 70%, 83% after controlled move-selection changes.",
+    "Recorded validation at 8988eab: dart format clean; flutter analyze No issues found; flutter test 182/182 passed in 2m01s; web release build succeeded.",
+    "Device integration tests were last verified at 619a2db, not re-run since the difficulty and lesson changes.",
+    "keyrabbit/Test commit c797a2a publishes the web build of 8988eab to https://keyrabbit.github.io/Test/demo/.",
+    "Lessons were materially changed: 7 of 8 passive readings now ask for a move, new mined lesson kinds were added, and claims are re-derived in tests.",
+    "Turn clarity now appears in the match app bar, after undo, and in lesson entry; identity is carried by mark and colour.",
+    "Asset generation is paused; Stage 3/4/5 assets remain provisional or incomplete.",
     "CI is not running; workflow files are staged in docs/ci because workflow OAuth scope is missing.",
     "iOS builds are impossible on this Windows machine without a macOS runner."
   ],
   "not_run": [
     "No iOS build was run; it is unavailable on Windows.",
     "CI is not installed or running; workflow installation is blocked by missing workflow token scope.",
-    "Windows integration tests were not re-run after the last three-run clean verification; recorded as last-verified, not current.",
+    "Device integration tests were not re-run since the difficulty and lesson changes; last green verification was at 619a2db.",
+    "No current APK or Windows release build result was provided for 8988eab in this refresh.",
     "No production store-package validation, signing, store metadata finalization, store privacy form submission, or production submission was run.",
-    "Stage 1 owner approval was not granted; Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted.",
+    "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused.",
     "A real premium_strategy_pack store backend is not implemented or verified."
   ],
   "environment": [
@@ -526,30 +548,30 @@
   ],
   "recent_changes": [
     {
-      "commit": "78667bd",
-      "summary": "Texture tiling pipeline: seamless.js gained --crop, --flatten and --hue; measure-texture.js added; L-040/L-041 record why framed wrap-error and mean colour were misleading."
+      "commit": "b64d50d",
+      "summary": "Turn clarity delivered and difficulty measurement started: match app bar shows a piece chip plus side-to-play sentence, undo restates turn, and lessons open with a learner-side banner."
     },
     {
-      "commit": "fa36585",
-      "summary": "Keyboard accessibility fix: GameScreen now owns/disposes its FocusNode instead of rebuilding it every frame; keyboard_test.dart covers the Windows baseline and the focus regression."
+      "commit": "193e163",
+      "summary": "Difficulty ladder reshaped with controlled move selection, no rule changes or hidden pieces. Measured after: Builder/Rookie 77%, Guard/Builder 82%, Trickster/Guard 70%, Master/Trickster 83%."
     },
     {
-      "commit": "6a12405",
-      "summary": "Large-text accessibility fix: text_scale_test.dart mounts all seven screens on a 360x640 phone at 2.0x text scale; Master Perfect play badge overflow is fixed with Wrap."
+      "commit": "a68bf38",
+      "summary": "Lessons rewritten: 7 of 8 passive readings now ask for a move; new mostLines, killerSquare, and onlyMove lesson kinds; positions mined by tools and re-derived by tests."
     },
     {
-      "commit": "8fec514",
-      "summary": "Touch-target accessibility gate: touch_target_test.dart walks semantics, scrolls each screen, measures every tap node against 44 logical pixels, and includes a 20x20 probe test."
+      "commit": "b64d50d",
+      "summary": "Exact solver added in lib/game/solver.dart with 9 tests; exhausted search budget reports UNRESOLVED instead of masquerading as a draw."
     },
     {
-      "commit": "edaad8a",
-      "summary": "Terrace at dusk theme shipped after prompt canon rewrite; both landscape and portrait masters are clean, and the rejected teal glass texture was re-rendered."
+      "commit": "8988eab",
+      "summary": "AGENTS.md records the measured-ladder and verified-lesson rules; connect4 main head for this refresh."
     }
   ],
   "regressions": [
     {
-      "title": "Earlier terrace masters were rejected",
-      "evidence": "Both previous terrace masters contained a checkerboard game board with red/yellow round tokens, a recognisable domed skyline, and a busy centre. The defect is fixed in edaad8a, but the dashboard keeps the history visible."
+      "title": "Owner-reported difficulty problem was partly elsewhere",
+      "evidence": "Owner felt the 2nd-to-3rd step was steep; measurement found the worst defect was Builder vs Rookie at 98%, and Guard vs Builder was only 52% so one level was not stronger than the level below. The fix is measured and rule-preserving."
     },
     {
       "title": "CI still not running",
@@ -558,8 +580,12 @@
   ],
   "asset_status": [
     {
+      "stage": "Asset generation",
+      "status": "Paused by owner instruction while functionality, interactions, difficulty, and lessons are improved."
+    },
+    {
       "stage": "Stage 1 style board",
-      "status": "Still awaiting owner STYLE APPROVED (#1); all downstream assets are formally ungated."
+      "status": "Issue #1 is closed after provisional approval to unblock development, but this is not final legal/design clearance and not a completed Stage 1 sign-off."
     },
     {
       "stage": "Stage 3 portraits",
@@ -567,7 +593,7 @@
     },
     {
       "stage": "Stage 4 backgrounds",
-      "status": "Four themes now ship with landscape and portrait masters, but they remain provisional and no 4:3 tablet masters exist."
+      "status": "Four themes ship with landscape and portrait masters, but they remain provisional and no 4:3 tablet masters exist."
     },
     {
       "stage": "Stage 5 textures",
@@ -577,5 +603,9 @@
       "stage": "Audio",
       "status": "No audio assets exist."
     }
-  ]
+  ],
+  "phase_status": {
+    "title": "Functionality and training focus",
+    "summary": "Owner gave provisional design approval on 2026-08-02 to unblock development, then asked to pause asset generation and focus on interactions, clearer turns, a smoother difficulty ladder, and much better training lessons. This is not legal clearance or a final Stage 1 sign-off."
+  }
 }
