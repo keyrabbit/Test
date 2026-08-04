@@ -541,6 +541,7 @@
     "Recorded validation at ef67381 on this machine: dart format clean; flutter analyze No issues found; flutter test 297/297 passed (about 2 minutes). No CI has ever run - these are local results.",
     "The course is 126 lessons; 42 are free (every hand-written lesson plus the whole first step) and 84 are in the strategy pack. Counts are derived from lib/game/lessons.dart at build time, not written by hand.",
     "flutter build web --release succeeded at ef67381; the output is 41.2 MB unminified on disk and is published to https://keyrabbit.github.io/Test/demo/.",
+    "flutter build windows --release succeeded at ef67381; four_in_a_row.exe launches and stays running on this machine. Release bundle is 28.6 MB, unsigned local build.",
     "Toolchain for this refresh is Flutter 3.44.8 stable / Dart 3.12.2 on Windows.",
     "Issue #7 is closed: the owner chose option 3, no CI for now. The workflow file stays staged at docs/ci/ci.yml and is not installed.",
     "Issues #4, #5 and #6 remain open. Asset work is paused by owner instruction until the design week.",
@@ -551,7 +552,7 @@
   "not_run": [
     "No CI has ever run. Every quality number here was produced locally on one Windows machine.",
     "No iOS build was run; it is unavailable on Windows and needs a macOS GitHub Actions runner.",
-    "No Windows or Android release build was re-run at ef67381. The last recorded artifact sizes are from 693ac19 and are not carried forward as current.",
+    "No Android release build was re-run at ef67381; the last recorded APK size is from 693ac19 and is not carried forward as current. The Windows release build was re-run and is unsigned.",
     "No production store-package validation, release signing, store metadata finalization, store privacy form submission, or production submission was run.",
     "A real premium_strategy_pack store backend is not implemented or verified; purchases are mock-only behind a DEMO PURCHASES indicator.",
     "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused.",
