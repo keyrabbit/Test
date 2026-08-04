@@ -29,7 +29,7 @@
         },
         {
           "done": true,
-          "evidence": "GitHub issues remain the blocker record; #1 is closed as provisional design approval, #8 is closed, and owner blockers #4, #5, #6, and #7 remain open."
+          "evidence": "GitHub issues remain the blocker record; #1, #2, #3, #7 and #8 are closed, and owner blockers #4, #5 and #6 remain open. #7 was closed by owner decision (option 3, no CI for now), not by installing CI."
         },
         {
           "done": true,
@@ -203,7 +203,7 @@
         },
         {
           "done": true,
-          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 218/218 passed at 693ac19."
+          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 323/323 passed at c3e8dff."
         },
         {
           "done": true,
@@ -475,7 +475,7 @@
         },
         {
           "done": false,
-          "evidence": "CI is not installed and no CI has ever run. docs/ci/ci.yml and docs/ci/README.md exist, but pushing to .github/workflows/ was rejected because the available GitHub tokens lack workflow scope; issue #7 is open."
+          "evidence": "CI is not installed and no CI has ever run. docs/ci/ci.yml and docs/ci/README.md exist, but the workflow was never installed under .github/workflows/: the push was first rejected because the available tokens lacked workflow scope, and the owner then closed issue #7 by choosing option 3, no CI for now. This stays not done until a workflow actually runs green."
         },
         {
           "done": false,
@@ -513,7 +513,7 @@
         },
         {
           "done": true,
-          "evidence": "keyrabbit/Test commit 8598211 publishes the refreshed 693ac19 web build to demo/; /demo/ and /demo/main.dart.js return HTTP 200."
+          "evidence": "keyrabbit/Test commit b009cc1 publishes the c3e8dff web build to demo/; /demo/ and /demo/main.dart.js return HTTP 200."
         }
       ],
       "criteria_done": 5,
@@ -651,7 +651,7 @@
     },
     {
       "title": "CI still not running",
-      "evidence": "docs/ci remains staged but uninstalled because the available token lacks workflow scope; issue #7 is unchanged and no CI has ever run."
+      "evidence": "docs/ci remains staged but uninstalled; issue #7 is closed by owner decision (option 3, no CI for now) and no CI has ever run."
     }
   ],
   "asset_status": [
