@@ -375,11 +375,11 @@
         },
         {
           "done": true,
-          "evidence": "flutter test integration_test -d windows was re-run after the binary rename at 693ac19 and passed 2/2, confirming the renamed Windows target still launches and plays."
+          "evidence": "flutter test integration_test -d windows was re-run at 24309a5 against the new hub-and-picker navigation and passed 2/2, dismissing the real first-run greeting and playing a whole match on a real device."
         },
         {
           "done": true,
-          "evidence": "integration_test/app_test.dart includes the whole-match Rookie UI test and a home → settings → privacy device test asserting Erase progress is genuinely enabled."
+          "evidence": "integration_test/app_test.dart includes the whole-match Rookie UI test, reached through the hub and the opponent picker, and a hub - settings - privacy device test asserting Erase progress is genuinely enabled."
         },
         {
           "done": true,
