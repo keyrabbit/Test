@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-08-04T17:14:35+01:00",
+  "generated_at": "2026-08-04T19:30:35+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. This build is connect4 commit ef67381: the 126-lesson course, the rating/level/badge layer, the lost-match drill suggestion, and the strategy-pack lesson gating."
+    "note": "Web is a development preview target only, not a promised store platform. This build is connect4 commit c3e8dff: the hub-and-picker navigation, the one-screen first run, the pause menu with resign, a match that is saved after every move, and the 126-lesson course."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 24/24 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 17/19 = 8.9474; QA, release, and store readiness: 5 * 27/31 = 4.3548; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.7257 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 28/28 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 17/19 = 8.9474; QA, release, and store readiness: 5 * 27/31 = 4.3548; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.7257 of 100"
   },
   "overall_percent_complete": 89.73,
   "milestones": [
@@ -25,7 +25,7 @@
         },
         {
           "done": true,
-          "evidence": "LEARNING.md runs through at least L-046 after commit 48ea65a, and AGENTS.md records measured-ladder and verified-lesson rules at 8988eab."
+          "evidence": "LEARNING.md runs through L-065 after commit b5574d7, and AGENTS.md records the measured-ladder and verified-lesson rules."
         },
         {
           "done": true,
@@ -33,13 +33,13 @@
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main is at 693ac19 and includes 775cad1 form-factor/leave-match guard work plus 693ac19 codename removal from player-visible launch surfaces."
+          "evidence": "connect4 origin/main is at c3e8dff and includes ded6973 (hub, opponent picker, first run), 2efd9cc (saved match, pause menu, resign) and b5574d7 (L-060 to L-065)."
         }
       ],
       "criteria_done": 4,
       "criteria_total": 4,
-      "percent_complete": 100,
-      "weighted_points": 8
+      "percent_complete": 100.0,
+      "weighted_points": 8.0
     },
     {
       "name": "Development environment and target build capability",
@@ -68,7 +68,7 @@
       ],
       "criteria_done": 4,
       "criteria_total": 5,
-      "percent_complete": 80,
+      "percent_complete": 80.0,
       "weighted_points": 9.6
     },
     {
@@ -248,12 +248,28 @@
         {
           "done": true,
           "evidence": "A lost match names the lesson that drills the mistake it turned on (lib/game/lesson_suggestion.dart), shown only when the turning point was the player's own move and never in pass-and-play. test/practise_card_test.dart plays a real seeded match to a loss and asserts the card appears."
+        },
+        {
+          "done": true,
+          "evidence": "The app has a front door: lib/ui/home_screen.dart is a hub that leads with Continue or Play, then the daily puzzle, lessons, record, and How to play; lib/ui/play_screen.dart is the opponent picker behind it. Covered by test/form_factor_test.dart and test/smoke_test.dart at c3e8dff."
+        },
+        {
+          "done": true,
+          "evidence": "An unfinished match survives leaving the screen and the app: lib/data/local_store.dart SavedMatch is written after every move and replayed on resume, verified by 10 tests in test/saved_match_test.dart."
+        },
+        {
+          "done": true,
+          "evidence": "A pause menu with resume, restart, resign, and quit exists; resigning is the only action that asks, because it is the only destructive one. 8 tests in test/nav_guard_test.dart."
+        },
+        {
+          "done": true,
+          "evidence": "A new player gets one skippable welcome screen that pre-answers the piece-contrast question from the platform high-contrast flag and is never shown again; 11 tests in test/welcome_test.dart, including that the store-less degraded mode shows no greeting at all."
         }
       ],
-      "criteria_done": 24,
-      "criteria_total": 24,
-      "percent_complete": 100,
-      "weighted_points": 45
+      "criteria_done": 28,
+      "criteria_total": 28,
+      "percent_complete": 100.0,
+      "weighted_points": 45.0
     },
     {
       "name": "Offline, privacy, accessibility, and monetization promises",
@@ -347,15 +363,15 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run at 693ac19 and was clean."
+          "evidence": "dart format was run at c3e8dff and was clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at 693ac19 and reported No issues found."
+          "evidence": "flutter analyze was run at c3e8dff and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at 693ac19: 218/218 passed; +29 tests since e73b7c3."
+          "evidence": "flutter test was run at c3e8dff: 323/323 passed; +105 tests since 693ac19."
         },
         {
           "done": true,
@@ -411,7 +427,7 @@
         },
         {
           "done": true,
-          "evidence": "test/nav_guard_test.dart adds 5 passing tests for the leave-match guard; the existing smoke test failed when the guard landed and was updated to walk through the prompt."
+          "evidence": "test/nav_guard_test.dart now pins the post-persistence contract in 8 tests: leaving a saved match never asks, resigning always does, the pause menu sells nothing, and the store-less degraded mode keeps the old warning because there it is still true."
         },
         {
           "done": true,
@@ -447,11 +463,11 @@
         },
         {
           "done": true,
-          "evidence": "flutter build web --release was run at 693ac19 and succeeded; keyrabbit/Test commit 8598211 publishes the refreshed demo, and /demo/ plus /demo/main.dart.js return HTTP 200."
+          "evidence": "flutter build web --release was run at c3e8dff and succeeded; the demo at https://keyrabbit.github.io/Test/demo/ was republished from that build."
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release and flutter build windows --release were run at 693ac19 and succeeded; APK is 45.9 MB, Windows bundle is 28.4 MB, and the executable is four_in_a_row.exe. These are unsigned debug-keystore/local builds, not release-signed distributables."
+          "evidence": "flutter build apk --release and flutter build windows --release were run at c3e8dff and succeeded; APK is 46.6 MB, Windows bundle is 28.7 MB, and the executable is four_in_a_row.exe. These are unsigned debug-keystore/local builds, not release-signed distributables."
         },
         {
           "done": false,
@@ -502,8 +518,8 @@
       ],
       "criteria_done": 5,
       "criteria_total": 5,
-      "percent_complete": 100,
-      "weighted_points": 5
+      "percent_complete": 100.0,
+      "weighted_points": 5.0
     }
   ],
   "blockers": [
