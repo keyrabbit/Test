@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-03T19:16:18+02:00",
+  "generated_at": "2026-08-04T09:28:38+02:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit dbf0c65 publishes the demo refreshed from connect4 commit e73b7c3."
+    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit 8598211 refreshes the demo for responsive layouts, keyboard coverage, and leave-match guard work from connect4 commit 693ac19."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 18/18 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 16/18 = 8.8889; QA, release, and store readiness: 5 * 24/28 = 4.2857; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.5981 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 20/20 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 16/18 = 8.8889; QA, release, and store readiness: 5 * 27/31 = 4.3548; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.6673 of 100"
   },
-  "overall_percent_complete": 89.6,
+  "overall_percent_complete": 89.67,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -33,7 +33,7 @@
         },
         {
           "done": true,
-          "evidence": "connect4 origin/main is at e73b7c3 and includes the exact/heuristic Move That Mattered update in this refresh."
+          "evidence": "connect4 origin/main is at 693ac19 and includes 775cad1 form-factor/leave-match guard work plus 693ac19 codename removal from player-visible launch surfaces."
         }
       ],
       "criteria_done": 4,
@@ -203,7 +203,15 @@
         },
         {
           "done": true,
-          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 182/182 passed at 8988eab."
+          "evidence": "Committed Flutter tests exist and the recorded validation is flutter test 218/218 passed at 693ac19."
+        },
+        {
+          "done": true,
+          "evidence": "Leave-match guard shipped in 775cad1: PopScope asks \"Leave this match?\" for Android/system back, app-bar back, and Escape when a match is in progress; fresh boards and finished games leave without a prompt."
+        },
+        {
+          "done": true,
+          "evidence": "Real home, game, lesson, and puzzle screens are now exercised across phone portrait, phone landscape, tablet portrait, and desktop form factors, with playable touch and keyboard columns at each size."
         },
         {
           "done": true,
@@ -226,8 +234,8 @@
           "evidence": "Lessons were improved in a68bf38: 7 of 8 passive readings now ask for a move; new mostLines, killerSquare, and onlyMove kinds use positions mined by tool/find_shapes.dart and tool/find_lessons.dart, not authored by eye."
         }
       ],
-      "criteria_done": 18,
-      "criteria_total": 18,
+      "criteria_done": 20,
+      "criteria_total": 20,
       "percent_complete": 100,
       "weighted_points": 45
     },
@@ -319,19 +327,19 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format . was run at e73b7c3 and was clean with 0 files changed."
+          "evidence": "dart format was run at 693ac19 and was clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at e73b7c3 and reported No issues found."
+          "evidence": "flutter analyze was run at 693ac19 and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at e73b7c3: 189/189 passed in 2m03s."
+          "evidence": "flutter test was run at 693ac19: 218/218 passed; +29 tests since e73b7c3."
         },
         {
           "done": true,
-          "evidence": "flutter test integration_test -d windows was run at e73b7c3 and passed 2/2."
+          "evidence": "flutter test integration_test -d windows was re-run after the binary rename at 693ac19 and passed 2/2, confirming the renamed Windows target still launches and plays."
         },
         {
           "done": true,
@@ -379,6 +387,18 @@
         },
         {
           "done": true,
+          "evidence": "test/form_factor_test.dart adds 19 passing tests driving real home, game, lesson, and puzzle screens at 390x844, 844x390, 834x1112, and 1440x900; each asserts no overflow and a playable column by touch and keyboard."
+        },
+        {
+          "done": true,
+          "evidence": "test/nav_guard_test.dart adds 5 passing tests for the leave-match guard; the existing smoke test failed when the guard landed and was updated to walk through the prompt."
+        },
+        {
+          "done": true,
+          "evidence": "test/launch_surface_test.dart pins codename removal from shippable launch surfaces: Windows BINARY_NAME is four_in_a_row and Android launcher label is Four in a Row."
+        },
+        {
+          "done": true,
           "evidence": "test/manifest_test.dart makes the asset manifest a gate for legal notes and provenance paths."
         },
         {
@@ -407,11 +427,11 @@
         },
         {
           "done": true,
-          "evidence": "flutter build web --release was run at e73b7c3 and succeeded; keyrabbit/Test commit dbf0c65 publishes that web build to /demo/."
+          "evidence": "flutter build web --release was run at 693ac19 and succeeded; keyrabbit/Test commit 8598211 publishes the refreshed demo, and /demo/ plus /demo/main.dart.js return HTTP 200."
         },
         {
           "done": true,
-          "evidence": "flutter build apk --release and flutter build windows --release were run at e73b7c3 and succeeded; app-release.apk is 45.8 MB, linefall.exe is in a 28.4 MB Windows release bundle. These are unsigned debug-keystore/local builds, not release-signed distributables."
+          "evidence": "flutter build apk --release and flutter build windows --release were run at 693ac19 and succeeded; APK is 45.9 MB, Windows bundle is 28.4 MB, and the executable is four_in_a_row.exe. These are unsigned debug-keystore/local builds, not release-signed distributables."
         },
         {
           "done": false,
@@ -423,17 +443,17 @@
         },
         {
           "done": false,
-          "evidence": "Store metadata is drafted in docs/STORE_METADATA.md but remains blocked on the final public name. The repository name connect4 itself must be renamed before the repo is ever made public."
+          "evidence": "Store metadata is drafted in docs/STORE_METADATA.md but remains blocked on final naming decisions. The repository name connect4 must be renamed before public release, and Android applicationId remains com.linefall.linefall as an owner decision because it becomes permanent after first publish."
         },
         {
           "done": false,
           "evidence": "Store screenshots, signing, production store forms, and production submission are not ready."
         }
       ],
-      "criteria_done": 24,
-      "criteria_total": 28,
-      "percent_complete": 85.71,
-      "weighted_points": 4.2857
+      "criteria_done": 27,
+      "criteria_total": 31,
+      "percent_complete": 87.1,
+      "weighted_points": 4.3548
     },
     {
       "name": "Public status dashboard",
@@ -457,7 +477,7 @@
         },
         {
           "done": true,
-          "evidence": "keyrabbit/Test commit dbf0c65 publishes the e73b7c3 web build to demo/; /demo/ returns HTTP 200."
+          "evidence": "keyrabbit/Test commit 8598211 publishes the refreshed 693ac19 web build to demo/; /demo/ and /demo/main.dart.js return HTTP 200."
         }
       ],
       "criteria_done": 5,
@@ -479,7 +499,7 @@
       "issue": "#5",
       "url": "https://github.com/keyrabbit/connect4/issues/5",
       "status": "open",
-      "impact": "Rejected batch remains unresolved; current assets are separate provisional runtime assets."
+      "impact": "Rejected batch remains unresolved; current app art remains procedural/placeholder-grade or provisional."
     },
     {
       "title": "Canonical amber/teal fail the colour-independence rule",
@@ -493,30 +513,38 @@
       "issue": "#7",
       "url": "https://github.com/keyrabbit/connect4/issues/7",
       "status": "open",
-      "impact": "CI workflow is staged in docs/ci but cannot be installed under .github/workflows/ until the owner grants a token with workflow scope; no CI has ever run."
+      "impact": "CI workflow cannot be pushed because the agent token lacks workflow OAuth scope; every validation number here is from local runs only, and no CI has ever run."
+    },
+    {
+      "title": "Owner naming decision: Android applicationId",
+      "issue": "owner decision",
+      "url": "https://github.com/keyrabbit/connect4",
+      "status": "open",
+      "impact": "Android applicationId is still com.linefall.linefall. It is not player-visible but becomes permanent after first publish, so it was deliberately not guessed."
     }
   ],
   "verified_facts": [
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
     "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main is at e73b7c3 Make the move that mattered a fact where it can be.",
-    "Move That Mattered now distinguishes exact solver-backed claims from heuristic guesses; unresolved early-game analysis is labelled Best guess — too early in the game to be certain.",
-    "Recorded validation at e73b7c3: dart format . clean, 0 files changed; flutter analyze No issues found; flutter test 189/189 passed in 2m03s; integration tests 2/2 passed; APK/Windows/web release builds succeeded.",
-    "Release artifact sizes at e73b7c3: app-release.apk 45.8 MB; Windows release bundle 28.4 MB. These are unsigned debug-keystore/local builds, not release-signed distributables.",
-    "keyrabbit/Test commit dbf0c65 publishes the web build of e73b7c3 to https://keyrabbit.github.io/Test/demo/, which returns HTTP 200.",
-    "tool/insight_cost.dart measured the solver budget: all-ply budget 14 cost 84s and resolved 10/38; targeted budget 20 cost 1.7s and resolved 16/16.",
+    "connect4 origin/main is at 693ac19 Take the codename off the taskbar and the home screen.",
+    "Commit 775cad1 adds form-factor coverage and a leave-match guard; commit 693ac19 removes the uncleared codename from player-visible Windows and Android launch surfaces.",
+    "Recorded validation at 693ac19: dart format clean; flutter analyze No issues found; flutter test 218/218 passed; integration tests 2/2 passed; APK/Windows/web release builds succeeded.",
+    "Release artifact sizes at 693ac19: APK 45.9 MB; Windows release bundle 28.4 MB; Windows executable four_in_a_row.exe. These are unsigned debug-keystore/local builds, not release-signed distributables.",
+    "keyrabbit/Test commit 8598211 publishes the web build of 693ac19 to https://keyrabbit.github.io/Test/demo/; /demo/ and /demo/main.dart.js return HTTP 200.",
+    "Toolchain for this refresh is Flutter 3.44.8 stable / Dart 3.12.2.",
     "CI is not running; workflow files are staged in docs/ci because workflow OAuth scope is missing.",
     "iOS builds are impossible on this Windows machine without a macOS runner.",
     "Asset work is paused by owner instruction; issues #4, #5, and #6 remain open and unanswered."
   ],
   "not_run": [
-    "No iOS build was run; it is unavailable on Windows.",
-    "CI is not installed or running; workflow installation is blocked by missing workflow token scope and issue #7 remains open.",
+    "No iOS build was run; it is unavailable on Windows and needs a macOS GitHub Actions runner.",
+    "CI is not installed or running; workflow installation is blocked by missing workflow token scope and issue #7 remains open. No CI has ever run.",
     "No production store-package validation, release signing, store metadata finalization, store privacy form submission, or production submission was run.",
     "The APK and Windows outputs are unsigned debug-keystore/local builds, not release-signed distributables.",
-    "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused.",
+    "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused until owner design iteration next week.",
     "A real premium_strategy_pack store backend is not implemented or verified.",
-    "The repository is still named connect4 and must be renamed before it is ever public."
+    "The repository is still named connect4 and must be renamed before it is ever public.",
+    "Android applicationId remains com.linefall.linefall and is left as an owner naming decision before first publish."
   ],
   "environment": [
     {
@@ -554,6 +582,18 @@
   ],
   "recent_changes": [
     {
+      "commit": "775cad1",
+      "summary": "Form-factor pass: real home, game, lesson, and puzzle screens are tested at phone portrait, phone landscape, tablet portrait, and desktop sizes, including touch and keyboard playability."
+    },
+    {
+      "commit": "775cad1",
+      "summary": "Leave-match guard: in-progress matches now prompt before leaving via Android/system back, app-bar back, or Escape; fresh and completed games still exit without a prompt."
+    },
+    {
+      "commit": "693ac19",
+      "summary": "Codename removed from player-visible launch surfaces: Windows executable is four_in_a_row.exe and Android launcher label is Four in a Row; Android applicationId remains an owner naming decision."
+    },
+    {
       "commit": "e73b7c3",
       "summary": "Move That Mattered is now exact where possible: late-game positions use Solver to prove a forced win or held draw was given up; early-game unresolved positions are labelled Best guess."
     },
@@ -580,16 +620,16 @@
     {
       "commit": "b64d50d",
       "summary": "Exact solver added in lib/game/solver.dart with 9 tests; exhausted search budget reports UNRESOLVED instead of masquerading as a draw."
-    },
-    {
-      "commit": "8988eab",
-      "summary": "AGENTS.md records the measured-ladder and verified-lesson rules; connect4 main head for this refresh."
     }
   ],
   "regressions": [
     {
-      "title": "Owner-reported difficulty problem was partly elsewhere",
-      "evidence": "Owner felt the 2nd-to-3rd step was steep; measurement found the worst defect was Builder vs Rookie at 98%, and Guard vs Builder was only 52% so one level was not stronger than the level below. The fix is measured and rule-preserving."
+      "title": "Wide layout was previously untested",
+      "evidence": "Every widget test had run at Flutter default 800x600, just under the app's 900px wide-layout breakpoint. test/form_factor_test.dart now renders and plays across phone, tablet, and desktop sizes."
+    },
+    {
+      "title": "In-progress matches could be lost through Back",
+      "evidence": "Backing out of a match in progress previously discarded it silently. PopScope now centralizes the leave-match confirmation across system back, app-bar back, and Escape."
     },
     {
       "title": "CI still not running",
@@ -599,7 +639,7 @@
   "asset_status": [
     {
       "stage": "Asset generation",
-      "status": "Paused by owner instruction while functionality, interactions, difficulty, and lessons are improved."
+      "status": "Paused by owner instruction while functionality and interactions are improved; the app currently ships procedural/placeholder-grade or provisional art."
     },
     {
       "stage": "Stage 1 style board",
@@ -623,7 +663,7 @@
     }
   ],
   "phase_status": {
-    "title": "Functionality and training focus",
-    "summary": "Owner gave provisional design approval on 2026-08-02 to unblock development, then asked to pause asset generation and focus on interactions, clearer turns, a smoother difficulty ladder, and much better training lessons. This is not legal clearance or a final Stage 1 sign-off."
+    "title": "Ship-readiness and functionality focus",
+    "summary": "Asset generation remains paused by owner instruction. This refresh records form-factor coverage, leave-match protection, and removal of the uncleared codename from player-visible launch surfaces, while CI, iOS, store submission, and final naming remain unresolved."
   }
 }
