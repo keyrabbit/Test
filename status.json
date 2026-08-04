@@ -1,19 +1,19 @@
 {
-  "generated_at": "2026-08-04T09:28:38+02:00",
+  "generated_at": "2026-08-04T17:14:35+01:00",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
     "label": "Playable web development preview",
     "url": "https://keyrabbit.github.io/Test/demo/",
-    "note": "Web is a development preview target only, not a promised store platform. keyrabbit/Test commit 8598211 refreshes the demo for responsive layouts, keyboard coverage, and leave-match guard work from connect4 commit 693ac19."
+    "note": "Web is a development preview target only, not a promised store platform. This build is connect4 commit ef67381: the 126-lesson course, the rating/level/badge layer, the lost-match drill suggestion, and the strategy-pack lesson gating."
   },
   "methodology": {
     "summary": "Each acceptance criterion is binary: done only when verified by a file, git history, GitHub issue/API output, or a tool command. Milestone percent is completed criteria divided by total criteria. Overall percent is the sum of milestone weight multiplied by completed criteria divided by total criteria.",
     "total_weight": 100,
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
-    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 20/20 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 16/18 = 8.8889; QA, release, and store readiness: 5 * 27/31 = 4.3548; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.6673 of 100"
+    "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 24/24 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 17/19 = 8.9474; QA, release, and store readiness: 5 * 27/31 = 4.3548; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.7257 of 100"
   },
-  "overall_percent_complete": 89.67,
+  "overall_percent_complete": 89.73,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -232,10 +232,26 @@
         {
           "done": true,
           "evidence": "Lessons were improved in a68bf38: 7 of 8 passive readings now ask for a move; new mostLines, killerSquare, and onlyMove kinds use positions mined by tool/find_shapes.dart and tool/find_lessons.dart, not authored by eye."
+        },
+        {
+          "done": true,
+          "evidence": "The course is 126 lessons (22 hand-written, 104 mined by tool/build_course.dart) graded into four steps. test/lessons_test.dart re-derives every claim each lesson makes from the rules engine, so no lesson can assert something the game does not do; 297 tests pass at ef67381."
+        },
+        {
+          "done": true,
+          "evidence": "Multi-move lessons exist: LessonKind.forcedLine teaches a two-move plan where the opponent's only block builds the winning line. Each mined sequence is verified - the first move makes exactly one threat, every alternative reply loses on the spot, and the finish is the unique winning column."
+        },
+        {
+          "done": true,
+          "evidence": "Gamification layer in lib/game/progress.dart: Elo-style rating against a fixed opponent ladder, named levels, win streaks, and 16 achievements, shown on the result panel and a \"Your play\" screen. test/progress_test.dart pins that no badge can be earned by losing and that finishing a lesson never moves the rating."
+        },
+        {
+          "done": true,
+          "evidence": "A lost match names the lesson that drills the mistake it turned on (lib/game/lesson_suggestion.dart), shown only when the turning point was the player's own move and never in pass-and-play. test/practise_card_test.dart plays a real seeded match to a loss and asserts the card appears."
         }
       ],
-      "criteria_done": 20,
-      "criteria_total": 20,
+      "criteria_done": 24,
+      "criteria_total": 24,
       "percent_complete": 100,
       "weighted_points": 45
     },
@@ -314,12 +330,16 @@
         {
           "done": false,
           "evidence": "Store forms have not been submitted and no developer account exists, so store privacy submission/readiness is not done."
+        },
+        {
+          "done": true,
+          "evidence": "The paid promise now has content behind it and no longer overstates: the strategy pack adds the 84 mined practice positions, and the unimplemented \"deeper post-match analysis\" claim was removed from the purchase screen. Every idea in the course stays free - all hand-written lessons and the whole first step, 42 lessons, well above the 20-lesson floor in AGENTS.md section 8. test/lesson_gating_test.dart pins that every LessonKind and every tier has a free lesson."
         }
       ],
-      "criteria_done": 16,
-      "criteria_total": 18,
-      "percent_complete": 88.89,
-      "weighted_points": 8.8889
+      "criteria_done": 17,
+      "criteria_total": 19,
+      "percent_complete": 89.47,
+      "weighted_points": 8.9474
     },
     {
       "name": "QA, release, and store readiness",
@@ -509,13 +529,6 @@
       "impact": "Blocks final colour-independent production art decisions; canonical teal #30CFC0 vs amber #FFB23F is only about 14/255 luma apart. Working assumption is teal #1FA396."
     },
     {
-      "title": "Owner input: grant the workflow scope so CI can be installed",
-      "issue": "#7",
-      "url": "https://github.com/keyrabbit/connect4/issues/7",
-      "status": "open",
-      "impact": "CI workflow cannot be pushed because the agent token lacks workflow OAuth scope; every validation number here is from local runs only, and no CI has ever run."
-    },
-    {
       "title": "Owner naming decision: Android applicationId",
       "issue": "owner decision",
       "url": "https://github.com/keyrabbit/connect4",
@@ -524,25 +537,25 @@
     }
   ],
   "verified_facts": [
-    "gh active account was switched to keyrabbit and authenticated for private repo access.",
-    "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
-    "connect4 origin/main is at 693ac19 Take the codename off the taskbar and the home screen.",
-    "Commit 775cad1 adds form-factor coverage and a leave-match guard; commit 693ac19 removes the uncleared codename from player-visible Windows and Android launch surfaces.",
-    "Recorded validation at 693ac19: dart format clean; flutter analyze No issues found; flutter test 218/218 passed; integration tests 2/2 passed; APK/Windows/web release builds succeeded.",
-    "Release artifact sizes at 693ac19: APK 45.9 MB; Windows release bundle 28.4 MB; Windows executable four_in_a_row.exe. These are unsigned debug-keystore/local builds, not release-signed distributables.",
-    "keyrabbit/Test commit 8598211 publishes the web build of 693ac19 to https://keyrabbit.github.io/Test/demo/; /demo/ and /demo/main.dart.js return HTTP 200.",
-    "Toolchain for this refresh is Flutter 3.44.8 stable / Dart 3.12.2.",
-    "CI is not running; workflow files are staged in docs/ci because workflow OAuth scope is missing.",
+    "connect4 origin/main is at ef67381 Record what this stretch taught.",
+    "Recorded validation at ef67381 on this machine: dart format clean; flutter analyze No issues found; flutter test 297/297 passed (about 2 minutes). No CI has ever run - these are local results.",
+    "The course is 126 lessons; 42 are free (every hand-written lesson plus the whole first step) and 84 are in the strategy pack. Counts are derived from lib/game/lessons.dart at build time, not written by hand.",
+    "flutter build web --release succeeded at ef67381; the output is 41.2 MB unminified on disk and is published to https://keyrabbit.github.io/Test/demo/.",
+    "Toolchain for this refresh is Flutter 3.44.8 stable / Dart 3.12.2 on Windows.",
+    "Issue #7 is closed: the owner chose option 3, no CI for now. The workflow file stays staged at docs/ci/ci.yml and is not installed.",
+    "Issues #4, #5 and #6 remain open. Asset work is paused by owner instruction until the design week.",
     "iOS builds are impossible on this Windows machine without a macOS runner.",
-    "Asset work is paused by owner instruction; issues #4, #5, and #6 remain open and unanswered."
+    "gh active account was switched to keyrabbit and authenticated for private repo access.",
+    "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/."
   ],
   "not_run": [
+    "No CI has ever run. Every quality number here was produced locally on one Windows machine.",
     "No iOS build was run; it is unavailable on Windows and needs a macOS GitHub Actions runner.",
-    "CI is not installed or running; workflow installation is blocked by missing workflow token scope and issue #7 remains open. No CI has ever run.",
+    "No Windows or Android release build was re-run at ef67381. The last recorded artifact sizes are from 693ac19 and are not carried forward as current.",
     "No production store-package validation, release signing, store metadata finalization, store privacy form submission, or production submission was run.",
-    "The APK and Windows outputs are unsigned debug-keystore/local builds, not release-signed distributables.",
-    "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused until owner design iteration next week.",
-    "A real premium_strategy_pack store backend is not implemented or verified.",
+    "A real premium_strategy_pack store backend is not implemented or verified; purchases are mock-only behind a DEMO PURCHASES indicator.",
+    "Stage 3 portraits, Stage 4 backgrounds, and Stage 5 textures are not owner-accepted; asset generation is paused.",
+    "The canonical amber/teal pair still separates by only 14/255 luma (issue #6). Player identity does not depend on colour anywhere in the app, but the palette itself has not been fixed.",
     "The repository is still named connect4 and must be renamed before it is ever public.",
     "Android applicationId remains com.linefall.linefall and is left as an owner naming decision before first publish."
   ],
@@ -582,44 +595,32 @@
   ],
   "recent_changes": [
     {
-      "commit": "775cad1",
-      "summary": "Form-factor pass: real home, game, lesson, and puzzle screens are tested at phone portrait, phone landscape, tablet portrait, and desktop sizes, including touch and keyboard playability."
+      "commit": "b93a4b2",
+      "summary": "Lessons can teach a line, not just a move: LessonKind.forcedLine adds verified two-move plans where the opponent's forced block builds your win."
     },
     {
-      "commit": "775cad1",
-      "summary": "Leave-match guard: in-progress matches now prompt before leaving via Android/system back, app-bar back, or Escape; fresh and completed games still exit without a prompt."
+      "commit": "7a826e4",
+      "summary": "The course grew from 22 lessons to 126. tool/build_course.dart mines positions with the rules engine and derives every sentence from the board, so no lesson can claim something untrue."
     },
     {
-      "commit": "693ac19",
-      "summary": "Codename removed from player-visible launch surfaces: Windows executable is four_in_a_row.exe and Android launcher label is Four in a Row; Android applicationId remains an owner naming decision."
+      "commit": "47d0719",
+      "summary": "Rating, named levels, win streaks and 16 achievements, with a \"Your play\" screen. The course stays unscored: practising can never farm a level."
     },
     {
-      "commit": "e73b7c3",
-      "summary": "Move That Mattered is now exact where possible: late-game positions use Solver to prove a forced win or held draw was given up; early-game unresolved positions are labelled Best guess."
+      "commit": "e957029",
+      "summary": "A lost match now names the lesson that drills the mistake it turned on. Also fixed a real layout bug the taller result panel exposed: the stacked layout overflowed instead of scrolling."
     },
     {
-      "commit": "tool/insight_cost.dart",
-      "summary": "Insight exact-tier budget was chosen by measurement: solving every ply at budget 14 cost 84s and resolved 10/38; targeted budget 20 cost 1.7s and resolved 16/16."
+      "commit": "31fbcdc",
+      "summary": "Made the paid promise true: the strategy pack adds the mined practice positions, the unimplemented analysis claim is gone, and every idea in the course stays free."
     },
     {
-      "commit": "2026-08-03",
-      "summary": "Correction: device integration tests are current, not stale. flutter test integration_test -d windows passed 2/2 on current head."
+      "commit": "30984df",
+      "summary": "A 126-row course gets a next step - one \"Start here\"/\"Carry on\" card - and a locked lesson can no longer be walked into from the end of the previous one."
     },
     {
-      "commit": "b64d50d",
-      "summary": "Turn clarity delivered and difficulty measurement started: match app bar shows a piece chip plus side-to-play sentence, undo restates turn, and lessons open with a learner-side banner."
-    },
-    {
-      "commit": "193e163",
-      "summary": "Difficulty ladder reshaped with controlled move selection, no rule changes or hidden pieces. Measured after: Builder/Rookie 77%, Guard/Builder 82%, Trickster/Guard 70%, Master/Trickster 83%."
-    },
-    {
-      "commit": "a68bf38",
-      "summary": "Lessons rewritten: 7 of 8 passive readings now ask for a move; new mostLines, killerSquare, and onlyMove lesson kinds; positions mined by tools and re-derived by tests."
-    },
-    {
-      "commit": "b64d50d",
-      "summary": "Exact solver added in lib/game/solver.dart with 9 tests; exhausted search budget reports UNRESOLVED instead of masquerading as a draw."
+      "commit": "ef67381",
+      "summary": "LEARNING.md L-053 to L-059, including the lesson/play boundary decision: the two stay separate systems joined by one after-the-fact loop."
     }
   ],
   "regressions": [
