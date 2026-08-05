@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T19:30:35+02:00",
+  "generated_at": "2026-08-05T07:14:22.664Z",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
@@ -13,7 +13,7 @@
     "formula": "overall_percent = sum(milestone.weight * milestone.criteria_done / milestone.criteria_total)",
     "arithmetic": "Governance and evidence base: 8 * 4/4 = 8.0000; Development environment and target build capability: 12 * 4/5 = 9.6000; Art direction and asset pipeline: 15 * 10/17 = 8.8235; Playable Flutter game implementation: 45 * 28/28 = 45.0000; Offline, privacy, accessibility, and monetization promises: 10 * 17/19 = 8.9474; QA, release, and store readiness: 5 * 27/31 = 4.3548; Public status dashboard: 5 * 5/5 = 5.0000; total = 89.7257 of 100"
   },
-  "overall_percent_complete": 89.73,
+  "overall_percent_complete": 89.76,
   "milestones": [
     {
       "name": "Governance and evidence base",
@@ -38,8 +38,8 @@
       ],
       "criteria_done": 4,
       "criteria_total": 4,
-      "percent_complete": 100.0,
-      "weighted_points": 8.0
+      "percent_complete": 100,
+      "weighted_points": 8
     },
     {
       "name": "Development environment and target build capability",
@@ -68,7 +68,7 @@
       ],
       "criteria_done": 4,
       "criteria_total": 5,
-      "percent_complete": 80.0,
+      "percent_complete": 80,
       "weighted_points": 9.6
     },
     {
@@ -268,8 +268,8 @@
       ],
       "criteria_done": 28,
       "criteria_total": 28,
-      "percent_complete": 100.0,
-      "weighted_points": 45.0
+      "percent_complete": 100,
+      "weighted_points": 45
     },
     {
       "name": "Offline, privacy, accessibility, and monetization promises",
@@ -363,19 +363,19 @@
       "acceptance_criteria": [
         {
           "done": true,
-          "evidence": "dart format was run at c3e8dff and was clean."
+          "evidence": "dart format was run at b3619d9 and was clean."
         },
         {
           "done": true,
-          "evidence": "flutter analyze was run at c3e8dff and reported No issues found."
+          "evidence": "flutter analyze was run at b3619d9 and reported No issues found."
         },
         {
           "done": true,
-          "evidence": "flutter test was run at c3e8dff: 323/323 passed; +105 tests since 693ac19."
+          "evidence": "flutter test was run at b3619d9: 352/352 passed in about 2 minutes; +29 tests since c3e8dff, of which 16 are test/review_findings_test.dart."
         },
         {
           "done": true,
-          "evidence": "flutter test integration_test -d windows was re-run at 24309a5 against the new hub-and-picker navigation and passed 2/2, dismissing the real first-run greeting and playing a whole match on a real device."
+          "evidence": "flutter test integration_test -d windows was re-run at b3619d9 and passed 2/2 on a real Windows device, after the review fixes changed resignation, undo and the saved match."
         },
         {
           "done": true,
@@ -484,12 +484,20 @@
         {
           "done": false,
           "evidence": "Store screenshots, signing, production store forms, and production submission are not ready."
+        },
+        {
+          "done": true,
+          "evidence": "A rubber-duck review of the new navigation found 8 release blockers, all reproduced in code before being fixed and all closed at b3619d9: a purchase prompt reachable from a paused match, a resignation during the opponent's reply that recorded a win, a reply landing in a finished match, a result outliving its board, undo re-counting a finished match, the one saved match replaced silently, an unwatched save the pause menu claimed was written, and Choose another opponent leading to the hub."
+        },
+        {
+          "done": true,
+          "evidence": "test/review_findings_test.dart pins all 8 findings in 16 tests. The pause sheet and the first run were added to test/form_factor_test.dart at four sizes and to test/text_scale_test.dart at 2.0x; the pause-menu test was verified against the unfixed code, which overflows by 62 pixels on a landscape phone."
         }
       ],
-      "criteria_done": 27,
-      "criteria_total": 31,
-      "percent_complete": 87.1,
-      "weighted_points": 4.3548
+      "criteria_done": 29,
+      "criteria_total": 33,
+      "percent_complete": 87.88,
+      "weighted_points": 4.3939
     },
     {
       "name": "Public status dashboard",
@@ -518,8 +526,8 @@
       ],
       "criteria_done": 5,
       "criteria_total": 5,
-      "percent_complete": 100.0,
-      "weighted_points": 5.0
+      "percent_complete": 100,
+      "weighted_points": 5
     }
   ],
   "blockers": [
@@ -553,8 +561,8 @@
     }
   ],
   "verified_facts": [
-    "connect4 origin/main is at ef67381 Record what this stretch taught.",
-    "Recorded validation at ef67381 on this machine: dart format clean; flutter analyze No issues found; flutter test 297/297 passed (about 2 minutes). No CI has ever run - these are local results.",
+    "connect4 origin/main is at b3619d9 Record L-066 to L-070.",
+    "Recorded validation at b3619d9 on this machine: dart format clean; flutter analyze No issues found; flutter test 352/352 passed in about 2 minutes; flutter test integration_test -d windows 2/2 passed. No CI has ever run - these are local results.",
     "The course is 126 lessons; 42 are free (every hand-written lesson plus the whole first step) and 84 are in the strategy pack. Counts are derived from lib/game/lessons.dart at build time, not written by hand.",
     "flutter build web --release succeeded at ef67381; the output is 41.2 MB unminified on disk and is published to https://keyrabbit.github.io/Test/demo/.",
     "flutter build windows --release succeeded at ef67381; four_in_a_row.exe launches and stays running on this machine. Release bundle is 28.6 MB, unsigned local build.",
@@ -612,14 +620,6 @@
   ],
   "recent_changes": [
     {
-      "commit": "b93a4b2",
-      "summary": "Lessons can teach a line, not just a move: LessonKind.forcedLine adds verified two-move plans where the opponent's forced block builds your win."
-    },
-    {
-      "commit": "7a826e4",
-      "summary": "The course grew from 22 lessons to 126. tool/build_course.dart mines positions with the rules engine and derives every sentence from the board, so no lesson can claim something untrue."
-    },
-    {
       "commit": "47d0719",
       "summary": "Rating, named levels, win streaks and 16 achievements, with a \"Your play\" screen. The course stays unscored: practising can never farm a level."
     },
@@ -638,6 +638,14 @@
     {
       "commit": "ef67381",
       "summary": "LEARNING.md L-053 to L-059, including the lesson/play boundary decision: the two stay separate systems joined by one after-the-fact loop."
+    },
+    {
+      "commit": "99324e5",
+      "summary": "Closed the 8 blockers a review found in the new navigation. The worst: the pause menu is reachable while the opponent is thinking, so resigning there recorded a win and the reply in flight then played into a finished match. Actions that end a match now bump a generation token every await rechecks."
+    },
+    {
+      "commit": "b3619d9",
+      "summary": "LEARNING.md L-066 to L-070: the opponent's thinking window is a real place; \"during a match\" means every screen the match can reach; an irreversible write must disable the control that repeats it; one save slot makes replacement a decision; a test that races a real interaction is not a test."
     }
   ],
   "regressions": [
