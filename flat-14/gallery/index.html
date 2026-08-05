@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flat 14 — frames</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#111318;color:#f2f2f0;padding:32px 24px 64px;
+    font-family:"Segoe UI",Inter,system-ui,-apple-system,sans-serif}
+  main{max-width:1180px;margin:0 auto}
+  h1{font-size:30px;letter-spacing:.14em;font-weight:600;margin:0 0 6px}
+  h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#9aa0a8;
+    font-weight:600;margin:44px 0 4px;border-top:1px solid #262a31;padding-top:20px}
+  p.sub{color:#c3c6cb;font-size:15px;line-height:1.6;margin:0 0 8px;max-width:70ch}
+  a{color:#f25c26}
+  .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    margin-top:18px}
+  figure{margin:0;background:#171a20;border:1px solid #262a31;border-radius:10px;
+    overflow:hidden}
+  figure img{display:block;width:100%;height:auto;background:#0b0d10}
+  figcaption{padding:10px 12px 12px;font-size:12px;line-height:1.55;color:#9aa0a8}
+  figcaption b{display:block;color:#e6e8ea;font-size:13px;font-weight:600;
+    letter-spacing:.02em;margin-bottom:3px}
+  footer{margin-top:48px;border-top:1px solid #262a31;padding-top:16px;
+    font-size:12.5px;color:#7f858d;line-height:1.9}
+  code{background:#1a1d23;padding:2px 6px;border-radius:4px}
+</style>
+</head>
+<body>
+<main>
+  <h1>FLAT 14 — FRAMES</h1>
+  <p class="sub">Every picture here was rendered by the test suite, not taken by
+  captures the frame. They are downscaled to 480 px wide — 0.9 MB
+  for the whole set, against about a hundred times that at full size, so the
+  source PNGs stay in the private repository.</p>
+  <p class="sub"><a href="../">back to the demo</a> · <a href="../status/">project dashboard</a> ·
+  <a href="../play/">play it</a></p>
+
+  <h2>Frames that carry a claim (64)</h2>
+  <p class="sub">Each of these states what must be visible in it. If the claim
+  and the picture disagree, the build is wrong.</p>
+  <div class="grid">
+  <figure>
+    <img src="01-room-wide.jpg" width="480" height="270" loading="lazy" alt="01-room-wide">
+    <figcaption><b>01-room-wide</b><span>Whole room. Prop density and the daylight shaft read here or nowhere.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="02-corner-contact.jpg" width="480" height="270" loading="lazy" alt="02-corner-contact">
+    <figcaption><b>02-corner-contact</b><span>Floor/wall corner behind the plant. Nothing but GTAO can darken this.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="03-desk.jpg" width="480" height="270" loading="lazy" alt="03-desk">
+    <figcaption><b>03-desk</b><span>Desk surface: contact occlusion under the lip, clutter, material variety.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="04-window-light.jpg" width="480" height="270" loading="lazy" alt="04-window-light">
+    <figcaption><b>04-window-light</b><span>The light source itself. Bloom threshold sits above every diffuse surface.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="05-keypad.jpg" width="480" height="270" loading="lazy" alt="05-keypad">
+    <figcaption><b>05-keypad</b><span>Emissive display with power on — the only surface allowed to bloom indoors.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="06-kitchen.jpg" width="480" height="270" loading="lazy" alt="06-kitchen">
+    <figcaption><b>06-kitchen</b><span>Counter run: dishes, tins, the scorched socket. Density at reading distance.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="07-entrance.jpg" width="480" height="270" loading="lazy" alt="07-entrance">
+    <figcaption><b>07-entrance</b><span>Entrance: shoes, mat, coat rail, skirting shadow along the left wall.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="08-pendant.jpg" width="480" height="270" loading="lazy" alt="08-pendant">
+    <figcaption><b>08-pendant</b><span>Pendant lit, and the shade doing its job: bulb glowing inside it, ceiling above unblown and evenly toned.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="09-consumer-unit.jpg" width="480" height="270" loading="lazy" alt="09-consumer-unit">
+    <figcaption><b>09-consumer-unit</b><span>Consumer unit open: breaker labels legible, riser hatch released.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="10-burnt-plug.jpg" width="480" height="270" loading="lazy" alt="10-burnt-plug">
+    <figcaption><b>10-burnt-plug</b><span>The scorched plug. The room's loudest single clue must stay loudest.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="11-open-drawer.jpg" width="480" height="270" loading="lazy" alt="11-open-drawer">
+    <figcaption><b>11-open-drawer</b><span>Open drawer: passport and manual readable, not lost in the new clutter.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="12-doormat.jpg" width="480" height="270" loading="lazy" alt="12-doormat">
+    <figcaption><b>12-doormat</b><span>Lifted doormat and the flyer beneath it.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="13-receipt.jpg" width="480" height="270" loading="lazy" alt="13-receipt">
+    <figcaption><b>13-receipt</b><span>Receipt flattened on the desk: the April date has to survive the jitter pass.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="14-fridge.jpg" width="480" height="270" loading="lazy" alt="14-fridge">
+    <figcaption><b>14-fridge</b><span>Fridge door: magnets and calendar, the second half of the date clue.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="15-carry-torch.jpg" width="480" height="270" loading="lazy" alt="15-carry-torch">
+    <figcaption><b>15-carry-torch</b><span>The verb: a lit torch held in hand, its beam on the riser, inventory bar below.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="16-hall-wide.jpg" width="480" height="270" loading="lazy" alt="16-hall-wide">
+    <figcaption><b>16-hall-wide</b><span>The hall from the flat door: marble, dado, 3.4 m ceiling, and the one shaft of daylight through the fanlight over the portone.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="17-portone.jpg" width="480" height="270" loading="lazy" alt="17-portone">
+    <figcaption><b>17-portone</b><span>The way out. Two leaves, the lock plate at face height, the fanlight above — the frame that has to make the door read as the goal.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="18-keyway.jpg" width="480" height="270" loading="lazy" alt="18-keyway">
+    <figcaption><b>18-keyway</b><span>The whole of room two's deduction in one frame: the keyway cut in the shape of the key that opens it. If this is not legible at reading distance the room is unsolvable.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="19-key-board.jpg" width="480" height="270" loading="lazy" alt="19-key-board">
+    <figcaption><b>19-key-board</b><span>Nine keys, nine hooks, and a card strip a leak has taken the numbers off — the premise made visible. The webs must differ readably at this distance.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="20-letterboxes.jpg" width="480" height="270" loading="lazy" alt="20-letterboxes">
+    <figcaption><b>20-letterboxes</b><span>Eight boxes, seven cards. 17 is brown where the others are polished and its flap will not lie down. Nothing here says the word "empty".</span></figcaption>
+  </figure>
+  <figure>
+    <img src="21-stairs.jpg" width="480" height="270" loading="lazy" alt="21-stairs">
+    <figcaption><b>21-stairs</b><span>The stairwell: flight, banister, bicycle, lift. Geometry the player cannot walk up must still look like it goes somewhere.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="22-porters-door.jpg" width="480" height="270" loading="lazy" alt="22-porters-door">
+    <figcaption><b>22-porters-door</b><span>The porter's door, in the west wall between the portone and the booth. It is the failure ending's way out, so a player has to be able to stand somewhere legal and see it — which the walk probe now asserts, and this frame shows.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="23-touch.jpg" width="480" height="270" loading="lazy" alt="23-touch">
+    <figcaption><b>23-touch</b><span>The tablet control layer over the opening view. Both thumb zones are invisible until a thumb lands, so the only permanent furniture is the action row along the bottom. A tablet player should see the room, not the controls.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="24-report.jpg" width="480" height="270" loading="lazy" alt="24-report">
+    <figcaption><b>24-report</b><span>The end screen and the one thing the game asks for. Issue #6 needs a stranger's session, and the ask has to arrive after the ending lands, read as optional, and say plainly that nothing was sent anywhere.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="25-report-paused.jpg" width="480" height="270" loading="lazy" alt="25-report-paused">
+    <figcaption><b>25-report-paused</b><span>The same ask, on the pause card, for the player who never reaches an ending. Those are the sessions issue #6 most needs and the button used to be unreachable from them. It has to read as a way out, not a toll gate.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="26-black-frame-notice.jpg" width="480" height="270" loading="lazy" alt="26-black-frame-notice">
+    <figcaption><b>26-black-frame-notice</b><span>What a player hit by issue #10 now sees. The canvas is hidden because the frame this appears over is black by definition; the notice is DOM, so it survives a render producing nothing. Three sessions of that bug produced zero reports, because nothing on screen said it was a bug or that it could be sent to anyone.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="27-cortile.jpg" width="480" height="270" loading="lazy" alt="27-cortile">
+    <figcaption><b>27-cortile</b><span>The courtyard, from just inside the androne. ADR-008 in one frame: the portone opened *inward*, and what is on the other side of it is nine metres of palazzo and a square of night sky, not the street. Twenty-two windows, six of them lit, and the way out is the gate at the far end — visible from here and shut for ten more rooms.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="28-cortile-gate.jpg" width="480" height="270" loading="lazy" alt="28-cortile-gate">
+    <figcaption><b>28-cortile-gate</b><span>The carriage gate, close. It must read as a way out and as impassable at the same time — see-through iron, so the player can look down the passage at the street, with the stop in the collision model rather than in a flag.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="29-cortile-well.jpg" width="480" height="270" loading="lazy" alt="29-cortile-well">
+    <figcaption><b>29-cortile-well</b><span>The wellhead, and the setts around it. The courtyard is the first room in this game with no ceiling and the first whose floor is not a plane the player walks on indoors; if the paving and the drum do not read as stone here, the room reads as a corridor with sky.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="30-cellars.jpg" width="480" height="270" loading="lazy" alt="30-cellars">
+    <figcaption><b>30-cellars</b><span>Six cellar doors along the south range, marked I to VI in cast iron. Room three's lock is in this frame and nothing in it is a puzzle piece: six plank doors, six padlocks, six numerals. What is missing is the only thing that matters — not one of them carries a flat number, and there are eight flats.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="31-meters.jpg" width="480" height="270" loading="lazy" alt="31-meters">
+    <figcaption><b>31-meters</b><span>The water meters, close enough to read. Eighteen, seventeen, sixteen, fifteen, fourteen, thirteen, left to right — the fitter's order, taken standing at the cabinet. The player reads them from across the courtyard, facing the other way, so the honest label is also the trap.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="32-trench.jpg" width="480" height="270" loading="lazy" alt="32-trench">
+    <figcaption><b>32-trench</b><span>The trench: relaid setts running out from the meter cabinet, along, and up to exactly one door, with bright new copper standing at each end. The third witness, and the one that needs no counting — a player who never works out that the two runs count in opposite directions can still follow a pipe.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="33-chalk.jpg" width="480" height="270" loading="lazy" alt="33-chalk">
+    <figcaption><b>33-chalk</b><span>The merchant's chalk, on the paving in front of the doors. Three of six numbers survive, which is enough to fix a direction and a step and not enough to be the answer written down. The number on the ground and the numeral above the door disagree, and that disagreement is the whole of room three.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="34-cantina-torch.jpg" width="480" height="270" loading="lazy" alt="34-cantina-torch">
+    <figcaption><b>34-cantina-torch</b><span>The cantina, with the bulb off and the torch lit. This is the bill for room one: a dead torch and two cells were the flat's second-best moment and then the tool did nothing for two rooms, and a screenshot claiming it had earned itself in the hall was deleted because the frame said otherwise. Here the room is a brick barrel with no light in it at all, and the beam is the only thing there is.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="35-cantina-bulb.jpg" width="480" height="270" loading="lazy" alt="35-cantina-bulb">
+    <figcaption><b>35-cantina-bulb</b><span>The same cellar with the pull cord pulled. Forty watts on a flex: the end wall is readable and the vault behind the player is not, which is the whole of ADR-009. If this frame lights the entire room the torch has nothing left to do and room four stops being about light.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="36-floods.jpg" width="480" height="270" loading="lazy" alt="36-floods">
+    <figcaption><b>36-floods</b><span>Four flood marks on the whitewash under the bulb — 1870, 1900, 1937, 1915, each beside the band it belongs to. Faded ochre on limewash over four metres is a low-contrast, large-area, coloured signal, which is the one class of thing a weak flat lamp shows and a hard torch cone destroys. The years must be legible here or the lock has no question in it.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="37-benchmark.jpg" width="480" height="270" loading="lazy" alt="37-benchmark">
+    <figcaption><b>37-benchmark</b><span>The surveyor's mark, raked by the torch brought across the cellar. It is cut geometry and not a painted line — and the strokes that carry it stand upright, which is the correction this room needed. Version one cut a horizontal V, and a horizontal groove answers to how *high* the light is: the bulb hangs high, the torch is carried at eye height, so the lamp that was supposed to hide the mark was the one that showed it. Upright strokes answer to the light's bearing instead. The bulb hangs almost square in front of this patch of wall and flattens them; a torch carried to one side arrives at sixty degrees, lights one face of every stroke and leaves the other black. The room stops being "turn the light off" and becomes "bring the light across".</span></figcaption>
+  </figure>
+  <figure>
+    <img src="38-padlock.jpg" width="480" height="270" loading="lazy" alt="38-padlock">
+    <figcaption><b>38-padlock</b><span>The second witness (ADR-003 D2): four brass wheels, worn bright at the digits they have been set to. Two per wheel, because the lock has been set twice in its life — except the third, which carries the same digit in both and is polished once. Sixteen orderings, two of which read as years. It confirms the wall and it cannot replace it.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="39-dust.jpg" width="480" height="270" loading="lazy" alt="39-dust">
+    <figcaption><b>39-dust</b><span>The trace room four owes room twelve: two wheel arcs and a stand, in a decade of cellar dust, and no bicycle. ADR-007's finale reads five traces from across the building and one of them is a bicycle that moved. A dust shadow is invisible under a lamp and a cliff under a raking beam, so the finale's trace lives in the one room whose rule is exactly that.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="40-hall-ladder.jpg" width="480" height="270" loading="lazy" alt="40-hall-ladder">
+    <figcaption><b>40-hall-ladder</b><span>The hall after the quality ladder has dropped a level and climbed back — the resize path, which start-up never exercises. At --dpr 2 this is the machine that reported walls reading black. The occlusion and bloom passes must be the same resolution as the colour target they are blended into; they were half of it.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="41-shaft.jpg" width="480" height="270" loading="lazy" alt="41-shaft">
+    <figcaption><b>41-shaft</b><span>The lift pit, from just inside the gate. The premise is in the first frame (ADR-006): two guide rails and a rope going up out of the light, and nothing at the bottom of them but the machine that put whatever is up there up there. Beyond the car's path, the working bay — winding gear, switch box, the handle in its bracket, the fitter's chalk on the return wall. All of it out of the car's way, which is what a lift pit with hand-winding gear actually looks like, and what the first version of this room got wrong badly enough to make it unfinishable: at 1.70 m the shaft was very nearly exactly the car, so the moment the player wound it down there was nowhere left to stand and nothing left to reach.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="42-pin-live.jpg" width="480" height="270" loading="lazy" alt="42-pin-live">
+    <figcaption><b>42-pin-live</b><span>The circuit is live and the pin is standing out of the quadrant, straight through the arc the brake arm has to swing along. This is the whole room in one object. If a player cannot see that the pin is in the way, ADR-010's central affordance is invisible and the design is a lie — so this frame and 43 are the same camera with one thing changed, and the difference between them is the claim.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="43-pin-dead.jpg" width="480" height="270" loading="lazy" alt="43-pin-dead">
+    <figcaption><b>43-pin-dead</b><span>The knife is out and the pin has dropped flush. Compare with 42: same camera, same light, one part moved 125 mm. That movement is the only thing in the game that teaches the player what the isolator is for, and it has to be legible at a glance from where a person actually stands.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="44-socket-clear.jpg" width="480" height="270" loading="lazy" alt="44-socket-clear">
+    <figcaption><b>44-socket-clear</b><span>The brake arm swung off the shaft, and the socket clear. Set, the arm lies straight across it and the handle will not go on — which is why the arm is 460 mm long. A short arm would be a lever; this one has to be an obstruction, because the obstruction is the instruction.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="45-chalk.jpg" width="480" height="270" loading="lazy" alt="45-chalk">
+    <figcaption><b>45-chalk</b><span>The second witness (ADR-003 D2): four marks in chalk, one under the other, in the same hand as the meter numbers in room three. Not words and not numbers — the shapes of four things, in the order somebody used them. A numbered list is an instruction, and the moment the wall gives instructions the machine stops being worth looking at.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="46-car-down.jpg" width="480" height="270" loading="lazy" alt="46-car-down">
+    <figcaption><b>46-car-down</b><span>The car at the landing, wound down by hand, hanging at landing level with its apron a stride above the pit floor where a minute ago there was nothing but two rails and a draught. Compare 41, taken from the same bay with the car still up: rails going into the dark and the underside of the thing at the top of them. Nothing here was unlocked and nothing was told -- the machine was put in the right order and it delivered the car, which is the only reward ADR-010 offers and the only one it needs. The frame is taken from the bay rather than the landing because the car, down, fills the landing end of the shaft completely; two earlier attempts put the camera 0.14 and 0.37 m from a panel and produced a wall of brown, which is a fair description of what a lift car is at arm's length and no description at all of where it is.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="47-handle-off.jpg" width="480" height="270" loading="lazy" alt="47-handle-off">
+    <figcaption><b>47-handle-off</b><span>The third interlock, which is the one this room had to be redesigned around. ADR-010 first said the winding handle fouled the switch box's lid — but the car nearly fills the shaft, so nothing operable at both ends of the sequence can sit next to the socket, and that interlock could not be built anywhere a player could reach it. What is here instead is the same idiom as the brake's plunger, one floor down in the story and one bolt across in the ironwork: the handle lives in a bracket on the switch box, and lifting it out raises a second brass pin into the knife's jaws. The switch will not close while the handle is on the shaft, and the reason is a part you can see rather than a sentence you are told.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="48-handle-home.jpg" width="480" height="270" loading="lazy" alt="48-handle-home">
+    <figcaption><b>48-handle-home</b><span>The same fitting with nothing done to it, and the pair is the claim. The winding handle is lying in its two bracket lugs on the lid of the switch box, and the brass pin is down in its housing with only its head showing above the collar. Read this frame against 47 and the mechanism explains itself without a word of narration: handle in, pin down, knife free to close; handle out, pin up across the seat, knife stopped half way. Neither frame alone proves anything -- a pin at one height is just a pin -- which is why the evidence set carries both. The pin is deliberately visible at rest rather than hidden inside the box, because the brake plunger one act earlier taught the player to read a pin's height, and a part that disappears when it is not doing its job teaches nothing.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="49-lodge-door.jpg" width="480" height="270" loading="lazy" alt="49-lodge-door">
+    <figcaption><b>49-lodge-door</b><span>The lodge door, open, off the androne — and the player has walked past it shut since room three. ADR-011 first put this door in the hall, beside the booth the board is read through, and the hall has no wall to put it in: the booth takes x -8.55 to -6.45 of that side and the stair's half-landing, a solid travertine mass 1.71 m tall, takes -6.45 to -5.35 for the full depth up to it. A doorway was cut, framed, lit and rendered there before anything noticed it opened into the side of a staircase. A porter's office door belongs on the carriage passage anyway: he watches the gate, and his door is two strides inside it.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="50-portineria.jpg" width="480" height="270" loading="lazy" alt="50-portineria">
+    <figcaption><b>50-portineria</b><span>The lodge from inside: the desk under the courtyard window, the pigeonholes on the left, the flex and its bulb. The ceiling is 400 mm lower than the hall's on purpose -- a lodge is a room fitted into a gap, not a room the building was planned around -- and the drop is the first thing the body reports on stepping through the door. Nothing in this frame is narrated anywhere in the game.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="51-lodge-window.jpg" width="480" height="270" loading="lazy" alt="51-lodge-window">
+    <figcaption><b>51-lodge-window</b><span>The same window from the courtyard, which is the second half of frame 50 and the only proof that the two rooms share one hole rather than each owning a private one. The wall between them is 0.16 m thick -- the androne's thickness, restated in code by subtracting one room's edge from the other's so it cannot drift -- and the reveal is that thickness deep. This pair is also the see-through check the owner's bug report earned: a hole cut in one shell and not the other is exactly how room one became visible through room two's wall.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="52-fobs.jpg" width="480" height="270" loading="lazy" alt="52-fobs">
+    <figcaption><b>52-fobs</b><span>The key board through the hatch, and the third of the three records. The board's own label strip is ruined -- that is room two's premise and has been since the second room -- so what says which key belongs to which flat is the brass fob hanging off each key, stamped with a number by a punch struck twice and a little off register. Two of them are not on the hooks the day-book says they are on. That is the one lie in room six, and it has hung here legible for four rooms before anybody had a reason to read it: ADR-006's "premise visible and never narrated" taken as far as it goes.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="53-cards.jpg" width="480" height="270" loading="lazy" alt="53-cards">
+    <figcaption><b>53-cards</b><span>A pigeonhole card at reading distance. Every name on room two's letterboxes appears here, and three of the cards have been written twice: the earlier name struck through in a different hand and a different ink, the later one above it. Flat 16 reads MARCHETTI under PARISI, and MARCHETTI is the name the day-book gives for deposit 207. This is the hinge of the room -- the day-book knows the name, the cards turn the name into a flat, and the fobs turn the flat into a hook -- and no line of text anywhere says so.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="54-daybook.jpg" width="480" height="270" loading="lazy" alt="54-daybook">
+    <figcaption><b>54-daybook</b><span>The day-book open on the desk at the November entry, with the luggage label's 207 in the left column. It gives a date, a name, a hook number and what was left. The hook number is wrong, and nothing in the book admits it -- the fobs are what catch it out. A record that lies and a record that catches it are the whole lock; the counterfoil in pigeonhole 16, carrying a pencil rubbing of the key's web, is the second independent witness ADR-003 D2 requires, and it can be matched by shape alone without reading a word.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="55-andito.jpg" width="480" height="270" loading="lazy" alt="55-andito">
+    <figcaption><b>55-andito</b><span>The andito: a 1.10 m service passage off the back of the lodge, running the depth of the south range to the coach house. It is the only new circulation in seven rooms and it exists because the rimessa had to be reachable without inventing a storey -- the game is strictly one level and always has been, `camera.position.y` is the literal 1.62 at all six places that set it, and room bounds carry no y at all. A ramp that visibly fell and then delivered the player level would have been a lie they could see. Vertical movement is room eight's question and belongs to room eight alone.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="56-rimessa.jpg" width="480" height="270" loading="lazy" alt="56-rimessa">
+    <figcaption><b>56-rimessa</b><span>The rimessa down its own length: 14.17 m of brick barrel, crown at 3.50, wide enough for a cart and a person standing on it. The clip run is the horizontal thing on the left wall -- eight conduits in eight cleats, every one of them below the springing at 2.05 so the run is on wall and never on vault, which is both how a real one is fixed and the reason the stack keeps its order. A run without cleats is eight pipes that could be anywhere.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="57-board.jpg" width="480" height="270" loading="lazy" alt="57-board">
+    <figcaption><b>57-board</b><span>The board. Eight porcelain fuse-carriers on slate, two rows of four, in the order they were fitted. One is in newer ceramic and that is the only thing in the room that says a rewire ever happened -- it does not say which way it pushed the run. The paper labels perished decades ago and no letter comes off them. The brass plate gives the board a name and a date and nothing else: ADR-012's lock is that the board's order and the run's order disagree by one, and nothing anywhere writes either order down.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="58-run.jpg" width="480" height="270" loading="lazy" alt="58-run">
+    <figcaption><b>58-run</b><span>Where the two orderings come apart. Eight conduits leave the board stacked bottom to top in run order and turn east along the wall; the newer carrier's conduit is not on top, it is threaded into the middle, because a fitter runs a new pipe where it is shortest to reach the thing it feeds and the sump is in the middle of the vault. Everything above that clip is one along. Counting the shutter's conduit off the run and pulling that many along the board is the trap, and it yields a specific wrong circuit rather than a shrug.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="59-silent.jpg" width="480" height="270" loading="lazy" alt="59-silent">
+    <figcaption><b>59-silent</b><span>The second witness, ADR-003 D2, and it is a light rather than a document. Seven of the eight carriers put something out that can be seen from this spot without moving -- two vault lamps, the bench lamp, the pump pilot, the charger on the scooter, the passage lamp down the vault, and the cellar bulb through the barred light over the side door. The eighth changes nothing, and that is the answer. It is only usable once the other seven are accounted for, and it can be read by somebody who cannot read.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="60-shutter.jpg" width="480" height="270" loading="lazy" alt="60-shutter">
+    <figcaption><b>60-shutter</b><span>The shutter up, and the ramp to the street beyond it. This is a frontier and not an ending -- ADR-007 puts five more spaces after it. Beside the motor hangs the emergency chain, which is the failure path made visible long before it is needed: three wrong fuses take the controller and the same shutter goes up by hand, slowly, under a courtyard of windows, and the building remembers it was heard. Same way out, worse. The fuse from the porter's drawer is motor-rated, so a wrong fitting does not blow the fuse -- it burns that circuit's wiring, permanently, which is what makes every guess cost something the player can see.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="61-well.jpg" width="480" height="270" loading="lazy" alt="61-well">
+    <figcaption><b>61-well</b><span>The stairwell well, cut in room two's ceiling by room eight. The frame before this one, shot 21, carried the claim "geometry the player cannot walk up must still look like it goes somewhere" -- and for six rooms the somewhere was a lie, because the ceiling was a closed plane 3.40 m up and the flight ran into it. ADR-013 cuts the opening out of the flight's own dimensions rather than out of four typed numbers, so a stair that moves takes its well with it. This is the first thing in the game the player can look up through.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="62-shaft.jpg" width="480" height="270" loading="lazy" alt="62-shaft">
+    <figcaption><b>62-shaft</b><span>From the half-landing, which the player can now stand on: eye at 1.71 + 1.62 = 3.33, seventy millimetres under the old ceiling, which is why the ceiling had to go. Three storeys of shaft, the return flight climbing away, and the lantern at the top -- the one surface in this building with sky behind it at four in the morning. It is dim on purpose. A skylight bright enough to light the stair would make the shaft a lamp; this one only makes the player look up.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="63-climb.jpg" width="480" height="270" loading="lazy" alt="63-climb">
+    <figcaption><b>63-climb</b><span>Standing on the sixth tread, 1.13 m above the hall floor, looking back down the flight at the half-landing. The floor model is one sentence -- you stand on top of whatever is under you, if you could have stepped up onto it -- and every height in this frame is a Box3 measured off geometry that has been in the game since room two. Nothing about the stair moved; the mass simply stopped being a wall and started being a floor one riser at a time.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="64-return.jpg" width="480" height="270" loading="lazy" alt="64-return">
+    <figcaption><b>64-return</b><span>Standing on the half-landing, looking back the way a stair goes: the return flight climbing east to the first floor, its balustrade, and the underside of the landing slab that closes the top of the well. Nothing here is walkable and that is the premise, not an omission -- ADR-006 says the premise is visible and never narrated. The player can see the way out is up, and can see exactly how far.</span></figcaption>
+  </figure>
+  </div>
+
+  <h2>Other frames (28)</h2>
+  <p class="sub">Captures kept as a record — a bug reproduced, a fix confirmed,
+  a release checked. They assert nothing on their own.</p>
+  <div class="grid">
+  <figure>
+    <img src="23-ambience.jpg" width="480" height="298" loading="lazy" alt="23-ambience">
+    <figcaption><b>23-ambience</b></figcaption>
+  </figure>
+  <figure>
+    <img src="andito-all.jpg" width="480" height="270" loading="lazy" alt="andito-all">
+    <figcaption><b>andito-all</b></figcaption>
+  </figure>
+  <figure>
+    <img src="andito-clean.jpg" width="480" height="270" loading="lazy" alt="andito-clean">
+    <figcaption><b>andito-clean</b></figcaption>
+  </figure>
+  <figure>
+    <img src="andito-one.jpg" width="480" height="270" loading="lazy" alt="andito-one">
+    <figcaption><b>andito-one</b></figcaption>
+  </figure>
+  <figure>
+    <img src="black-atrio.jpg" width="480" height="270" loading="lazy" alt="black-atrio">
+    <figcaption><b>black-atrio</b></figcaption>
+  </figure>
+  <figure>
+    <img src="bug-10-black-frame.jpg" width="480" height="341" loading="lazy" alt="bug-10-black-frame">
+    <figcaption><b>bug-10-black-frame</b></figcaption>
+  </figure>
+  <figure>
+    <img src="ceil-close.jpg" width="480" height="270" loading="lazy" alt="ceil-close">
+    <figcaption><b>ceil-close</b></figcaption>
+  </figure>
+  <figure>
+    <img src="ceil-first.jpg" width="480" height="270" loading="lazy" alt="ceil-first">
+    <figcaption><b>ceil-first</b></figcaption>
+  </figure>
+  <figure>
+    <img src="ceil-red.jpg" width="480" height="270" loading="lazy" alt="ceil-red">
+    <figcaption><b>ceil-red</b></figcaption>
+  </figure>
+  <figure>
+    <img src="ceil-second.jpg" width="480" height="270" loading="lazy" alt="ceil-second">
+    <figcaption><b>ceil-second</b></figcaption>
+  </figure>
+  <figure>
+    <img src="cortile-black.jpg" width="480" height="270" loading="lazy" alt="cortile-black">
+    <figcaption><b>cortile-black</b></figcaption>
+  </figure>
+  <figure>
+    <img src="cortile-clean.jpg" width="480" height="270" loading="lazy" alt="cortile-clean">
+    <figcaption><b>cortile-clean</b></figcaption>
+  </figure>
+  <figure>
+    <img src="cortile-hole.jpg" width="480" height="270" loading="lazy" alt="cortile-hole">
+    <figcaption><b>cortile-hole</b></figcaption>
+  </figure>
+  <figure>
+    <img src="cortile-void.jpg" width="480" height="270" loading="lazy" alt="cortile-void">
+    <figcaption><b>cortile-void</b></figcaption>
+  </figure>
+  <figure>
+    <img src="drop-flat.jpg" width="480" height="270" loading="lazy" alt="drop-flat">
+    <figcaption><b>drop-flat</b></figcaption>
+  </figure>
+  <figure>
+    <img src="drop-top.jpg" width="480" height="270" loading="lazy" alt="drop-top">
+    <figcaption><b>drop-top</b></figcaption>
+  </figure>
+  <figure>
+    <img src="drop-up.jpg" width="480" height="270" loading="lazy" alt="drop-up">
+    <figcaption><b>drop-up</b></figcaption>
+  </figure>
+  <figure>
+    <img src="floor-only.jpg" width="480" height="270" loading="lazy" alt="floor-only">
+    <figcaption><b>floor-only</b></figcaption>
+  </figure>
+  <figure>
+    <img src="hand-key-zoom.jpg" width="480" height="267" loading="lazy" alt="hand-key-zoom">
+    <figcaption><b>hand-key-zoom</b></figcaption>
+  </figure>
+  <figure>
+    <img src="hand-key.jpg" width="480" height="270" loading="lazy" alt="hand-key">
+    <figcaption><b>hand-key</b></figcaption>
+  </figure>
+  <figure>
+    <img src="ladder-fixed.jpg" width="480" height="270" loading="lazy" alt="ladder-fixed">
+    <figcaption><b>ladder-fixed</b></figcaption>
+  </figure>
+  <figure>
+    <img src="lift-gap.jpg" width="480" height="206" loading="lazy" alt="lift-gap">
+    <figcaption><b>lift-gap</b></figcaption>
+  </figure>
+  <figure>
+    <img src="lodgewindow-fixed.jpg" width="480" height="270" loading="lazy" alt="lodgewindow-fixed">
+    <figcaption><b>lodgewindow-fixed</b></figcaption>
+  </figure>
+  <figure>
+    <img src="read-boxes.jpg" width="480" height="480" loading="lazy" alt="read-boxes">
+    <figcaption><b>read-boxes</b></figcaption>
+  </figure>
+  <figure>
+    <img src="read-notebook.jpg" width="480" height="480" loading="lazy" alt="read-notebook">
+    <figcaption><b>read-notebook</b></figcaption>
+  </figure>
+  <figure>
+    <img src="read-vetcard.jpg" width="480" height="480" loading="lazy" alt="read-vetcard">
+    <figcaption><b>read-vetcard</b></figcaption>
+  </figure>
+  <figure>
+    <img src="release-downloaded-build.jpg" width="480" height="270" loading="lazy" alt="release-downloaded-build">
+    <figcaption><b>release-downloaded-build</b></figcaption>
+  </figure>
+  <figure>
+    <img src="yardlamp-fixed.jpg" width="480" height="270" loading="lazy" alt="yardlamp-fixed">
+    <figcaption><b>yardlamp-fixed</b></figcaption>
+  </figure>
+  </div>
+
+  <footer>
+    92 frames · generated 2026-08-05T23:44:32.905Z
+    · build <code>b723149</code> · 2026-08-06T00:54:43+02:00<br>
+    Source: <a href="https://github.com/keyrabbit/Escape">github.com/keyrabbit/Escape</a>
+  </footer>
+</main>
+</body>
+</html>
