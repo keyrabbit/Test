@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T15:48:22.667Z",
+  "generated": "2026-08-06T22:57:35.315Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -625,6 +625,15 @@
       "claim": "Standing on the half-landing, looking back the way a stair goes: the return flight climbing east to the first floor, its balustrade, and the underside of the landing slab that closes the top of the well. Nothing here is walkable and that is the premise, not an omission -- ADR-006 says the premise is visible and never narrated. The player can see the way out is up, and can see exactly how far."
     },
     {
+      "name": "65-key-in-hand-phone3x",
+      "file": "65-key-in-hand-phone3x.jpg",
+      "w": 480,
+      "h": 1039,
+      "full": 1170,
+      "bytes": 26848,
+      "claim": null
+    },
+    {
       "name": "65-key-in-hand",
       "file": "65-key-in-hand.jpg",
       "w": 480,
@@ -793,6 +802,15 @@
       "h": 270,
       "full": 960,
       "bytes": 3405,
+      "claim": null
+    },
+    {
+      "name": "frame-atrio",
+      "file": "frame-atrio.jpg",
+      "w": 480,
+      "h": 270,
+      "full": 960,
+      "bytes": 14806,
       "claim": null
     },
     {
