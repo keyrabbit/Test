@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T22:57:35.315Z",
+  "generated": "2026-08-06T23:54:32.552Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -9,7 +9,7 @@
       "w": 480,
       "h": 270,
       "full": 1600,
-      "bytes": 12636,
+      "bytes": 12658,
       "claim": "Whole room. Prop density and the daylight shaft read here or nowhere."
     },
     {
@@ -54,7 +54,7 @@
       "w": 480,
       "h": 270,
       "full": 1600,
-      "bytes": 11803,
+      "bytes": 11796,
       "claim": "Counter run: dishes, tins, the scorched socket. Density at reading distance."
     },
     {
@@ -126,7 +126,7 @@
       "w": 480,
       "h": 270,
       "full": 1600,
-      "bytes": 7304,
+      "bytes": 7319,
       "claim": "Fridge door: magnets and calendar, the second half of the date clue."
     },
     {
