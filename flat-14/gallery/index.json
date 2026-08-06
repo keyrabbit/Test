@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T03:22:11.374Z",
+  "generated": "2026-08-06T04:06:09.500Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -596,6 +596,15 @@
       "full": 1600,
       "bytes": 11990,
       "claim": "Standing on the sixth tread, 1.13 m above the hall floor, looking back down the flight at the half-landing. The floor model is one sentence -- you stand on top of whatever is under you, if you could have stepped up onto it -- and every height in this frame is a Box3 measured off geometry that has been in the game since room two. Nothing about the stair moved; the mass simply stopped being a wall and started being a floor one riser at a time."
+    },
+    {
+      "name": "63-warp-cortile",
+      "file": "63-warp-cortile.jpg",
+      "w": 480,
+      "h": 300,
+      "full": 1280,
+      "bytes": 14414,
+      "claim": null
     },
     {
       "name": "64-return",
