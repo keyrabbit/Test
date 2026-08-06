@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T04:06:09.500Z",
+  "generated": "2026-08-06T05:28:05.110Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -604,6 +604,15 @@
       "h": 300,
       "full": 1280,
       "bytes": 14414,
+      "claim": null
+    },
+    {
+      "name": "64-phone-start",
+      "file": "64-phone-start.jpg",
+      "w": 480,
+      "h": 1039,
+      "full": 1170,
+      "bytes": 23633,
       "claim": null
     },
     {
