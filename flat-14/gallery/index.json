@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T15:12:27.498Z",
+  "generated": "2026-08-06T15:48:22.667Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -549,8 +549,8 @@
       "w": 480,
       "h": 270,
       "full": 1600,
-      "bytes": 10382,
-      "claim": "The shutter up, and the ramp to the street beyond it. This is a frontier and not an ending -- ADR-007 puts five more spaces after it. Beside the motor hangs the emergency chain, which is the failure path made visible long before it is needed: three wrong fuses take the controller and the same shutter goes up by hand, slowly, under a courtyard of windows, and the building remembers it was heard. Same way out, worse. The fuse from the porter's drawer is motor-rated, so a wrong fitting does not blow the fuse -- it burns that circuit's wiring, permanently, which is what makes every guess cost something the player can see."
+      "bytes": 15421,
+      "claim": "The shutter up, and the ramp to the street beyond it -- and at the top of the ramp, a barred gate, which is the whole of room eight's premise standing in daylight (issue #32). This is a frontier and not an ending -- ADR-007 puts five more spaces after it. Beside the motor hangs the emergency chain, which is the failure path made visible long before it is needed: three wrong fuses take the controller and the same shutter goes up by hand, slowly, under a courtyard of windows, and the building remembers it was heard. Same way out, worse. The fuse from the porter's drawer is motor-rated, so a wrong fitting does not blow the fuse -- it burns that circuit's wiring, permanently, which is what makes every guess cost something the player can see."
     },
     {
       "name": "61-notes-carried",
@@ -632,6 +632,15 @@
       "full": 1600,
       "bytes": 9783,
       "claim": "A key off the board and in the hand: bow, shank and web, the whole of it inside the frame. It used to arrive as one limb — the held clone was scaled by its largest dimension and a key is almost all length, so the rest of it fell outside the near clip."
+    },
+    {
+      "name": "66-gate",
+      "file": "66-gate.jpg",
+      "w": 480,
+      "h": 270,
+      "full": 1600,
+      "bytes": 18867,
+      "claim": "The gate at the top of the ramp, and the lock on room eight (issue #32). Every other room in this game is opened by something the player finds; this one is opened by something they rule out. The shutter goes up, the street is right there, and it is barred, chained and padlocked from the far side -- so the last horizontal answer the building has is gone and the only direction left is the flight in the hall, which has been standing in plain sight since room two. It is drawn as bars rather than a leaf on purpose: a solid gate reads as a door that might open, and a barred one shows the street through it and makes the refusal legible in a single glance. Nothing narrates this. The shutter has to be up before the gate can even be seen, which is why the premise cannot arrive early."
     },
     {
       "name": "andito-all",
