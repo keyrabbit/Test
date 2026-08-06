@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T23:44:32.905Z",
+  "generated": "2026-08-06T00:35:59.275Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -553,6 +553,15 @@
       "claim": "The shutter up, and the ramp to the street beyond it. This is a frontier and not an ending -- ADR-007 puts five more spaces after it. Beside the motor hangs the emergency chain, which is the failure path made visible long before it is needed: three wrong fuses take the controller and the same shutter goes up by hand, slowly, under a courtyard of windows, and the building remembers it was heard. Same way out, worse. The fuse from the porter's drawer is motor-rated, so a wrong fitting does not blow the fuse -- it burns that circuit's wiring, permanently, which is what makes every guess cost something the player can see."
     },
     {
+      "name": "61-notes-carried",
+      "file": "61-notes-carried.jpg",
+      "w": 480,
+      "h": 270,
+      "full": 1600,
+      "bytes": 13864,
+      "claim": "The notes panel, and issue #27 in one frame. The owner replayed room one in two minutes by ignoring every clue, which is by design — but two of the things in this list are still owed to a later room and the panel used to draw them exactly like the four that are finished. The mark says only that a clue is still worth something; it never says where it is wanted, because that would hand over the room it belongs to."
+    },
+    {
       "name": "61-well",
       "file": "61-well.jpg",
       "w": 480,
@@ -739,6 +748,24 @@
       "h": 270,
       "full": 960,
       "bytes": 3405,
+      "claim": null
+    },
+    {
+      "name": "gallery-live",
+      "file": "gallery-live.jpg",
+      "w": 480,
+      "h": 413,
+      "full": 1280,
+      "bytes": 24177,
+      "claim": null
+    },
+    {
+      "name": "gallery-page",
+      "file": "gallery-page.jpg",
+      "w": 480,
+      "h": 600,
+      "full": 1280,
+      "bytes": 36441,
       "claim": null
     },
     {
