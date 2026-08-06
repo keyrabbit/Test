@@ -53,8 +53,8 @@
   <p class="lede">A first-person escape room with no assets — every texture and
   sound generated in code. This page is generated from the repository, so it
   cannot disagree with it.</p>
-  <p class="stamp">Built 2026-08-06T00:37:23.726Z from
-    <code>2f6a8b0</code> Mark the clues a later room still wants</p>
+  <p class="stamp">Built 2026-08-06T02:00:38.861Z from
+    <code>a3d0206</code> Record the unreachable room and its lesson</p>
 
   <a class="play" href="../">Play the demo</a>
 
@@ -86,7 +86,7 @@
     <div class="card good">
       <div class="label">Assertions</div>
       <div class="value">547<span class="dim">/547</span></div>
-      <div class="note">19 routes · all green · 2m ago</div>
+      <div class="note">19 routes · all green · 5m ago</div>
     </div>
     <div class="card good">
       <div class="label">Draw calls</div>
@@ -101,7 +101,7 @@
     <div class="card ">
       <div class="label">Open issues</div>
       <div class="value">10</div>
-      <div class="note">21 closed</div>
+      <div class="note">22 closed</div>
     </div>
     <div class="card ">
       <div class="label">Screenshots</div>
@@ -116,73 +116,73 @@
     <tr>
       <td><code>?probe=solve</code></td>
       <td class="num">32/32</td>
-      <td class="num dim">35.3s</td>
+      <td class="num dim">35.1s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=fail</code></td>
       <td class="num">8/8</td>
-      <td class="num dim">20.8s</td>
+      <td class="num dim">20.5s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve2</code></td>
       <td class="num">25/25</td>
-      <td class="num dim">36.9s</td>
+      <td class="num dim">36.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=fail2</code></td>
       <td class="num">11/11</td>
-      <td class="num dim">20s</td>
+      <td class="num dim">21s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve3</code></td>
       <td class="num">22/22</td>
-      <td class="num dim">23.2s</td>
+      <td class="num dim">24.2s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve4</code></td>
       <td class="num">20/20</td>
-      <td class="num dim">13.2s</td>
+      <td class="num dim">13.1s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve5</code></td>
       <td class="num">41/41</td>
-      <td class="num dim">24.8s</td>
+      <td class="num dim">24.5s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve6</code></td>
       <td class="num">26/26</td>
-      <td class="num dim">18.9s</td>
+      <td class="num dim">18.2s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=solve7</code></td>
       <td class="num">27/27</td>
-      <td class="num dim">17.3s</td>
+      <td class="num dim">17.1s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=fail7</code></td>
       <td class="num">24/24</td>
-      <td class="num dim">20.6s</td>
+      <td class="num dim">22s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=climb</code></td>
       <td class="num">17/17</td>
-      <td class="num dim">25.4s</td>
+      <td class="num dim">24.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=walk</code></td>
       <td class="num">101/101</td>
-      <td class="num dim">87.6s</td>
+      <td class="num dim">87.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
@@ -200,31 +200,31 @@
     <tr>
       <td><code>?probe=perf</code></td>
       <td class="num">7/7</td>
-      <td class="num dim">13.9s</td>
+      <td class="num dim">13.4s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=light</code></td>
       <td class="num">66/66</td>
-      <td class="num dim">64.1s</td>
+      <td class="num dim">64s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=sound</code></td>
       <td class="num">12/12</td>
-      <td class="num dim">19.8s</td>
+      <td class="num dim">18.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=touch</code></td>
       <td class="num">32/32</td>
-      <td class="num dim">76.3s</td>
+      <td class="num dim">74.8s</td>
       <td class="ok">pass</td>
     </tr>
     <tr>
       <td><code>?probe=render</code></td>
       <td class="num">21/21</td>
-      <td class="num dim">27.5s</td>
+      <td class="num dim">27.4s</td>
       <td class="ok">pass</td>
     </tr></table>
     </div>
@@ -379,41 +379,41 @@
       Where should a stranger's playtest report actually go? (shipped a default, want it confirmed)</li>
     <li><a href="https://github.com/keyrabbit/Escape/issues/21">#21</a>
       v2: rooms as authored data, and a palazzo that supplies its own content</li>
-    <li><a href="https://github.com/keyrabbit/Escape/issues/27">#27</a>
-      Room one has a two-minute happy path on replay. By design, or a hole?</li>
     <li><a href="https://github.com/keyrabbit/Escape/issues/28">#28</a>
       The game was rendering at a quarter of the screen's area on every 2x display</li>
     <li><a href="https://github.com/keyrabbit/Escape/issues/29">#29</a>
       Taking a key put one limb of it in your hand</li>
     <li><a href="https://github.com/keyrabbit/Escape/issues/30">#30</a>
-      On a phone the two touch button rows were drawn on top of each other</li></ul>
+      On a phone the two touch button rows were drawn on top of each other</li>
+    <li><a href="https://github.com/keyrabbit/Escape/issues/32">#32</a>
+      Room eight cannot be entered by playing: nothing in play sets scalaOpen</li></ul>
     </div>
     <div>
       <h2>Recent commits</h2>
       <ul>
-    <li><code>2f6a8b0</code> Mark the clues a later room still wants
+    <li><code>a3d0206</code> Record the unreachable room and its lesson
       <span class="dim">1m ago</span></li>
+    <li><code>2696a67</code> Fail the build when a room can only be reached by a warp
+      <span class="dim">2m ago</span></li>
+    <li><code>e742f90</code> Regenerate thumbnails for the new notes frame
+      <span class="dim">1h ago</span></li>
+    <li><code>2f6a8b0</code> Mark the clues a later room still wants
+      <span class="dim">1h ago</span></li>
     <li><code>460ecd5</code> Gallery: repair the intro sentence an edit had cut in half
-      <span class="dim">45m ago</span></li>
-    <li><code>26e800f</code> Publish the frame gallery as thumbnails
-      <span class="dim">48m ago</span></li>
-    <li><code>b723149</code> the roadmap records the four floaters
-      <span class="dim">1h ago</span></li>
-    <li><code>1a63308</code> a green check is evidence about its population, not about the building
-      <span class="dim">1h ago</span></li>
-    <li><code>adc2f94</code> the check that only looked in two rooms now looks in eight, and found four things hanging in the air
-      <span class="dim">1h ago</span></li>
-    <li><code>31078df</code> a pot that moved when a wall changed: the plant's leaves come off a local stream
       <span class="dim">2h ago</span></li>
-    <li><code>db05927</code> the two poses that failed, photographed clean
+    <li><code>26e800f</code> Publish the frame gallery as thumbnails
+      <span class="dim">2h ago</span></li>
+    <li><code>b723149</code> the roadmap records the four floaters
       <span class="dim">3h ago</span></li>
-    <li><code>c20b7ac</code> the roadmap records the first clean sweep
+    <li><code>1a63308</code> a green check is evidence about its population, not about the building
       <span class="dim">3h ago</span></li>
-    <li><code>93c5dd3</code> the sweep is clean: 3336 frames, 139 stand points, no black, no void, no leak
+    <li><code>adc2f94</code> the check that only looked in two rooms now looks in eight, and found four things hanging in the air
       <span class="dim">3h ago</span></li>
-    <li><code>bca0893</code> the dashboard jumps to a room too, from the same list the demo page uses
+    <li><code>31078df</code> a pot that moved when a wall changed: the plant's leaves come off a local stream
       <span class="dim">4h ago</span></li>
-    <li><code>559e3cf</code> the same defect twice: a triangle should never be much larger than its room
+    <li><code>db05927</code> the two poses that failed, photographed clean
+      <span class="dim">4h ago</span></li>
+    <li><code>c20b7ac</code> the roadmap records the first clean sweep
       <span class="dim">4h ago</span></li></ul>
     </div>
   </div>
