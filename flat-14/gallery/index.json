@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T00:35:59.275Z",
+  "generated": "2026-08-06T03:22:11.374Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -578,6 +578,15 @@
       "full": 1600,
       "bytes": 6164,
       "claim": "From the half-landing, which the player can now stand on: eye at 1.71 + 1.62 = 3.33, seventy millimetres under the old ceiling, which is why the ceiling had to go. Three storeys of shaft, the return flight climbing away, and the lantern at the top -- the one surface in this building with sky behind it at four in the morning. It is dim on purpose. A skylight bright enough to light the stair would make the shaft a lamp; this one only makes the player look up."
+    },
+    {
+      "name": "62-warp-scala",
+      "file": "62-warp-scala.jpg",
+      "w": 480,
+      "h": 300,
+      "full": 1280,
+      "bytes": 19108,
+      "claim": null
     },
     {
       "name": "63-climb",
