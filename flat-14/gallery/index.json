@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T05:28:05.110Z",
+  "generated": "2026-08-06T15:12:27.498Z",
   "width": 480,
   "quality": 0.72,
   "frames": [
@@ -623,6 +623,15 @@
       "full": 1600,
       "bytes": 7405,
       "claim": "Standing on the half-landing, looking back the way a stair goes: the return flight climbing east to the first floor, its balustrade, and the underside of the landing slab that closes the top of the well. Nothing here is walkable and that is the premise, not an omission -- ADR-006 says the premise is visible and never narrated. The player can see the way out is up, and can see exactly how far."
+    },
+    {
+      "name": "65-key-in-hand",
+      "file": "65-key-in-hand.jpg",
+      "w": 480,
+      "h": 270,
+      "full": 1600,
+      "bytes": 9783,
+      "claim": "A key off the board and in the hand: bow, shank and web, the whole of it inside the frame. It used to arrive as one limb — the held clone was scaled by its largest dimension and a key is almost all length, so the rest of it fell outside the near clip."
     },
     {
       "name": "andito-all",
