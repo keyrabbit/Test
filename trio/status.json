@@ -1,7 +1,7 @@
 {
   "project": "Today's Trio",
-  "updatedAt": "2026-08-07T07:21:45.380Z",
-  "commit": "a5d864d",
+  "updatedAt": "2026-08-07T07:52:47.475Z",
+  "commit": "2de98fa",
   "branch": "main",
   "tasks": [
     {
@@ -118,9 +118,9 @@
     "total": 18
   },
   "tests": {
-    "passed": 46,
+    "passed": 54,
     "failed": 0,
-    "total": 46,
+    "total": 54,
     "ok": true,
     "note": ""
   },
@@ -128,11 +128,11 @@
     "dayCount": 60,
     "firstDate": "2026-07-31",
     "lastDate": "2026-09-28",
-    "generatedAt": "2026-08-07T06:40:04.143Z",
+    "generatedAt": "2026-08-07T07:34:55.603Z",
     "puzzleCount": 540
   },
   "build": {
-    "builtAt": "2026-08-07T07:20:51.259Z",
+    "builtAt": "2026-08-07T07:51:27.485Z",
     "hasServiceWorker": true
   },
   "criteria": [
@@ -144,7 +144,7 @@
     {
       "label": "Every logic puzzle passes deterministic validation",
       "met": true,
-      "detail": "46/46 engine tests passing"
+      "detail": "54/54 engine tests passing"
     },
     {
       "label": "Audio available for all age 6–7 instructions",
