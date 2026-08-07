@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    Replaced by the value of `--base-href` at build time.
+  -->
+  <base href="/Test/stella/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="A calm, offline four-in-a-row strategy game that shows you the move that mattered.">
+  <!-- Matches the default palette's background in lib/theme/palette.dart, so
+       the browser chrome does not flash a bright bar over a dark game. -->
+  <meta name="theme-color" content="#1C1917">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Four in a Row">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <!-- The internal codename is not used in anything public-facing: AGENTS.md
+       section 2 keeps it out of store metadata and page titles until naming
+       clearance. "Four in a Row" is the descriptive category phrase. -->
+  <title>Four in a Row</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* The engine takes a moment to download and boot. Without this the page
+       is plain white for that whole time and then cuts abruptly to a
+       near-black board, which is a poor first frame for a game whose whole
+       tone is calm. */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #1C1917;
+    }
+    #launch {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background-color: #1C1917;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: #A8A099;
+      transition: opacity 220ms ease-out;
+    }
+    #launch.gone { opacity: 0; pointer-events: none; }
+    /* Two pieces, amber and teal. Shape and value carry them as well as hue,
+       per AGENTS.md section 9. */
+    .pieces { display: flex; gap: 12px; align-items: center; }
+    .piece {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      animation: settle 1600ms ease-in-out infinite;
+    }
+    .amber { background: #FFB23F; box-shadow: inset 0 0 0 6px rgba(0,0,0,0.18); }
+    .teal  { background: #1FA396; box-shadow: inset 0 0 0 6px rgba(255,255,255,0.10); animation-delay: 200ms; }
+    .label { font-size: 15px; letter-spacing: 0.2px; }
+    @keyframes settle {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-6px); }
+    }
+    /* Never animate at a player who asked us not to. */
+    @media (prefers-reduced-motion: reduce) {
+      .piece { animation: none; }
+      #launch { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="launch">
+    <div class="pieces">
+      <div class="piece amber"></div>
+      <div class="piece teal"></div>
+    </div>
+    <div class="label">Four in a Row</div>
+  </div>
+
+  <script>
+    // Flutter reports its first frame here; the placeholder is removed then,
+    // so it can never outlast the app or hide a failed load behind a spinner.
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('launch');
+      if (!el) return;
+      el.classList.add('gone');
+      setTimeout(function () { el.remove(); }, 240);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

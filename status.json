@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T07:14:22.664Z",
+  "generated_at": "2026-08-07T07:48:32.326Z",
   "source_repository": "keyrabbit/connect4 (private)",
   "dashboard_repository": "keyrabbit/Test",
   "demo_preview": {
@@ -571,7 +571,8 @@
     "Issues #4, #5 and #6 remain open. Asset work is paused by owner instruction until the design week.",
     "iOS builds are impossible on this Windows machine without a macOS runner.",
     "gh active account was switched to keyrabbit and authenticated for private repo access.",
-    "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/."
+    "keyrabbit/Test exists, is public, and GitHub Pages is configured for main branch root at https://keyrabbit.github.io/Test/.",
+    "Branch stella exists at 75875ac and is published separately at /Test/stella/. It is an experiment tracked by an issue, is not merged into main, and is excluded from the milestone figures. Validation at 75875ac: dart format clean; flutter analyze No issues found; flutter test 366/366 passed (+14 in test/parent_mode_test.dart)."
   ],
   "not_run": [
     "No CI has ever run. Every quality number here was produced locally on one Windows machine.",
@@ -691,5 +692,10 @@
   "phase_status": {
     "title": "Ship-readiness and functionality focus",
     "summary": "Asset generation remains paused by owner instruction. This refresh records form-factor coverage, leave-match protection, and removal of the uncleared codename from player-visible launch surfaces, while CI, iOS, store submission, and final naming remain unresolved."
+  },
+  "branch_preview": {
+    "label": "Parent mode (branch stella)",
+    "url": "https://keyrabbit.github.io/Test/stella/",
+    "note": "Built from branch stella at 75875ac, which is NOT merged into main and may be removed. It adds parent mode: a grown-up can rename the five opponents. Everything else is main as of b3619d9. This preview does not count toward the completion figures above, which are derived from main only."
   }
 }

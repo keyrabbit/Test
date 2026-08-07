@@ -228,6 +228,13 @@
           <p class="note">${esc(data.demo_preview.note || 'Web is a development preview target only.')}</p>
           <a class="preview-link" href="${esc(data.demo_preview.url)}">Open playable preview</a>
         </section>` : '';
+      const branchPreview = data.branch_preview?.url ? `
+        <section class="card preview-card" aria-labelledby="branch-preview-heading">
+          <p class="eyebrow">Branch preview — not on main</p>
+          <h2 id="branch-preview-heading">${esc(data.branch_preview.label || 'Branch preview')}</h2>
+          <p class="note">${esc(data.branch_preview.note || '')}</p>
+          <a class="preview-link" href="${esc(data.branch_preview.url)}">Open branch preview</a>
+        </section>` : '';
       const changes = renderChanges(data.recent_changes);
       const regressions = renderRegressions(data.regressions);
       const assetStatus = renderAssetStatus(data.asset_status);
@@ -253,6 +260,7 @@
         </section>
 
         ${preview}
+        ${branchPreview}
 
         ${phase}
 

@@ -1,0 +1,35 @@
+{
+    "name": "Four in a Row",
+    "short_name": "Four in a Row",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1C1917",
+    "theme_color": "#1C1917",
+    "description": "A calm, offline four-in-a-row strategy game that shows you the move that mattered.",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/Icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/Icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/Icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
