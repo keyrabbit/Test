@@ -1,7 +1,7 @@
 {
   "project": "Today's Trio",
-  "updatedAt": "2026-08-07T06:57:51.877Z",
-  "commit": "19a943a",
+  "updatedAt": "2026-08-07T07:21:45.380Z",
+  "commit": "a5d864d",
   "branch": "main",
   "tasks": [
     {
@@ -105,16 +105,22 @@
       "title": "Playable demo published for phone/tablet",
       "area": "Week 5",
       "status": "done"
+    },
+    {
+      "id": "playtest",
+      "title": "Playtest mode + engagement report",
+      "area": "Testing",
+      "status": "done"
     }
   ],
   "taskSummary": {
-    "done": 17,
-    "total": 17
+    "done": 18,
+    "total": 18
   },
   "tests": {
-    "passed": 27,
+    "passed": 46,
     "failed": 0,
-    "total": 27,
+    "total": 46,
     "ok": true,
     "note": ""
   },
@@ -126,7 +132,7 @@
     "puzzleCount": 540
   },
   "build": {
-    "builtAt": "2026-08-07T06:57:07.321Z",
+    "builtAt": "2026-08-07T07:20:51.259Z",
     "hasServiceWorker": true
   },
   "criteria": [
@@ -138,7 +144,7 @@
     {
       "label": "Every logic puzzle passes deterministic validation",
       "met": true,
-      "detail": "27/27 engine tests passing"
+      "detail": "46/46 engine tests passing"
     },
     {
       "label": "Audio available for all age 6–7 instructions",
