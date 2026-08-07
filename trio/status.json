@@ -1,0 +1,184 @@
+{
+  "project": "Today's Trio",
+  "updatedAt": "2026-08-07T06:57:51.877Z",
+  "commit": "19a943a",
+  "branch": "main",
+  "tasks": [
+    {
+      "id": "shell",
+      "title": "App shell + local daily content format",
+      "area": "Week 1",
+      "status": "done"
+    },
+    {
+      "id": "pattern",
+      "title": "Pattern Pop engine, generator + validator",
+      "area": "Week 1",
+      "status": "done"
+    },
+    {
+      "id": "validation",
+      "title": "Deterministic validation for every puzzle",
+      "area": "Week 1",
+      "status": "done"
+    },
+    {
+      "id": "tutorial",
+      "title": "Interactive audio tutorial",
+      "area": "Week 1",
+      "status": "done"
+    },
+    {
+      "id": "content14",
+      "title": "First 14 days of test content",
+      "area": "Week 1",
+      "status": "done"
+    },
+    {
+      "id": "trail",
+      "title": "Daily Trail (non-punitive progress)",
+      "area": "Week 2",
+      "status": "done"
+    },
+    {
+      "id": "band",
+      "title": "Parent-controlled difficulty setting",
+      "area": "Week 2",
+      "status": "done"
+    },
+    {
+      "id": "offline",
+      "title": "Offline persistence + service worker",
+      "area": "Week 2",
+      "status": "done"
+    },
+    {
+      "id": "logic",
+      "title": "Logic Lane engine, generator + solver",
+      "area": "Week 3",
+      "status": "done"
+    },
+    {
+      "id": "bands",
+      "title": "Difficulty bands across all three puzzles",
+      "area": "Week 3",
+      "status": "done"
+    },
+    {
+      "id": "a11y",
+      "title": "Accessibility pass",
+      "area": "Week 3",
+      "status": "done"
+    },
+    {
+      "id": "spark",
+      "title": "Spark engine + six variants",
+      "area": "Week 4",
+      "status": "done"
+    },
+    {
+      "id": "trio",
+      "title": "Trio home + completion flow",
+      "area": "Week 4",
+      "status": "done"
+    },
+    {
+      "id": "content60",
+      "title": "60-day validated content batch",
+      "area": "Week 4",
+      "status": "done"
+    },
+    {
+      "id": "parentzone",
+      "title": "Parent Zone",
+      "area": "Week 5",
+      "status": "done"
+    },
+    {
+      "id": "resultcard",
+      "title": "Spoiler-free result card",
+      "area": "Week 5",
+      "status": "done"
+    },
+    {
+      "id": "deploy",
+      "title": "Playable demo published for phone/tablet",
+      "area": "Week 5",
+      "status": "done"
+    }
+  ],
+  "taskSummary": {
+    "done": 17,
+    "total": 17
+  },
+  "tests": {
+    "passed": 27,
+    "failed": 0,
+    "total": 27,
+    "ok": true,
+    "note": ""
+  },
+  "content": {
+    "dayCount": 60,
+    "firstDate": "2026-07-31",
+    "lastDate": "2026-09-28",
+    "generatedAt": "2026-08-07T06:40:04.143Z",
+    "puzzleCount": 540
+  },
+  "build": {
+    "builtAt": "2026-08-07T06:57:07.321Z",
+    "hasServiceWorker": true
+  },
+  "criteria": [
+    {
+      "label": "30+ consecutive days of all three puzzle types",
+      "met": true,
+      "detail": "60 days (2026-07-31 → 2026-09-28)"
+    },
+    {
+      "label": "Every logic puzzle passes deterministic validation",
+      "met": true,
+      "detail": "27/27 engine tests passing"
+    },
+    {
+      "label": "Audio available for all age 6–7 instructions",
+      "met": true,
+      "detail": "Speech synthesis layer, on by default for 6–7"
+    },
+    {
+      "label": "No child-facing action requires an account",
+      "met": true,
+      "detail": "No accounts, no backend, no network calls"
+    },
+    {
+      "label": "Progress persists through restarts and offline use",
+      "met": true,
+      "detail": "localStorage + precaching service worker"
+    },
+    {
+      "label": "Difficulty changeable only through Parent Zone",
+      "met": true,
+      "detail": "Multiplication parental gate"
+    },
+    {
+      "label": "Purchases and external links parent-gated or absent",
+      "met": true,
+      "detail": "No purchase path in the alpha build"
+    },
+    {
+      "label": "Child can recover from every mistake without losing anything",
+      "met": true,
+      "detail": "No lives, no timers, no resets"
+    },
+    {
+      "label": "No third-party ad SDK",
+      "met": true,
+      "detail": "Zero runtime dependencies beyond React"
+    }
+  ],
+  "criteriaSummary": {
+    "met": 9,
+    "total": 9
+  },
+  "demoUrl": "https://keyrabbit.github.io/Test/trio/play/"
+}

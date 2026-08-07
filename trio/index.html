@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today's Trio — Build Status</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🔷</text></svg>" />
+    <style>
+      :root {
+        --bg: #12101f;
+        --panel: #1c1930;
+        --line: #2f2a47;
+        --ink: #f2eefc;
+        --muted: #a49dc4;
+        --ok: #43d17c;
+        --pending: #6b6489;
+        --warn: #ffb454;
+        --accent: #8b6ef5;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 24px 16px 60px;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      .wrap { max-width: 1000px; margin: 0 auto; }
+      header { display: flex; flex-wrap: wrap; gap: 12px; align-items: baseline; justify-content: space-between; margin-bottom: 6px; }
+      h1 { font-size: 1.7rem; margin: 0; letter-spacing: -0.02em; }
+      h2 { font-size: 1rem; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+      .sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+      .live { display: inline-flex; align-items: center; gap: 7px; font-size: 0.85rem; color: var(--muted); }
+      .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ok); animation: pulse 2s infinite; }
+      @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+      .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: 28px; }
+      .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+      .stat .value { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+      .stat .label { color: var(--muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; }
+      .stat .note { color: var(--muted); font-size: 0.8rem; margin-top: 4px; }
+      .stat[data-tone='ok'] .value { color: var(--ok); }
+      .stat[data-tone='warn'] .value { color: var(--warn); }
+
+      section { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 18px; }
+      .bar { height: 8px; border-radius: 99px; background: #2a2542; overflow: hidden; margin-bottom: 16px; }
+      .bar > i { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--ok)); transition: width 400ms ease; }
+
+      ul { list-style: none; margin: 0; padding: 0; }
+      li { display: flex; gap: 10px; align-items: flex-start; padding: 9px 0; border-bottom: 1px solid var(--line); }
+      li:last-child { border-bottom: none; }
+      .mark { flex-shrink: 0; width: 20px; text-align: center; }
+      .mark[data-status='done'] { color: var(--ok); }
+      .mark[data-status='pending'] { color: var(--pending); }
+      .title { flex: 1; }
+      .area { color: var(--muted); font-size: 0.78rem; padding: 2px 8px; border: 1px solid var(--line); border-radius: 99px; white-space: nowrap; }
+      .detail { color: var(--muted); font-size: 0.82rem; display: block; }
+      li[data-status='pending'] .title { color: var(--muted); }
+
+      .demo { display: inline-block; margin-top: 6px; padding: 12px 22px; border-radius: 99px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; }
+      .demo:hover { filter: brightness(1.1); }
+      code { background: #262138; padding: 2px 7px; border-radius: 6px; font-size: 0.85em; }
+      footer { color: var(--muted); font-size: 0.82rem; text-align: center; margin-top: 30px; }
+      .err { color: var(--warn); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>🔷 Today's Trio — Build Status</h1>
+        <span class="live"><span class="dot"></span><span id="updated">loading…</span></span>
+      </header>
+      <p class="sub">
+        Private-alpha MVP built from <code>spec.txt</code>. This page reads
+        <code>status.json</code>, which is regenerated from the test suite, the validated content
+        bundle and the build output — nothing here is hand-written.
+      </p>
+
+      <div id="stats" class="grid"></div>
+
+      <section>
+        <h2>Release criteria — spec §24</h2>
+        <div class="bar"><i id="criteria-bar" style="width: 0"></i></div>
+        <ul id="criteria"></ul>
+      </section>
+
+      <section>
+        <h2>Implementation sequence — spec §25</h2>
+        <div class="bar"><i id="task-bar" style="width: 0"></i></div>
+        <ul id="tasks"></ul>
+      </section>
+
+      <section id="demo-section" style="display: none">
+        <h2>Playable demo</h2>
+        <p class="sub" style="margin-bottom: 0">
+          Works on a phone or tablet. Add it to your home screen to play offline.
+        </p>
+        <a class="demo" id="demo-link" href="#">▶ Play the demo</a>
+      </section>
+
+      <footer>Auto-refreshes every 15 seconds · <span id="commit"></span></footer>
+    </div>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+
+      function stat(label, value, note, tone) {
+        return `<div class="stat" data-tone="${tone ?? ''}">
+          <div class="value">${value}</div>
+          <div class="label">${label}</div>
+          ${note ? `<div class="note">${note}</div>` : ''}
+        </div>`;
+      }
+
+      function render(d) {
+        const when = new Date(d.updatedAt);
+        $('updated').textContent = `updated ${when.toLocaleTimeString()}`;
+        $('commit').textContent = d.commit ? `${d.branch} @ ${d.commit}` : '';
+
+        const tests = d.tests ?? { passed: 0, total: 0, ok: false };
+        const content = d.content;
+
+        $('stats').innerHTML = [
+          stat('Tests passing', `${tests.passed}/${tests.total}`, tests.ok ? 'all green' : 'failing', tests.ok ? 'ok' : 'warn'),
+          stat('Release criteria', `${d.criteriaSummary.met}/${d.criteriaSummary.total}`, 'spec §24',
+            d.criteriaSummary.met === d.criteriaSummary.total ? 'ok' : 'warn'),
+          stat('Validated days', content ? content.dayCount : '—',
+            content ? `${content.firstDate} → ${content.lastDate}` : 'no content'),
+          stat('Puzzles shipped', content ? content.puzzleCount : '—', '3 puzzles × 3 bands × days'),
+          stat('Build', d.build ? '✓' : '—', d.build?.hasServiceWorker ? 'offline-ready' : 'not built',
+            d.build ? 'ok' : 'warn'),
+        ].join('');
+
+        const pct = (n, t) => (t === 0 ? 0 : Math.round((n / t) * 100));
+
+        $('criteria-bar').style.width = pct(d.criteriaSummary.met, d.criteriaSummary.total) + '%';
+        $('criteria').innerHTML = d.criteria
+          .map(
+            (c) => `<li data-status="${c.met ? 'done' : 'pending'}">
+              <span class="mark" data-status="${c.met ? 'done' : 'pending'}">${c.met ? '✓' : '○'}</span>
+              <span class="title">${c.label}<span class="detail">${c.detail}</span></span>
+            </li>`,
+          )
+          .join('');
+
+        $('task-bar').style.width = pct(d.taskSummary.done, d.taskSummary.total) + '%';
+        $('tasks').innerHTML = d.tasks
+          .map(
+            (t) => `<li data-status="${t.status}">
+              <span class="mark" data-status="${t.status}">${t.status === 'done' ? '✓' : '○'}</span>
+              <span class="title">${t.title}</span>
+              <span class="area">${t.area}</span>
+            </li>`,
+          )
+          .join('');
+
+        if (d.demoUrl) {
+          $('demo-section').style.display = '';
+          $('demo-link').href = d.demoUrl;
+        }
+      }
+
+      async function refresh() {
+        try {
+          const res = await fetch('status.json?t=' + Date.now(), { cache: 'no-store' });
+          render(await res.json());
+        } catch (e) {
+          $('updated').innerHTML = '<span class="err">status.json unavailable</span>';
+        }
+      }
+
+      refresh();
+      setInterval(refresh, 15000);
+    </script>
+  </body>
+</html>

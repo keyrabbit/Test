@@ -1,0 +1,691 @@
+# Today's Trio — Product Specification
+
+**Status:** Draft v0.1
+**Date:** 2026-08-06
+**Working title:** Today's Trio (placeholder; naming and trademark review required)
+**Target launch audience:** Children ages 6–10, with parents/guardians as purchasers
+**Platforms:** iPhone/iPad first; Android, Web/PWA, and Windows immediately after validation
+
+## 1. Product summary
+
+Today's Trio is a privacy-first daily puzzle ritual designed specifically for children ages 6–10. Every day, a child receives the same three short, carefully designed challenges as other players in their age band:
+
+1. A visual pattern puzzle.
+2. A spatial or deduction puzzle.
+3. A word or number puzzle.
+
+The complete experience should take roughly 3–7 minutes. The goal is not to maximize screen time. The goal is to create a small daily moment children look forward to, parents feel good about, and families can occasionally solve together.
+
+The product takes the strongest behaviors of successful daily puzzle products—fresh daily content, shared puzzles, satisfying completion, lightweight progress, archives, and spoiler-free result sharing—and redesigns them for children rather than simplifying an adult product.
+
+### Product promise
+
+> Three clever puzzles. A few happy minutes. Something new every day.
+
+### Core principle
+
+**Optimize for days enjoyed, not minutes consumed.**
+
+There is no infinite feed, energy system, punishment for missing a day, public leaderboard, behavioral advertising, or pressure to keep playing.
+
+## 2. Problem and opportunity
+
+Children have many puzzle and educational apps, but most fall into one of four categories:
+
+* Adult daily games with vocabulary or difficulty reduced for children.
+* Large educational libraries built around lessons and progression.
+* Endless casual games optimized for session length and advertising.
+* Digital versions of puzzle/activity books.
+
+There is room for a polished destination whose primary behavior is a **short, shared, daily puzzle ritual for kids**.
+
+Existing products validate parts of the idea:
+
+* Spellie offers daily Wordle-like puzzles for young spellers.
+* Puzzle Juniors offers kid-friendly versions of several familiar word-game formats.
+* Gritty Kids offers a paid, ad-free collection of logic, math, word, focus, and spatial puzzles for children.
+* LogicLike offers a large educational activity library for young children.
+
+Today's Trio should not clone any of those products or New York Times game presentation. Its differentiation is an original multi-format daily ritual, strong visual logic, family-safe product design, and minimal dependence on language.
+
+## 3. Goals
+
+### Primary goals
+
+1. A 6-year-old can understand and begin the first puzzle without an adult explaining the interface.
+2. The complete daily experience feels rewarding in 3–7 minutes.
+3. Children voluntarily ask to return on another day.
+4. Parents describe the product as screen time they feel good about.
+5. The app can operate with no child account and almost no backend infrastructure.
+6. Daily puzzle production can scale without requiring several hours of manual authoring every day.
+7. The product can expand internationally with limited translation work.
+
+### Business goals
+
+1. Validate daily retention before optimizing monetization.
+2. Establish a credible family subscription at roughly $20–30/year.
+3. Keep the daily experience free so the main habit and word-of-mouth loop remain accessible.
+4. Create future expansion paths into archives, practice packs, family features, printables, and classroom licensing.
+
+## 4. Non-goals
+
+V1 will not include:
+
+* Child-to-child chat or messaging.
+* Public profiles.
+* Public leaderboards.
+* User-generated puzzles.
+* Behavioral or third-party advertising.
+* An endless game feed.
+* Competitive multiplayer.
+* School curriculum alignment or formal learning claims.
+* AI chat with children.
+* A complex cloud account system.
+* A virtual currency economy.
+
+## 5. Audience
+
+### Primary player: curious child
+
+**Age:** 6–10
+**Example:** a child like Stella at age 6 who enjoys solving things but may still need help reading longer instructions.
+
+Needs:
+
+* Immediate comprehension.
+* Large, forgiving touch targets.
+* Short spoken/visual instructions.
+* Visible success and encouraging feedback.
+* Challenges that feel clever rather than school-like.
+* Permission to make mistakes without losing progress.
+
+### Primary customer: parent or guardian
+
+Needs:
+
+* Confidence that the product is safe and age-appropriate.
+* No manipulative monetization or advertising.
+* Clear limits to the daily experience.
+* Evidence that the child is practicing reasoning, attention, spatial skills, words, or numbers.
+* A purchase flow the child cannot accidentally enter.
+
+### Secondary user: family co-player
+
+A parent, sibling, or grandparent may occasionally solve a puzzle with the child. Family mode should make this delightful without turning the core product into an adult game.
+
+## 6. Positioning
+
+**Category:** Daily puzzle game for kids
+**Audience-facing positioning:** "A daily puzzle ritual for curious kids and their grownups."
+**Parent-facing value:** Thoughtful, finite, privacy-first screen time.
+**Child-facing value:** Three new mysteries to crack every day.
+
+The product should feel more like opening a tiny daily puzzle magazine than starting an educational lesson.
+
+## 7. Daily experience
+
+### Home screen
+
+The first screen is intentionally simple:
+
+* Friendly daily illustration/theme.
+* "Today's Trio" progress: 0/3, 1/3, 2/3, or Complete.
+* Three large puzzle cards.
+* A small collection/progress area.
+* Parent Zone entry separated from child actions.
+
+The app should never open on a store offer, notification prompt, or account prompt.
+
+### First-use flow
+
+1. Parent opens app.
+2. One-screen explanation of the product promise.
+3. Parent selects a starting difficulty band: **6–7**, **8–10**, or **Family**.
+4. Optional audio instructions are enabled by default for ages 6–7.
+5. Child sees a 20–30 second interactive tutorial using a sample puzzle.
+6. Today's first puzzle begins.
+
+No account is required.
+
+### Daily flow
+
+1. Open app.
+2. See three daily cards.
+3. Choose any unfinished puzzle.
+4. Play for 30 seconds to roughly 3 minutes.
+5. Receive warm completion feedback.
+6. Return to the Trio screen.
+7. After all three, reveal the day's collectible/reward and a short celebration.
+8. Offer "Come back tomorrow" and, behind a parent gate, optional result sharing.
+
+Do not immediately funnel the child into another game after completion.
+
+## 8. Initial puzzle formats
+
+All puzzle types require a deterministic validator or solver. Generated puzzles must be proven solvable and, where applicable, have exactly one intended solution before publication.
+
+### Puzzle A — Pattern Pop
+
+**Skill:** visual reasoning and pattern recognition
+**Target duration:** 30–90 seconds
+
+Presentation:
+
+* A sequence or grid contains one missing item.
+* The child chooses the correct item from 3–5 visual answers.
+* Visual attributes may include color, shape, count, rotation, size, position, or simple transformations.
+
+Difficulty scaling:
+
+* Ages 6–7: one primary rule; highly distinct choices.
+* Ages 8–10: two interacting rules; plausible distractors.
+* Family: two or three rules with less obvious transformations.
+
+No reading should be required after the tutorial.
+
+### Puzzle B — Logic Lane
+
+**Skill:** deduction, ordering, and spatial reasoning
+**Target duration:** 1–3 minutes
+
+Presentation:
+
+* 3–5 friendly objects or characters must be placed into slots.
+* The child receives icon-based or very short clues such as "Rocket is left of Star" or "Cat is not in the blue house."
+* The child drags items into position and receives non-punitive feedback.
+
+Accessibility:
+
+* Every clue can be spoken aloud.
+* Color is never the sole source of meaning.
+* A "Show me what this clue means" affordance demonstrates clue grammar without giving the answer.
+
+Difficulty scaling changes item count, clue count, clue composition, and number of deduction steps.
+
+### Puzzle C — Spark
+
+**Skill:** alternates between language and number reasoning
+**Target duration:** 1–2 minutes
+
+Spark alternates formats across the week to add variety without creating a new engine every day.
+
+Initial variants:
+
+* **Word Spark:** choose the word/picture that completes a simple relationship, category, rhyme, or word transformation.
+* **Number Spark:** identify the missing number, balance a simple expression, or solve a visual quantity rule.
+
+For early readers, Word Spark supports audio and illustrations. Vocabulary must be drawn from a curated child-safe, age-banded list.
+
+### Theme layer
+
+The three puzzles may share a light daily theme—space, ocean, animals, camping, music—without requiring a story. Themes change visuals and vocabulary but never obscure the logical structure.
+
+## 9. Difficulty system
+
+V1 exposes three bands:
+
+* **6–7:** early reader; audio-first; shorter puzzles.
+* **8–10:** stronger reader; more steps and ambiguity.
+* **Family:** designed to encourage child/adult discussion without becoming frustrating.
+
+Difficulty is selected by the parent and can be changed in Parent Zone.
+
+Do not silently adapt difficulty based on a child's failures in V1. Adaptive difficulty can be explored later once it can be implemented transparently and safely.
+
+Each daily puzzle has a shared conceptual seed across bands so family members can discuss "today's puzzle" while receiving age-appropriate versions.
+
+## 10. Progress and motivation
+
+### No punitive streak
+
+Missing a day must not reset a large number to zero.
+
+Instead use a **Daily Trail**:
+
+* Completing the Trio adds one visible piece to a growing scene, map, constellation, garden, or collection.
+* Missing a day leaves the collection unchanged.
+* Weekly and monthly completion can earn cosmetic badges without loss mechanics.
+
+The app may show neutral history such as "You solved puzzles on 5 days this week," but should not communicate shame or urgency.
+
+### Rewards
+
+Rewards are cosmetic and deterministic:
+
+* Stickers.
+* Small animated creatures/objects.
+* Scene pieces.
+* Theme postcards.
+
+No random loot boxes, premium currency, or pay-to-complete mechanics.
+
+## 11. Hints and mistakes
+
+The product should normalize mistakes as part of solving.
+
+* First mistake: simple "Try another idea" feedback.
+* Repeated difficulty: offer a hint proactively but never force it.
+* Hints reveal reasoning steps, not the final answer when possible.
+* No lives/hearts.
+* No timer pressure for the core child modes.
+* A timer may exist as an opt-in Family challenge in a later version.
+
+## 12. Parent Zone
+
+Parent Zone is entered through an age-appropriate parental gate.
+
+V1 functions:
+
+* Change difficulty band.
+* Toggle audio, music, and sound.
+* Manage local child profiles if more than one child uses the device.
+* View simple participation history.
+* Restore purchases.
+* View or purchase premium access.
+* Read privacy information.
+* Export/share a spoiler-free result card.
+
+All purchasing and external navigation originates here, never in the child play flow.
+
+## 13. Sharing
+
+Sharing is designed for parents, not child social networking.
+
+After a completed Trio, Parent Zone can generate a result card containing:
+
+* Date.
+* Three puzzle icons.
+* Completion indicators.
+* Optional number of hints.
+* A fun non-identifying collectible/theme image.
+* Product link.
+
+It must not contain the child's name, age, avatar/photo, exact answers, persistent identifier, or location.
+
+## 14. Monetization
+
+### Principles
+
+* No third-party ads.
+* No paywall before today's puzzles.
+* No purchase prompts inside puzzles.
+* Parent is the buyer.
+* Premium should add depth and convenience rather than make the free child experience intentionally frustrating.
+
+### Free
+
+* Today's complete Trio.
+* Daily Trail/collection.
+* Core hints.
+* One local child profile.
+* Recent completion history.
+
+### Premium — initial hypothesis
+
+Target pricing to test:
+
+* **$24.99/year** family subscription.
+* Consider **$39.99–$49.99 lifetime** only after annual retention and willingness-to-pay are understood.
+
+Premium candidates:
+
+* Full daily archive.
+* Unlimited practice puzzles generated from validated templates.
+* Multiple child profiles.
+* Additional collectible/theme packs.
+* Cross-device parent-controlled sync in a later release.
+* Printable weekend puzzle sheets in a later release.
+* Family challenge variants.
+
+Do not introduce a weekly subscription.
+
+## 15. Privacy and child safety
+
+The default architecture minimizes data collection rather than relying on policy text to make invasive collection acceptable.
+
+V1 requirements:
+
+* No child email address, phone number, real name, precise birth date, photo, voice recording, location, or contacts.
+* No IDFA or cross-app tracking.
+* No third-party advertising SDK.
+* No child chat, public profile, or user-generated content.
+* Child display names, if supported, remain local by default.
+* No account required for the free experience.
+* Core functionality works when telemetry is unavailable.
+* Any production analytics design must receive a child-privacy/COPPA and App Store Kids Category review before launch.
+
+For the private MVP, measurement can be performed through a parent-consented test cohort and direct parent feedback. Production telemetry should be first-party, minimal, aggregated where feasible, and must not be used for behavioral advertising.
+
+## 16. Content system
+
+### Content pipeline
+
+1. Generate candidate puzzle from deterministic rules/templates.
+2. Run solver/validator.
+3. Reject ambiguous, impossible, duplicate, or difficulty-outlier puzzles.
+4. Run age/vocabulary/safety checks.
+5. Render automated screenshots for visual inspection.
+6. Human reviews the final daily Trio.
+7. Publish a signed/versioned daily content package.
+
+Generative AI may propose themes, clue wording, artwork briefs, or candidate content, but it is never the authority on whether a puzzle is valid.
+
+### Editorial target
+
+After tooling is mature, final human review should require **under 15 minutes per day's Trio on average**. If a puzzle format consistently requires much more editorial work, redesign the generator or remove that format from the daily set.
+
+### Content horizon
+
+* Maintain at least 30 days of reviewed upcoming content.
+* Private MVP can bundle 60 days directly in the app.
+* Public MVP may retrieve small static date-keyed content files; it does not require an application server.
+* Cache enough upcoming/recent content for at least seven days of offline use.
+
+## 17. Technical architecture
+
+### V0 / private test
+
+* Single local application.
+* 30–60 pre-generated days bundled with the build.
+* Local progress only.
+* No login.
+* No backend.
+* TestFlight distribution for iPhone/iPad.
+
+### Public MVP
+
+Recommended shared implementation:
+
+* TypeScript game/content engine.
+* Responsive web/PWA shell.
+* iOS/Android packaging through a thin native wrapper such as Capacitor.
+* Windows distributed as an installable PWA/MSIX package.
+* Static CDN/object storage for date-keyed content manifests and assets.
+* Local encrypted/preferences storage for progress and settings.
+* Native purchase APIs for platform subscriptions.
+
+No dynamic gameplay service is necessary for launch. Accounts and sync are deferred until demand justifies them.
+
+### Logical client components
+
+* App Shell
+* Daily Content Loader
+* Pattern Pop Renderer/Validator
+* Logic Lane Renderer/Validator
+* Spark Renderer/Validator
+* Audio/Instruction Layer
+* Local Progress Store
+* Daily Trail / Collection
+* Parent Zone
+* Purchase Entitlements
+* Privacy-Safe Measurement Layer
+
+### Daily content schema — illustrative
+
+```json
+{
+  "date": "2026-09-21",
+  "theme": "space",
+  "contentVersion": 1,
+  "puzzles": [
+    {
+      "id": "2026-09-21-pattern",
+      "type": "pattern",
+      "bands": {
+        "6-7": {},
+        "8-10": {},
+        "family": {}
+      }
+    }
+  ]
+}
+```
+
+Solutions/validation data may use a separate schema from rendered puzzle data. Client-side secrecy is not a security boundary; the system should optimize for reliability and simplicity rather than elaborate anti-cheat protection.
+
+## 18. Offline behavior
+
+* Today's already-downloaded Trio must always work offline.
+* Private MVP works entirely offline.
+* Public MVP prefetches future content conservatively when online.
+* Completion is stored locally immediately.
+* No child progress should be lost because a network request failed.
+* If today's content is unavailable, show a friendly cached practice puzzle rather than an error-oriented dead end.
+
+## 19. Accessibility and kid usability
+
+Minimum requirements:
+
+* Minimum 48×48 CSS-pixel touch targets; prefer larger in primary play.
+* No essential state conveyed only by color.
+* High-contrast mode compatibility.
+* Reduced-motion support.
+* Spoken instructions available for every child-facing instruction.
+* Screen-reader labels for interactive controls.
+* Simple, consistent iconography.
+* Avoid dense text blocks in child mode.
+* Avoid requiring precise drag behavior when tap-to-select can provide an alternative.
+* Support portrait phones and tablet layouts.
+
+The age 6–7 experience should be usable by a child who can recognize basic words but is not yet a fluent reader.
+
+## 20. Visual and audio direction
+
+The experience should be warm, clever, and contemporary—not preschoolish and not an adult newspaper skin.
+
+Principles:
+
+* Clean shapes and expressive illustrations.
+* Limited animation used as feedback/reward.
+* Soft but high-contrast palette.
+* Character can come from the Daily Trail collectibles rather than a constantly talking mascot.
+* Calm sound design; no casino-like reward sounds.
+* Optional background music off by default after onboarding unless testing proves otherwise.
+
+## 21. Notifications
+
+No notification permission request on first launch.
+
+After several completed days, Parent Zone may offer an optional single daily reminder controlled by the parent. Notifications should be neutral, e.g. "Today's three puzzles are ready," and should never warn about losing progress.
+
+## 22. Success metrics
+
+Because this is child-directed, production analytics implementation depends on the approved privacy design. The following are product targets, measurable in the consented alpha cohort first.
+
+### North-star behavior
+
+**Weekly Completed Trios per active household.**
+
+This rewards repeat participation without incentivizing long sessions.
+
+### MVP validation targets
+
+| Metric                                             |                        Target |
+| -------------------------------------------------- | ----------------------------: |
+| First-session users completing at least one puzzle |                          ≥80% |
+| First-session users completing all three           |                          ≥55% |
+| D1 return                                          |                          ≥35% |
+| D7 return                                          |                          ≥20% |
+| D30 return                                         |                          ≥10% |
+| Trio completion once a session starts              |                          ≥65% |
+| Retained household play frequency                  |                  ≥4 days/week |
+| Median complete Trio time                          |                       3–7 min |
+| Parent "would recommend" / strong satisfaction     | ≥80% positive in alpha survey |
+
+These are internal launch gates, not claimed industry benchmarks.
+
+### Guardrails
+
+* Median child session should not drift materially above 8 minutes because of product-driven loops.
+* No revenue metric can justify adding behavioral advertising or manipulative loss mechanics.
+* Difficulty-related abandonment should not disproportionately affect the 6–7 band.
+
+## 23. Validation plan
+
+### Stage 0 — mechanic test
+
+**Goal:** determine whether one puzzle is fun enough that a child asks for another tomorrow.
+
+Build only Pattern Pop with:
+
+* 14–30 daily puzzles.
+* Local progress.
+* One simple Daily Trail collectible.
+* Audio tutorial.
+* No monetization.
+
+Test first with Stella and approximately 5–10 additional families if available.
+
+Key question: **Does the child independently want to return tomorrow?**
+
+Do not build the full suite if the answer is weak.
+
+### Stage 1 — Trio alpha
+
+Add Logic Lane and Spark. Run a 30-day parent-consented private alpha.
+
+Validate:
+
+* D1/D7 return.
+* Which of the three puzzles children choose first.
+* Completion and hint usage by age band.
+* Parent perception of screen-time quality.
+* Whether children understand Daily Trail without a punitive streak.
+* Whether 3 puzzles feels like the correct daily amount.
+
+### Stage 2 — monetization test
+
+Keep today's Trio free. Test a premium archive/practice offer with parents only after the daily habit demonstrates retention.
+
+Primary questions:
+
+* Is $24.99/year credible?
+* Is archive/practice enough value for subscription?
+* Would parents prefer a one-time lifetime purchase?
+
+### Stage 3 — public launch
+
+Launch iPhone/iPad first, then Android/Web/Windows once core retention and production content operations are stable.
+
+## 24. MVP release criteria
+
+The private Trio alpha is ready when:
+
+* At least 30 consecutive days of all three puzzle types are available.
+* Every generated logic puzzle passes deterministic validation.
+* All age 6–7 instructions have audio.
+* No child-facing action requires an account.
+* Progress persists through app restarts and offline use.
+* Difficulty can be changed only through Parent Zone.
+* Purchases and external links are absent or parent-gated.
+* A child can recover from every puzzle mistake without losing a life or daily reward.
+* The app has no third-party ad SDK.
+* Content has completed human age/safety review.
+* Critical flows have been tested on a small iPhone and an iPad.
+
+## 25. Proposed implementation sequence
+
+### Week 1
+
+* Shared app shell and local daily content format.
+* Pattern Pop engine and generator.
+* Deterministic validation.
+* Audio tutorial.
+* First 14 days of test content.
+
+### Week 2
+
+* Daily Trail.
+* Parent difficulty setting.
+* Offline persistence.
+* TestFlight build.
+* First child tests; revise Pattern Pop based on observation.
+
+### Week 3
+
+* Logic Lane engine/generator/solver.
+* Difficulty bands.
+* Accessibility pass.
+
+### Week 4
+
+* Spark engine and first two variants.
+* Trio home/completion flow.
+* 30-day content batch and review tools.
+
+### Week 5
+
+* Parent Zone.
+* Private-alpha measurement.
+* Result card generation.
+* Polish, performance, error recovery, and device testing.
+
+### Week 6+
+
+* 30-day alpha.
+* Iterate only on evidence from retention, completion, observation, and parent feedback.
+* Decide whether to proceed to premium/public MVP.
+
+## 26. Key product decisions already made
+
+| Decision                | Choice                                                          |
+| ----------------------- | --------------------------------------------------------------- |
+| Audience                | Kids 6–10; parent is customer                                   |
+| Core cadence            | 3 short puzzles per day                                         |
+| Daily duration          | ~3–7 minutes                                                    |
+| Monetization            | Free daily core + family premium                                |
+| Advertising             | None                                                            |
+| Subscription hypothesis | ~$24.99/year                                                    |
+| Accounts                | None required in V1                                             |
+| Streak design           | Non-punitive Daily Trail                                        |
+| Social                  | Parent-gated result sharing only                                |
+| Backend                 | None for private MVP; static content delivery for public MVP    |
+| Content                 | Generator + deterministic solver + human final review           |
+| Primary differentiation | Original, visual, language-light, kid-native daily puzzle suite |
+
+## 27. Open decisions
+
+These do not block Stage 0:
+
+1. Final product name and trademark/domain availability.
+2. Whether the third daily puzzle should always alternate word/number or become a fourth rotating engine later.
+3. Final collectible metaphor: constellation, garden, map, creatures, or another world.
+4. Whether Family difficulty should be available free or be a premium feature.
+5. Annual-only versus annual + lifetime purchase at public launch.
+6. Whether public V1 belongs in Apple's Kids Category versus a broader family positioning; this requires policy/legal review based on final audience and data design.
+7. Exact first-party analytics/measurement architecture for production.
+8. Whether cross-device sync provides enough value to justify parent accounts in V2.
+
+## 28. Risks and mitigations
+
+| Risk                                             | Mitigation                                                                                                    |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
+| Puzzles feel educational rather than fun         | Observe children; optimize for delight and voluntary return, not curriculum coverage                          |
+| Daily content becomes an editorial burden        | Procedural generation, solver validation, 30-day buffer, <15 min/day human review target                      |
+| Ages 6 and 10 require very different experiences | Shared daily seed with explicit difficulty bands                                                              |
+| Subscription value is too thin                   | Prove retention first; add archive/practice/family utility before monetizing                                  |
+| Kids privacy limits growth analytics             | Design for minimal data; use parent-consented alpha research; privacy review before production telemetry      |
+| Visual puzzles become repetitive                 | Theme layer, controlled mechanic variants, periodic new engines after core retention works                    |
+| Product becomes another Wordle clone             | Original puzzle mechanics and presentation; avoid copied names, assets, layouts, datasets, and result formats |
+| Parents perceive streaks as addictive            | Use cumulative, non-loss progress and finite daily sessions                                                   |
+
+## 29. Competitive references and policy references
+
+Product references for ongoing study:
+
+* Spellie: [https://spelliegame.com/](https://spelliegame.com/)
+* Puzzle Juniors: [https://puzzlejuniors.com/](https://puzzlejuniors.com/)
+* Gritty Kids: [https://apps.apple.com/us/app/gritty-kids-logic-puzzles/id6502895106](https://apps.apple.com/us/app/gritty-kids-logic-puzzles/id6502895106)
+* LogicLike: [https://play.google.com/store/apps/details?id=com.logicappkids](https://play.google.com/store/apps/details?id=com.logicappkids)
+* NYT Games: [https://apps.apple.com/us/app/nyt-games-wordle-crossword/id307569751](https://apps.apple.com/us/app/nyt-games-wordle-crossword/id307569751)
+
+Policy references to review again immediately before release:
+
+* Apple App Review Guidelines: [https://developer.apple.com/app-store/review/guidelines/](https://developer.apple.com/app-store/review/guidelines/)
+* Apple Kids guidance: [https://developer.apple.com/kids/](https://developer.apple.com/kids/)
+* FTC COPPA guidance: [https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions)
+* Google Play Families Policy: [https://support.google.com/googleplay/android-developer/answer/9893335](https://support.google.com/googleplay/android-developer/answer/9893335)
+
+## 30. One-sentence build brief
+
+Build a delightful, ad-free, privacy-first app where a 6–10-year-old can independently solve three original age-appropriate puzzles in a few minutes every day, feel successful even after mistakes, and genuinely want to come back tomorrow.
